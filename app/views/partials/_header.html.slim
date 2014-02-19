@@ -1,0 +1,97 @@
+.header-wrapper
+  .header-top
+    .row
+      .large-2.columns
+        .header-cell-phones
+          a href="tel:+380322422260"
+            |+38 (032) 242 22 60
+          a href="tel:+380673403019"
+            |+38 (067) 340 30 19
+      .large-1.columns
+        p
+      .large-2.columns
+        .header-contact-links
+          a.link-to-form href="#"
+            |Замовити дзвінок
+          a href="mail:woodtechnic@ukr.net"
+            |woodtechnic@ukr.net
+      .large-1.columns
+        p
+      .large-4.columns
+        #search-bar
+          javascript:
+            (function() {
+              var cx = '010860152595732084541:dgjb7gnpx94';
+              var gcse = document.createElement('script');
+              gcse.type = 'text/javascript';
+              gcse.async = true;
+              gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                  '//www.google.com/cse/cse.js?cx=' + cx;
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(gcse, s);
+            })();
+          gcse:search
+      .large-2.columns
+        .language-toggle
+          a href="#"
+            |UA
+          a href="#"
+            |RUS
+          .clearfix
+  .row
+    .large-1.right
+      #header-spoiler
+        .container-top
+          img src=asset_path("triangle.svg")
+        .container-bottom
+          #rotate.header-spoiler-button.rotate onclick="rotateDIV()"
+            img.passive-rotate-image src=asset_path('Settings icon (passive).svg')
+            img.active-rotate-image src=asset_path('Settings icon (active).svg')
+
+  .header-bottom
+    .row
+      .top-main-menu
+        nav class="top-bar"
+          .small-4.large-2.colums.left.header-logo
+            =link_to image_tag('WoodTechnic logo.svg')+ "", root_path
+          ul class="title-area"
+            li class="toggle-topbar menu-icon"
+              a href="#"
+                |Menu
+          .large-8.columns.right
+            section.top-bar-section
+              /<!-- Right Nav Section -->
+              ul.right.top-menu-links
+                li
+                  = link_to "Продукція", production_path, :class => is_active?("production")
+                li
+                  = link_to "Акції", promotion_path, :class => is_active?("promotion")
+                li.has-dropdown
+                  = link_to "Інформація", information_path, :class => is_active?("information")
+                  ul.dropdown
+                    li
+                      a href="#"
+                        |Хто ми
+                    li
+                      a href="#"
+                        |Новини
+                    li
+                      a href="#"
+                        |Ваканції
+                    li
+                      a href="#"
+                        |Відгуки
+                    li
+                      a href="#"
+                        |Для партнерів
+                    li
+                      a href="#"
+                        |Для монтажників
+                    li
+                      a href="#"
+                        |Для покупців
+                    li
+                      a href="#"
+                        |Сертифікати та гарантія
+                li
+                  = link_to "Контакти", contacts_path, :class => is_active?("contacts")

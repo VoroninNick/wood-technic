@@ -1,0 +1,82 @@
+.row
+  /.large-12.columns
+  ul.breadcrumbs
+    li.bred_logo_home
+      =link_to image_tag("logo home.svg")+"", root_path
+    li
+      =link_to "продукція", production_path
+    li.unavailable
+      =link_to "жалюзійні дверцята", door_louver_path
+    /li class="current"
+.row
+  .large-4.columns
+    .d_v_image
+      img src=asset_path("d_v.png")
+  .large-8.columns
+    .d_v_content
+      h1
+        |ЖАЛЮЗІЙНІ ДВЕРЦЯТА
+      p
+        |Дверцята жалюзійні стали досить популярні в Європі ще в середині 19 століття. Їх як правило використовували в якості ставень на вікна. Пізніше в процесі еволюції їх почали використовувати в облаштуванні інтер’єру в якості меблевих фасадів, перегородок, ширм. І за досить короткий період вони набули надзвичайної популярності і в Україні. Тож якщо ви бажайте внести в свою оселю частинку природи, поставити оригінальні акценти чи просто відгородити непотрібні площі дверцята жалюзійні – саме для вас.
+      h1
+        |Палітра доступних кольорів
+      .palette_colors
+        .large-2.columns
+          .palette-item
+            img src=asset_path("wenge.png")
+            h4
+              |Венге
+        .large-2.columns
+          .palette-item
+            img src=asset_path("vilha.png")
+            h4
+              |Вільха
+        .large-2.columns
+          .palette-item
+            img src=asset_path("gorih.png")
+            h4
+              |Горіх
+        .large-2.columns
+          .palette-item
+            img src=asset_path("dub.png")
+            h4
+              |Дуб
+        .large-2.columns
+          .palette-item
+            img src=asset_path("mahagon.png")
+            h4
+              |Махагон
+        .large-2.columns
+          .palette-item
+            img src=asset_path("jablunia.png")
+            h4
+              |Яблуня
+      a.order_product href="#"
+        |Замовити
+.row
+  dl.tabs#myTabs
+    dd.active
+      a href="#panel2-1"
+        |Експлуатуція
+    dd.active
+      a href="#panel2-2"
+        |Технічні характеристики
+    dd.active
+      a href="#panel2-3"
+        |Гарантія
+  .tabs-content
+    .content.active#panel2-1
+      p
+        |First panel content goes here...
+    .content#panel2-2
+      p
+        |Second panel content goes here...
+    .content#panel2-3
+      p
+        |Third panel content goes here...
+
+
+
+
+
+

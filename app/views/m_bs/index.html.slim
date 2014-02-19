@@ -1,0 +1,17 @@
+h1 Listing m_bs
+
+table
+  tr
+    th
+    th
+    th
+
+  - @m_bs.each do |m_b|
+    tr
+      td = link_to 'Show', m_b
+      td = link_to 'Edit', edit_m_b_path(m_b)
+      td = link_to 'Destroy', m_b, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New M b', new_m_b_path

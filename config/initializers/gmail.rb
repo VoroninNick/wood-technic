@@ -2,7 +2,7 @@
 ActionMailer::Base.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    #:domain               => "voroninstudio.eu",
+    :domain               => "voroninstudio.eu",
     :user_name            => "support",
     :password             => "Studiosupport123",
     #:user_name           => "partido12",

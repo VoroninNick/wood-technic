@@ -38,6 +38,11 @@
         |09:00 – 14:00
       span
         |На складі обід з 13:00 до 14:00
+.row
+  .large-4.columns.push-4
+    img src=asset_path("call-icon.png")
+    h3
+      |Консультація фахівця:
 .header-block-page-wrapper
   .header-block-page.promo-green-line.contacts-google
     h1
@@ -46,26 +51,36 @@
   .large-12.columns
     .google-maps
       #map
+    .door-lists-shadow.maps-shadow
+      img src=asset_path('door-lis-carousel-shadow.png')
+
 .header-block-page-wrapper
   .header-block-page.promo-green-line.contact-form
     h1
       |ФОРМА ЗВОРОТНЬОГО ЗВ’ЯЗКУ
 .row
-  .large-12.columns
-    - if @was_sent
-      h1
-        | thanks for message
-    .contacts-form
-      = simple_form_for @contact_new_form, :html => {:class => 'form-horizontal' },:url => contacts_path do |f|
-        .columns.large-6.form-horizontal-left
-          = f.input :name, :required => true, placeholder: 'Олександр Олександрієвський', :class=>" name"
-          /= f.label :"ім'я", :for=>"contact_name"
-          = f.input :email, :required => false, placeholder: 'voronin.nick@gmail.com', :label=>false
-          = f.label :"ел.скринька", :for=>"contact_phone"
-          = f.input :phone, :required => true, placeholder: '+38 (050) 417 07 28', :label=>false
-          = f.label :"телефон", :for=>"contact_email"
-        .columns.large-6.form-horizontal-right
-          = f.input :message, :as => :text, :required => false, placeholder: 'Будемо раді почути відгуки та запитання від Вас.', :label=>false
-          = f.label :"текст вашого повідомлення", :for=>"contact_message"
-          .form-actions
-            = f.button :submit, '', :class=> "btn btn-primary"
+  - if @was_sent
+    .large-6.columns
+      .message-send
+        span
+          |Ваше повідомлення надіслане!
+.row
+  .contacts-form
+    = simple_form_for @contact_new_form, :html => {:class => 'form-horizontal' },:url => contacts_path do |f|
+      .columns.large-6.form-horizontal-left
+        = f.label :"Ваше ім'я:", :for=>"contact_name"
+        = f.input :name, :required => true, placeholder: 'Воронін Микола Валерійович', :label=>false, :class=>" name"
+
+        = f.label :"Контактний телефон:", :for=>"contact_phone"
+        = f.input :phone, :required => true, placeholder: '+38 (050) 417 07 28', :label=>false
+
+        = f.label :"Електронна скринька:", :for=>"contact_email"
+        = f.input :email, :required => false, placeholder: 'voronin.nick@gmail.com', :label=>false
+
+
+      .columns.large-6.form-horizontal-right
+        = f.label :"Текст повідомлення:", :for=>"contact_message"
+        = f.input :message, :as => :text, :required => false, placeholder: 'Будемо раді почути відгуки та запитання від Вас.', :label=>false
+
+        .form-actions.right
+          = f.button :submit, 'НАДІСЛАТИ', :class=> "btn btn-primary"

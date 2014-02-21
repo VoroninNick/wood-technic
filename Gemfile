@@ -58,7 +58,7 @@ gem 'ckeditor'
 gem 'carrierwave'
 gem "mini_magick"
 gem 'protected_attributes'
-gem 'paperclip'
+gem "paperclip", "~> 3.5.3"
 
 gem 'russian'
 gem 'rails-i18n'
@@ -66,5 +66,6 @@ gem 'rails-i18n'
 gem 'truncate_html'
 gem 'time_diff'
 gem 'sitemap_generator'
+
 
 gem 'capistrano'

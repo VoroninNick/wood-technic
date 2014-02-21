@@ -17,6 +17,10 @@ Wt::Application.routes.draw do
   get '/production/door-louver' => 'production#d_v', as: :door_louver
   get '/production/mdf' => 'production#mdf', as: :mdf
 
+  post '/contacts' => 'main#send_message', as: :send_message
+
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

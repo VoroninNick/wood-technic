@@ -17,7 +17,13 @@ class MainController < ApplicationController
   end
 
   def contacts
-
+    @contact_new_form = ContactForm.new
+  end
+  def send_message
+    ContactUs.new_message(params[:contact_form]).deliver
+    @was_sent = true
+    @contact_new_form = ContactForm.new
+    render action: :contacts
   end
 
 end

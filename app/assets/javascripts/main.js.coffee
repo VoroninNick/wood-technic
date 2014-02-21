@@ -2,15 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-navigateTab = (event) ->
-  url = $(event.target).attr("href")
-  target = url.split("#")[1]
-  if target.substr(0, 3) is "tab"
-    state = tab: target.substr(3)
-    selectTab "LOOK_MY_ID", state.tab #<-- change the tab
-    history.pushState state, null, url #<-- change the url
-    event.preventDefault()
-  return
 
 #$(document).on 'ready page:load', ->
 ready = ->
@@ -41,11 +32,8 @@ ready = ->
     itemsMobile: false # itemsMobile disabled - inherit from itemsTablet option
     autoPlay : 5000
 
-#tabs on production
-#  $("#myTabs").on "toggled", (event, tab) ->
-#    console.log tab
-#    return
-  $("#myTabs").on "click", navigateTab
+
+
 
 
   $("#rotate").click ->
@@ -54,6 +42,25 @@ ready = ->
 #
 #  return
   # main banner
+
+  lat = 49.87213
+  lng = 23.92897
+  myLatlng = new google.maps.LatLng(lat, lng)
+  myOptions =
+    zoom: 16
+    center: myLatlng
+    scrollwheel: false
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+
+
+  map = new google.maps.Map(document.getElementById("map"), myOptions)
+  marker = new google.maps.Marker(
+    position: myLatlng
+    map: map
+    title: "Wood Technic"
+    icon: '/assets/logo-for-map.png'
+  )
+
 $(document).ready(ready)
 $(document).on('page:load', ready)
 

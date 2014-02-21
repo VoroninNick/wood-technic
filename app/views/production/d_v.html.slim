@@ -51,29 +51,34 @@
             img src=asset_path("jablunia.png")
             h4
               |Яблуня
-      a.order_product href="#"
-        |Замовити
+        .clearfix
+      .clearfix
+      .order_product_wrapper
+        a.order_product href="#"
+          |Замовити
 .row
-  dl.tabs#myTabs
-    dd.active
-      a href="#panel2-1"
-        |Експлуатуція
-    dd.active
-      a href="#panel2-2"
-        |Технічні характеристики
-    dd.active
-      a href="#panel2-3"
-        |Гарантія
-  .tabs-content
-    .content.active#panel2-1
-      p
-        |First panel content goes here...
-    .content#panel2-2
-      p
-        |Second panel content goes here...
-    .content#panel2-3
-      p
-        |Third panel content goes here...
+  .door-louver-tabs-wrapper
+    .large-12.columns
+      dl.tabs#door-louver-tabs data-tab=""
+        dd
+          a href="#panel2-1"
+            |Експлуатуція
+        dd.active
+          a href="#panel2-2"
+            |Технічні характеристики
+        dd.active
+          a href="#panel2-3"
+            |Гарантія
+      .tabs-content
+        .content.active#panel2-1
+          p
+            |First panel content goes here...
+        .content#panel2-2
+          .row
+            .large-12.columns
+        .content#panel2-3
+          p
+            |Third panel content goes here...
 
 
 

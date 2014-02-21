@@ -52,6 +52,9 @@
       |ФОРМА ЗВОРОТНЬОГО ЗВ’ЯЗКУ
 .row
   .large-12.columns
+    - if @was_sent
+      h1
+        | thanks for message
     .contacts-form
       = simple_form_for @contact_new_form, :html => {:class => 'form-horizontal' },:url => contacts_path do |f|
         .columns.large-6.form-horizontal-left
@@ -66,6 +69,3 @@
           = f.label :"текст вашого повідомлення", :for=>"contact_message"
           .form-actions
             = f.button :submit, '', :class=> "btn btn-primary"
-      - if @was_sent
-        h1
-          | thanks for message

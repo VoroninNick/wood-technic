@@ -1,0 +1,40 @@
+.promo-image-wrapper
+  .row
+    .promo-breadcrumbs-wrapper
+      ul.breadcrumbs.bp
+        li.bred_logo_home
+          =link_to image_tag("logo home.svg")+"", root_path
+        li
+          =link_to "акції", promotion_path
+        li.unavailable
+          =link_to =@promo_show.title
+  img src=@promo_show.image.url(:large)
+.header-block-page-wrapper
+  .header-block-page.products-green-line
+    h1 = @promo_show.title
+.row
+  .large-4.columns
+    .my-label
+      span
+        |До кінця акції залишилось:
+    .promo-timer
+      b
+        |20
+      span
+        |днів
+      b
+        |17
+      span
+        |год
+      b
+        |38
+      span
+        |хв
+  .large-8.columns
+    .promo-content-wrapper
+      h2
+        |Короткий опис акції
+      p = @promo_show.short_description
+      h2
+        |Детальні умови акції
+      p = raw @promo_show.description

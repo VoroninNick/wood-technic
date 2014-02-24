@@ -19,6 +19,8 @@ Wt::Application.routes.draw do
 
   post '/contacts' => 'main#send_message', as: :send_message
 
+  get '/promotion/:url' => 'pages#promo_one_item', as: :promo_show_one_item
+
 
 
 

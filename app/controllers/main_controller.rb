@@ -1,6 +1,7 @@
 class MainController < ApplicationController
   def index
     @banner = MainBanner.order('index_sorting asc')
+    @promotion = Promotion.order('updated_at asc')
 
   end
 

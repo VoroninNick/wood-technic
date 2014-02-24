@@ -7,12 +7,13 @@
   .large-12.columns
     .special-offers
       .special-offers-top
-        .small-6.large-6.columns.special-offers-first.so
-          a href=""
-            img src=asset_path("promo1.jpg")
-        .small-6.large-6.columns.special-offers-second.so
-          a href=""
-            img src=asset_path("promo2.jpg")
+        -@promotion.each do |p|
+          .small-6.large-6.columns.special-offers-first.so
+            a href=promo_show_one_item_path(p.url)
+              = image_tag p.image_on_main_page.url
+          .small-6.large-6.columns.special-offers-second.so
+            a href=""
+              img src=asset_path("promo2.jpg")
       .special-offers-bottom
         .small-6.large-6.columns.special-offers-third.so  style="background: red; height: 30px;"
           p

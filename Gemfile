@@ -69,3 +69,5 @@ gem 'sitemap_generator'
 
 
 gem 'capistrano'
+
+gem 'capistrano-rails'

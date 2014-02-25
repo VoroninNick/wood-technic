@@ -16,6 +16,9 @@
 .promo-timer
     :margin-top 30px
     :border 1px solid #b2b2b2
+    :height 45px
+    :padding-top 5px
+
     b
         :color #94d60a
         :font-size 1.875rem
@@ -34,3 +37,73 @@
     p
         :color #7a868c
         :font-size 1.125rem
+.page-header-title
+    :position relative
+    :overflow hidden
+    :padding 35px 0 65px 0
+    h1
+        :position relative
+        :text-align center
+        :display table
+        :margin 0 auto
+        :background white
+        :padding 0 30px
+        :color #7a868c
+        :text-transform uppercase
+        :font-size 2.2rem
+
+    h1:after, h1:before
+        :background-color #94d60a
+        :content ""
+        :height 1px
+        :position absolute
+        :top 22px
+        :width 10000px
+        :z-index -1
+    h1:after
+        :right 0
+    h1:before
+        :left 0
+
+.promotion-item
+    :max-height 700px
+    :overflow hidden
+    :position relative
+    :-webkit-filter blur(2px)
+    :-moz-filter blur(2px)
+    :-o-filter blur(2px)
+    :-ms-filter blur(2px)
+    :filter blur(2px)
+
+    .title-button
+        :position absolute
+        :top 20%
+        :margin 0 auto
+        :display block
+
+        .link-to-item
+            :padding-top 90px
+    h1
+        :color #ffffff
+        :font-size 4rem
+
+    .p-i-content-wrapper
+        :width 100%
+        :position absolute
+        :background rgba(0,0,0, 0.7)
+        :bottom -150px
+        :transition all 0.7s
+        :-webkit-transition all 0.7s
+        p
+            :color #ffffff
+            :padding-top 25px
+.promotion-item:hover
+    :-webkit-filter blur(0)
+    :-moz-filter blur(0)
+    :-o-filter blur(0)
+    :-ms-filter blur(0)
+    :filter blur(0)
+
+    .p-i-content-wrapper
+        :bottom 0
+

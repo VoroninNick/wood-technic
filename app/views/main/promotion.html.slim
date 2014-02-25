@@ -1,0 +1,17 @@
+.promotion-wrapper
+  -@promotion.each do |p|
+    .promotion-item.button-link
+      img src=p.image.url(:large)
+        .title-button
+          .row
+            .large-8.columns.push-3
+              h1 =p.title
+              .link-to-item
+                =link_to "Переглянути",promo_show_one_item_path(p.url)
+      .p-i-content-wrapper
+        .row
+          .large-8.columns.push-2
+            p = p.short_description
+.page-header-title
+    h1
+      |ІНШІ АКЦІЇ

@@ -5,6 +5,7 @@
 
 #$(document).on 'ready page:load', ->
 ready = ->
+  $(".fancybox").fancybox()
 #  main banner
   $(".bxslider").bxSlider
     mode: 'fade'

@@ -70,11 +70,13 @@
                   = link_to "Інформація", information_path, :class => is_active?("information")
                   ul.dropdown
                     li
-                      a href="#"
-                        |Хто ми
+                      =link_to "Хто ми", about_us_path
+                      /a href="#"
+                      /  |Хто ми
                     li
-                      a href="#"
-                        |Новини
+                      =link_to "Новини", info_news_path
+                      /a href="#"
+                      /  |Новини
                     li
                       a href="#"
                         |Ваканції

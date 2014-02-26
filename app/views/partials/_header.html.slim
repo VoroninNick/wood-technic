@@ -90,10 +90,8 @@
                       a href="#"
                         |Для монтажників
                     li
-                      a href="#"
-                        |Для покупців
+                      =link_to "Для покупців", for_buyers_path
                     li
-                      a href="#"
-                        |Сертифікати та гарантія
+                      =link_to "Сертифікати та гарантія", certificates_and_warranty_path
                 li
                   = link_to "Контакти", contacts_path, :class => is_active?("contacts")

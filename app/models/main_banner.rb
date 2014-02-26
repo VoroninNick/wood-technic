@@ -1,11 +1,11 @@
 class MainBanner < ActiveRecord::Base
   attr_accessible :title, :back_image, :description, :ulr_to_content, :index_sorting
 
-  has_attached_file :back_image
-  #has_attached_file :back_image, styles:{
-  #    large: "1820x900>"
-  #},url:'/assets/images/main_banner/:id/image_:style.:extension',
-  #                  path:':rails_root/public:url'
+  #has_attached_file :back_image
+  has_attached_file :back_image, styles:{
+      large: "1820x900>"
+  },url:'/assets/images/main_banner/:id/image_:style.:extension',
+                    path:':rails_root/public:url'
 
   rails_admin do
     navigation_label 'Головний банер'

@@ -22,7 +22,13 @@ Wt::Application.routes.draw do
   get '/promotion/:url' => 'pages#promo_one_item', as: :promo_show_one_item
 
   get '/information/about-us/' => 'wt_information#who_we', as: :about_us
+
   get '/information/news/' => 'wt_information#news', as: :info_news
+  get '/information/news/:url' => 'pages#news_one_item', as: :info_news_show_one_item
+
+  get '/information/for_buyers/' => 'wt_information#for_buyers', as: :for_buyers
+
+  get '/information/certificates_and_warranty/' => 'wt_information#certificates_and_warranty', as: :certificates_and_warranty
 
 
 

@@ -1,43 +1,48 @@
 ul.bxslider
-  li
-    img src=asset_path("2014-02-01 13.30.57.jpg")
-    .cont-block.button-link
-      .ban-header
-        h1
-          |WoodTechnic
-      .ban-content
-        p
-          span
-          |двері у якісне життя
-      .link-to-item
-        a href="#"
-          |Продукція
-  li
-    img src=asset_path("2014-02-01 13.32.41.jpg")
-    .cont-block.button-link
-      .ban-header
-        h1
-          |WoodTechnic
-      .ban-content
-        p
-          span
-          |двері у якісне життя
-      .link-to-item
-        a href="#"
-          |Продукція
-  li
-    img src=asset_path("2014-02-01 13.31.17.jpg")
-    .cont-block.button-link
-      .ban-header
-        h1
-          |WoodTechnic
-      .ban-content
-        p
-          span
-          |двері у якісне життя
-      .link-to-item
-        a href="#"
-          |Продукція
+  -if @banner
+    -@banner.each do |b|
+      li
+        img src=b.back_image.url(:large)
+        /img src=asset_path("2014-02-01 13.30.57.jpg")
+        .cont-block.button-link
+          .ban-header
+            h1 = b.title
+              /|WoodTechnic
+          .ban-content
+            p
+              h4
+                span.banner-text-line
+                = raw b.description
+              /|двері у якісне життя
+          .link-to-item
+            a href=b.ulr_to_content
+              |Продукція
+      /li
+      /  img src=asset_path("2014-02-01 13.32.41.jpg")
+      /  .cont-block.button-link
+      /    .ban-header
+      /      h1
+      /        |WoodTechnic
+      /    .ban-content
+      /      p
+      /        span
+      /        |двері у якісне життя
+      /    .link-to-item
+      /      a href="#"
+      /        |Продукція
+  /li
+  /  img src=asset_path("2014-02-01 13.31.17.jpg")
+  /  .cont-block.button-link
+  /    .ban-header
+  /      h1
+  /        |WoodTechnic
+  /    .ban-content
+  /      p
+  /        span
+  /        |двері у якісне життя
+  /    .link-to-item
+  /      a href="#"
+  /        |Продукція
 
 
   /-@banner.each do |b|

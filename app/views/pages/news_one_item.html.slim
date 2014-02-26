@@ -1,0 +1,19 @@
+.information-wrapper.iwn
+  .row
+    .promo-breadcrumbs-wrapper
+      ul.breadcrumbs.bp
+        li.bred_logo_home
+          =link_to image_tag("logo home.svg")+"", root_path
+        li
+          =link_to "Новини", info_news_path
+        li.unavailable
+          a
+            =@news_show.title
+  .row
+    .news-article
+      .large-4.columns
+        img src=@news_show.image.url(:large)
+      .large-8.columns
+        h1 =@news_show.title
+        h5 =@news_show.created_at.strftime("%d. %m. %Y")
+        p = raw @news_show.description

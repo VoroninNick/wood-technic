@@ -153,12 +153,24 @@
             :color white
             :font-size 1.8rem
             :margin-bottom 4rem
-            span
+            h4
+                :float left
                 :display block
                 :width 32px
                 :height 2px
                 :background white
                 :position relative
+        h4
+            p:before
+                :display block
+                :content ' '
+                :position absolute
+                :width 35px
+                :height 2px
+                :background #fff
+                :left 12%
+                :top 25px
+
 .button-link
     .link-to-item
         :text-align center
@@ -232,10 +244,6 @@
         :text-transform uppercase
         :font-size 2.2rem
         :text-align center
-/*.special-offers-first*/
-    /*:background gray*/
-/*.special-offers-second*/
-    /*:background orange*/
 .door-list
     :padding-bottom 60px
     li
@@ -245,7 +253,6 @@
         :padding-right 0.6375rem
         :width 200px!important
         :padding-top 10px
-        /*:height 650px*/
         .image-grid
             :padding-bottom 75px
         .image-grid:after
@@ -395,6 +402,14 @@
             :filter blur(0px)
             img
                 :opacity 1
+.unavailable
+    a
+        :border none!important
+.breadcrumbs
+    a
+        :font-family Tinos
+.bx-wrapper
+    :height 705px !important
 
 
 

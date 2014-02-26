@@ -5,7 +5,7 @@ class Promotion < ActiveRecord::Base
   },url:'/assets/images/promotions/:id/image_:style.:extension',
                     path:':rails_root/public:url'
   has_attached_file :image_on_main_page, styles:{
-      avatar: "830x590>"
+      avatar: "830x590#"
   },url:'/assets/images/promotions_main/:id/image_:style.:extension',
                     path:':rails_root/public:url'
 

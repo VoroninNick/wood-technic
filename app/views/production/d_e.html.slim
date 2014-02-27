@@ -7,4 +7,11 @@
       =link_to "продукція", production_path
     li.unavailable
       =link_to "двері міжкімнатні", door_enterior_path
-      /li class="current"
+.row
+  -@modal.each do |m|
+    .large-6.columns
+      img src=m.image
+      .main-content-block
+        h1 =m.title
+        .link-to-item
+          =link_to "Переглянути",promo_show_one_item_path(m.url)

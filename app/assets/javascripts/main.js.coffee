@@ -4,7 +4,9 @@
 
 
 #$(document).on 'ready page:load', ->
-ready = ->
+$(document).ready ->
+  $("#tab-container").easytabs()
+
   $(".fancybox").fancybox()
 #  main banner
   $(".bxslider").bxSlider
@@ -14,6 +16,12 @@ ready = ->
       $('.link-to-item').addClass('animated slideInLeft')
       $('.ban-header').addClass('animated slideInDown')
       $('.ban-content').addClass('animated slideInLeft')
+#product
+  $(".product-door").bxSlider
+    pagerCustom: "#product-button"
+    mode: 'fade'
+    controls: 'false'
+
 #  main page carousel
   owl = $("#door-main-carousel")
   owl.owlCarousel
@@ -36,14 +44,11 @@ ready = ->
 
 
 
-
+#drop-down header
   $("#rotate").click ->
     $('.header-top').toggleClass "heig"
-#    return
-#
-#  return
-  # main banner
 
+#google maps
   lat = 49.87213
   lng = 23.92897
   myLatlng = new google.maps.LatLng(lat, lng)
@@ -61,9 +66,11 @@ ready = ->
     title: "Wood Technic"
     icon: '/assets/logo-for-map.png'
   )
+#order modal
+  $('#OrderModal').foundation()
 
-$(document).ready(ready)
-$(document).on('page:load', ready)
+#$(document).ready(ready)
+#$(document).on('page:load', ready)
 
 
 

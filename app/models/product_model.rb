@@ -10,6 +10,8 @@ class ProductModel < ActiveRecord::Base
     self.url = title.parameterize
   end
 
+  has_many :dveris
+
   rails_admin do
     navigation_label 'Продукція'
     label 'Модель'

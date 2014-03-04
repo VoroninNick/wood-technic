@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227110625) do
+ActiveRecord::Schema.define(version: 20140303155039) do
 
   create_table "banners", force: true do |t|
     t.text     "title"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 20140227110625) do
     t.datetime "updated_at"
   end
 
+  create_table "characteristic", force: true do |t|
+    t.integer  "door_id"
+    t.text     "operation"
+    t.text     "specifications"
+    t.text     "warranty"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
     t.string   "data_content_type"
@@ -54,6 +63,17 @@ ActiveRecord::Schema.define(version: 20140227110625) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
 
+  create_table "colory_dverejs", force: true do |t|
+    t.string   "title"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "dveri_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "contact_forms", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -63,8 +83,60 @@ ActiveRecord::Schema.define(version: 20140227110625) do
     t.datetime "updated_at"
   end
 
+  create_table "door_color", force: true do |t|
+    t.string   "title"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "door_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "doors", force: true do |t|
+    t.string   "title"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.text     "description"
+    t.string   "url"
+    t.integer  "product_model_id"
+    t.text     "meta_title"
+    t.text     "meta_description"
+    t.text     "meta_keyword"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dveris", force: true do |t|
+    t.string   "title"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.text     "description"
+    t.string   "url"
+    t.integer  "product_model_id"
+    t.text     "meta_title"
+    t.text     "meta_description"
+    t.text     "meta_keyword"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "feedback_emails", force: true do |t|
     t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "harakterystykies", force: true do |t|
+    t.integer  "dveri_id"
+    t.text     "operation"
+    t.text     "specifications"
+    t.text     "warranty"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

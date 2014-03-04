@@ -1,0 +1,86 @@
+.row
+  ul.breadcrumbs
+    li.bred_logo_home
+      =link_to image_tag("logo home.svg")+"", root_path
+    li
+      =link_to "продукція", production_path
+    li
+      =link_to "двері міжкімнатні", door_enterior_path
+    li
+      =link_to "Моделі", door_enterior_path
+    li.unavailable
+      =@model.title
+
+.row
+  .p-d-s
+    .large-1.columns
+      #product-button
+        -if @d_e_s_i
+          - count = 0
+          -@d_e_s_i.each do |da|
+            a data-slide-index="#{count}" href=""
+              img src=da.image.url(:avatar)
+              .white-opacity-cub
+              span =da.title
+              -count +=1
+    .large-11.columns
+      ul.product-door
+        -if @d_e_s_i
+          -@d_e_s_i.each do |dac|
+            li
+              .large-3.columns
+                img src=dac.image(:large)
+              .large-9.columns
+                h1 =dac.title
+                p =raw dac.description
+                h2
+                  |Колір дверей
+                .form-actions
+                  a.fancybox href="#order-door"  rel="order-door"
+                    |Замовити
+div style="display: none"
+  div id="order-door"  rel="order-door"
+    .order-form-header
+      h1
+        |ФОРМА ЗАМОВЛЕННЯ ДВЕРЕЙ
+      .large-5.columns.push-1
+
+      .form-actions
+        a href="#"
+          |Замовити
+
+
+.row
+  .door-info
+    #tab-container.tab-container
+      ul.etabs.header-box-shadow-right-bottom
+        li.tab
+          a href="#tab-th"
+            |Догляд
+        li.tab
+          a href="#tab-d"
+            | Технічні характеристики
+        li.tab
+          a href="#tab-ug"
+            |Гарантія
+      - if @characteristic
+        -@characteristic.each do |ch|
+          #tab-th.tab-content.header-box-shadow-right-bottom
+            .tab-content-inner
+              = raw ch.operation
+              .tab-bottom-line
+              .clearfix
+          .clearfix
+          #tab-d.tab-content.header-box-shadow-right-bottom
+            .tab-content-inner
+              = raw ch.specifications
+              .tab-bottom-line
+              .clearfix
+          .clearfix
+          #tab-ug.tab-content.header-box-shadow-right-bottom
+            .tab-content-inner
+              = raw ch.warranty
+              .tab-bottom-line
+              .clearfix
+          .clearfix
+

@@ -14,6 +14,8 @@ Wt::Application.routes.draw do
   get '/contacts' => 'main#contacts', as: :contacts
 
   get '/production/door-interior' => 'production#d_e', as: :door_enterior
+  get '/production/door-interior/:url' => 'pages#d_e_s_i', as: :door_enterior_show_one_item
+
   get '/production/door-louver' => 'production#d_v', as: :door_louver
   get '/production/mdf' => 'production#mdf', as: :mdf
 

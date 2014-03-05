@@ -7,23 +7,38 @@
   .large-12.columns
     .special-offers
       .special-offers-top
-        -@promotion.each do |p|
-          .small-6.large-6.columns.special-offers-first.so
-            a href=promo_show_one_item_path(p.url)
-              = image_tag p.image_on_main_page.url
-      .special-offers-bottom
-        .small-6.large-6.columns.special-offers-third.so  style="background: red; height: 30px;"
-          p
-            |3 й
-        .small-6.large-2.columns style="background: blue; height: 30px;"
-          p
-            |4 й
-        .small-6.large-2.columns style="background: black; height: 30px;"
-          p
-            |4 й
-        .small-6.large-2.columns style="background: yellow; height: 30px;"
-          p
-            |4 й
+        -if @promotion
+          -@promotion[0..1].each do |p|
+            .small-6.large-6.columns.special-offers-first.so
+              .ltm.top-index-2-block style = "background: url(#{p.image_on_main_page.url});"
+                .white-opa-filter
+                a href=promo_show_one_item_path(p.url)
+                  h1 =p.title
+                .p-i-content-wrapper
+                  p =p.short_description
+        - p = @promotion[2]
+        -if p
+          .large-6.columns.left
+            .ltm.bottom-index-1-block style = "background: url(#{p.image_on_main_page.url});"
+              .white-opa-filter
+              a href=promo_show_one_item_path(p.url)
+                h1 =p.title
+        -if @promotion[3..4]
+          -@promotion[3..4].each do |p|
+            .large-2.columns
+              .ltm.bottom-index-2-block style = "background: url(#{p.image_on_main_page.url});"
+                .white-opa-filter
+                a href=promo_show_one_item_path(p.url)
+                  h1 style="display: none;"
+                    =p.title
+        .large-2.columns
+          .pdf-wrapper
+            a href="#"
+              img src=asset_path("pdf-icon.jpg")
+              span
+                |Завантажити
+              b
+                |Каталог
 .header-block-page-wrapper
   .header-block-page.products-green-line
     h1

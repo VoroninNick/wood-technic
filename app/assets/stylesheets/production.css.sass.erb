@@ -26,8 +26,13 @@
         h1, h4, a
             :text-align center
         .ltc
+            :position absolute
+            :bottom 0
+            :width 100%
+
             span
                 :display block
+                :text-align center
                 :color #fff
                 :border 1px solid #fff
                 :font-size 1.875rem
@@ -51,9 +56,6 @@
         :transition 0.4s ease-out all
         :-webkit-transition 0.4s ease-out all
 
-    .ltc
-        :position absolute
-        :bottom 0
 .prod-bar:hover
     :transition 0.4s ease-out all
     :-webkit-transition 0.4s ease-out all
@@ -225,3 +227,25 @@
         :color #fff
         :font-size 1.5rem
         :text-transform uppercase
+
+.door-interior-model-wrapper
+    .top-2-block
+        :height 230px
+        :overflow hidden
+    .bottom-3-block
+        :height 245px
+        :overflow hidden
+
+        img
+            :height 100%
+            :width 100%
+    .columns
+        :padding-left 0 !important
+        :padding-right 0 !important
+
+    .main-content-block
+        :width 100%
+
+        h1
+            :color #ffffff
+            :text-align center

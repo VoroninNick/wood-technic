@@ -1,5 +1,4 @@
 .row
-  /.large-12.columns
   ul.breadcrumbs
     li.bred_logo_home
       =link_to image_tag("logo home.svg")+"", root_path
@@ -8,10 +7,24 @@
     li.unavailable
       =link_to "двері міжкімнатні", door_enterior_path
 .row
-  -@modal.each do |m|
-    .large-6.columns
-      img src=m.image
-      .main-content-block
-        h1 =m.title
-        .link-to-item
-          =link_to "Переглянути",door_enterior_show_one_item_path(m.url)
+  .door-interior-model-wrapper
+    -if @modal
+      -@modal[0..1].each do |m|
+        .large-6.columns
+          .top-2-block
+            img src=m.image
+            .main-content-block
+              h1 =m.title
+              .link-to-item
+                =link_to "Переглянути",door_enterior_show_one_item_path(m.url)
+.row
+  .door-interior-model-wrapper
+    -if @modal[2..@modal.length]
+      -@modal[2..@modal.length].each do |m|
+        .large-4.columns
+          .bottom-3-block
+            img src=m.image
+            .main-content-block
+              h1 =m.title
+              .link-to-item
+                =link_to "Переглянути",door_enterior_show_one_item_path(m.url)

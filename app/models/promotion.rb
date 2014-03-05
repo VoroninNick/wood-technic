@@ -29,14 +29,17 @@ class Promotion < ActiveRecord::Base
 
     edit do
       field :title
-      field :short_description
+      field :short_description do
+      label 'Короткий опис'
+      help ''
+    end
       field :image, :paperclip do
-        label 'Зображення'
+        label 'Зображення на сторінку акції 1820x1040'
         help 'Розмір зображення'
       end
       field :image_on_main_page, :paperclip do
-        label 'Зображення'
-        help 'Розмір зображення'
+        label 'Зображення на головну сторінку'
+        help 'Розмір зображення 830x590'
       end
       field :begin_promo
       field :end_promo

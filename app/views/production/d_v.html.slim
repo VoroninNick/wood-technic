@@ -1,5 +1,4 @@
 .row
-  /.large-12.columns
   ul.breadcrumbs
     li.bred_logo_home
       =link_to image_tag("logo home.svg")+"", root_path
@@ -7,7 +6,6 @@
       =link_to "продукція", production_path
     li.unavailable
       =link_to "жалюзійні дверцята", door_louver_path
-    /li class="current"
 .row
   .large-4.columns
     .d_v_image
@@ -56,29 +54,49 @@
       .order_product_wrapper
         a.order_product href="#"
           |Замовити
+
+
 .row
-  .door-louver-tabs-wrapper
-    .large-12.columns
-      dl.tabs#door-louver-tabs data-tab=""
-        dd
-          a href="#panel2-1"
+  .door-info.door-louver-tabs-wrapper
+    #tab-container.tab-container
+      ul.etabs.header-box-shadow-right-bottom
+        li.tab
+          a href="#tab-th"
             |Експлуатуція
-        dd.active
-          a href="#panel2-2"
-            |Технічні характеристики
-        dd.active
-          a href="#panel2-3"
+        li.tab
+          a href="#tab-d"
+            | Технічні характеристики
+        li.tab
+          a href="#tab-ug"
             |Гарантія
-      .tabs-content
-        .content.active#panel2-1
+      #tab-th.tab-content.header-box-shadow-right-bottom
+        .tab-content-inner
           p
-            |First panel content goes here...
-        .content#panel2-2
-          .row
-            .large-12.columns
-        .content#panel2-3
+            |test
+          .tab-bottom-line
+          .clearfix
+      .clearfix
+      #tab-d.tab-content.header-box-shadow-right-bottom
+        .tab-content-inner
           p
-            |Third panel content goes here...
+            |test
+          .tab-bottom-line
+          .clearfix
+      .clearfix
+      #tab-ug.tab-content.header-box-shadow-right-bottom
+        .tab-content-inner
+          p
+            |test
+          .tab-bottom-line
+          .clearfix
+      .clearfix
+
+
+/.row
+/  .door-louver-tabs-wrapper
+/    .large-12.columns
+/      dl.tabs#door-louver-tabs data-tab=""
+
 
 
 

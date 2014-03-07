@@ -6,6 +6,7 @@
 #$(document).on 'ready page:load', ->
 $(document).ready ->
   $("#tab-container").easytabs()
+  $("#mdf-tab-container").easytabs()
 
   $(".fancybox").fancybox()
 #  main banner

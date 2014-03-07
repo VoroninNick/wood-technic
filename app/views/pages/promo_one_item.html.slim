@@ -19,6 +19,8 @@
       span
         |До кінця акції залишилось:
     .promo-timer
+      -@end_time_promo =((@promo_show.end_promo - Time.now)/1.day).ceil
+      b = @end_time_promo
       b
         |20
       span

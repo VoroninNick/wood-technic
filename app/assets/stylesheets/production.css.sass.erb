@@ -9,7 +9,6 @@
 .prod-bar
     :position relative
     :height 600px
-    :opacity 0.6
     .prod-bar-content
         :position relative
         :top 25%
@@ -19,6 +18,7 @@
         h1
             :font-size 3rem
             :font-weight 700
+            :text-shadow 1px 1px 1px rgba(0, 0, 0, 0.3)
         h3
             :font-size 1.5rem
         h1, h4
@@ -52,21 +52,17 @@
         :-o-filter blur(3px)
         :-ms-filter blur(3px)
         :filter blur(3px)
-        :opacity 0.95
+        :background rgba(255, 255, 255, 0.35)
         :transition 0.4s ease-out all
         :-webkit-transition 0.4s ease-out all
 
-.prod-bar:hover
-    :transition 0.4s ease-out all
-    :-webkit-transition 0.4s ease-out all
-    :opacity 1
-    .blur-opa
-        :opacity 1
-        :-webkit-filter blur(0px)
-        :-moz-filter blur(0px)
-        :-o-filter blur(0px)
-        :-ms-filter blur(0px)
-        :filter blur(0px)
+.prod-bar:hover .blur-opa
+    :background none
+    :-webkit-filter blur(0px)
+    :-moz-filter blur(0px)
+    :-o-filter blur(0px)
+    :-ms-filter blur(0px)
+    :filter blur(0px)
 
 .prod-bar:hover:before
     :content ''
@@ -75,8 +71,10 @@
     :height 100%
     :width 15px
     :position absolute
-    :left -15px
+    :left -13px
     :top 0
+    :background-size 90%
+    :z-index 11
 .prod-bar:hover:after
     :content ''
     :display block
@@ -86,13 +84,18 @@
     :position absolute
     :top 0
     :right -15px
+    :background-size 90%
+    :z-index 11
 
 .door-interior
     :background url("<%= asset_path('door-interior.jpg') %>")no-repeat center
+    :background-size  100%
 .door-louver
-    :background url("<%= asset_path('3770559_original.png') %>")no-repeat center
+    :background url("<%= asset_path('Blinds-1.jpg') %>")no-repeat center
+    :background-size  100%
 .mdf
     :background url("<%= asset_path('Pict-24.jpg') %>")no-repeat center
+    :background-size  100%
 
 .bred_logo_home
     :width 32px
@@ -149,7 +152,7 @@
 
 .main-content-block
     :position absolute
-    :top 0
+    :top 14%
 
     .link-to-item
         :text-align center
@@ -231,10 +234,10 @@
 .door-interior-model-wrapper
     .top-2-block
         :height 230px
-        :overflow hidden
+        /*:overflow hidden*/
     .bottom-3-block
         :height 245px
-        :overflow hidden
+        /*:overflow hidden*/
 
         img
             :height 100%
@@ -249,3 +252,141 @@
         h1
             :color #ffffff
             :text-align center
+            :font-weight 700
+            :text-transform uppercase
+            :text-shadow 1px 1px 1px rgba(0, 0, 0, 0.3)
+            :padding-bottom 40px
+
+.mdf-items-wrapper
+    .columns
+        :padding-left 0 !important
+        :padding-right 0 !important
+.mdf-item
+    :position relative
+    .opa-blur-mdf
+        :background rgba(255, 255, 255, 0.35)
+        :-webkit-filter blur(1px)
+        :-moz-filter blur(1px)
+        :-o-filter blur(1px)
+        :-ms-filter blur(1px)
+        :filter blur(1px)
+        :transition 0.4s ease-out all
+        :-webkit-transition 0.4s ease-out all
+        :height 100%
+        :display block
+        :width 100%
+        :position absolute
+        :top 0
+
+    .title
+        :position absolute
+        :top 30%
+        :width 100%
+
+        h1
+            :color #ffffff
+            :font-size 1.875rem
+            :text-align center
+.mdf-item:hover .opa-blur-mdf
+    :background none
+    :-webkit-filter blur(0)
+    :-moz-filter blur(0)
+    :-o-filter blur(0)
+    :-ms-filter blur(0)
+    :filter blur(0)
+
+.button-to-opa-blur
+    :position relative
+    .opa-blur-model
+        :background rgba(255, 255, 255, 0.35)
+        :-webkit-filter blur(1px)
+        :-moz-filter blur(1px)
+        :-o-filter blur(1px)
+        :-ms-filter blur(1px)
+        :filter blur(1px)
+        :transition 0.4s ease-out all
+        :-webkit-transition 0.4s ease-out all
+        :height 100%
+        :display block
+        :width 100%
+        :position absolute
+        :top 0
+.button-to-opa-blur:hover .opa-blur-model
+    :background none
+    :-webkit-filter blur(0)
+    :-moz-filter blur(0)
+    :-o-filter blur(0)
+    :-ms-filter blur(0)
+    :filter blur(0)
+
+table
+    :border-collapse collapse !important
+.mdf-info
+    h1
+        :color #555555
+        :font-size 1.5rem
+        :padding-bottom 25px
+        :padding-top 20px
+    p
+        :color #7a868c
+        :font-size 1.125rem
+
+        span
+            :color #94d60a
+
+
+.mi
+    li
+        :list-style none
+        :padding-left 25px
+    li:before
+        :display block
+        :content ''
+        :width 20px
+        :height 1px
+        :background #94d60a
+        :position relative
+        :top 15px
+        :right 25px
+    ul
+        :color #7a868c
+        :font-size 1.125rem
+        :margin-left 0 !important
+#mdf-tab-container
+    :padding-top 85px
+.d_v_image:after
+    :display block
+    :content ''
+    :background url("<%= asset_path('bottom-shadow.png') %>")no-repeat center
+    :background-size  100%
+    :position relative
+    :top -4px
+    :height 15px
+    :width 100%
+
+.tbgr
+    :border-right 1px solid #fff
+.button-to-opa-blur:hover:before
+    :display block
+    :content ''
+    :position absolute
+    :width 100%
+    :height 15px
+    :background url("<%= asset_path('top-shadow.png') %>")no-repeat center
+    :background-size  100%
+    :top -13px
+.button-to-opa-blur:hover:after
+    :display block
+    :content ''
+    :position absolute
+    :width 100%
+    :height 15px
+    :background url("<%= asset_path('bottom-shadow.png') %>")no-repeat center
+    :background-size  100%
+    :bottom -13px
+    :z-index 11
+
+.bottom-3-block.button-to-opa-blur:hover:before
+    :top -10px
+.bottom-3-block.button-to-opa-blur:hover:after
+    :bottom -10px

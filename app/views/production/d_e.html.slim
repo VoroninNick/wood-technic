@@ -11,7 +11,8 @@
     -if @modal
       -@modal[0..1].each do |m|
         .large-6.columns
-          .top-2-block
+          .top-2-block.button-to-opa-blur
+            .opa-blur-model
             img src=m.image
             .main-content-block
               h1 =m.title
@@ -22,7 +23,8 @@
     -if @modal[2..@modal.length]
       -@modal[2..@modal.length].each do |m|
         .large-4.columns
-          .bottom-3-block
+          .bottom-3-block.button-to-opa-blur
+            .opa-blur-model
             img src=m.image
             .main-content-block
               h1 =m.title

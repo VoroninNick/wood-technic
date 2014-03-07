@@ -8,6 +8,7 @@ class ProductionController < ApplicationController
  end
 
   def mdf
+    @mdf =Mdf.order("updated_at asc")
 
   end
 end

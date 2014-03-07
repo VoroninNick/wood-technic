@@ -1,17 +1,31 @@
 .promotion-wrapper
-  -@promotion.each do |p|
-    .promotion-item.button-link
-      img src=p.image.url(:large)
-        .title-button
+  -if @promotion
+    -@promotion[0..2].each do |p|
+      .promotion-item.button-link
+        img src=p.image.url(:large)
+          .title-button
+            .row
+              .large-8.columns.push-3
+                h1 =p.title
+                .link-to-item
+                  =link_to "Переглянути",promo_show_one_item_path(p.url)
+        .p-i-content-wrapper
           .row
-            .large-8.columns.push-3
-              h1 =p.title
-              .link-to-item
-                =link_to "Переглянути",promo_show_one_item_path(p.url)
-      .p-i-content-wrapper
-        .row
-          .large-8.columns.push-2
-            p = p.short_description
+            .large-8.columns.push-2
+              p = truncate_html p.short_description, length: 240, omission: '...'
 .page-header-title
     h1
       |ІНШІ АКЦІЇ
+.row
+  .promotion-small-item-wrapper
+    -if @promotion[3...@promotion.length]
+      -@promotion[3..@promotion.length].each do |p|
+        .large-4.columns.left
+          a href=promo_show_one_item_path(p.url)
+            .promotion-small-item
+              .opa-blur-promo
+              .image style = "background: url(#{p.image_on_main_page.url});"
+                .title-button
+                  h1 =p.title
+                  .link-to-item
+                    =link_to "Переглянути",promo_show_one_item_path(p.url), :class => 'peregl'

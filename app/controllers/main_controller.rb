@@ -10,7 +10,7 @@ class MainController < ApplicationController
   end
 
   def promotion
-    @promotion = Promotion.order('updated_at asc').limit(3)
+    @promotion = Promotion.order('updated_at asc')
   end
 
   def information

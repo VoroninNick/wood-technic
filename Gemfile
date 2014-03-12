@@ -51,6 +51,7 @@ gem 'rails_admin'
 gem 'devise'
 
 gem "simple_form"
+gem 'mail_form'
 
 gem 'foundation-rails'
 

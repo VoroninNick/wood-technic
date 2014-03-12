@@ -18,41 +18,35 @@
         |Дверцята жалюзійні стали досить популярні в Європі ще в середині 19 століття. Їх як правило використовували в якості ставень на вікна. Пізніше в процесі еволюції їх почали використовувати в облаштуванні інтер’єру в якості меблевих фасадів, перегородок, ширм. І за досить короткий період вони набули надзвичайної популярності і в Україні. Тож якщо ви бажайте внести в свою оселю частинку природи, поставити оригінальні акценти чи просто відгородити непотрібні площі дверцята жалюзійні – саме для вас.
       h1
         |Палітра доступних кольорів
-      .palette_colors
-        .large-2.columns
-          .palette-item
-            img src=asset_path("wenge.png")
-            h4
-              |Венге
-        .large-2.columns
-          .palette-item
-            img src=asset_path("vilha.png")
-            h4
-              |Вільха
-        .large-2.columns
-          .palette-item
-            img src=asset_path("gorih.png")
-            h4
-              |Горіх
-        .large-2.columns
-          .palette-item
-            img src=asset_path("dub.png")
-            h4
-              |Дуб
-        .large-2.columns
-          .palette-item
-            img src=asset_path("mahagon.png")
-            h4
-              |Махагон
-        .large-2.columns
-          .palette-item
-            img src=asset_path("jablunia.png")
-            h4
-              |Яблуня
+      ul.palette_colors
+        li.palette-item
+          img src=asset_path("wenge.png")
+          h4
+            |Венге
+        li.palette-item
+          img src=asset_path("vilha.png")
+          h4
+            |Вільха
+        li.palette-item
+          img src=asset_path("gorih.png")
+          h4
+            |Горіх
+        li.palette-item
+          img src=asset_path("dub.png")
+          h4
+            |Каштан
+        li.palette-item
+          img src=asset_path("mahagon.png")
+          h4
+            |Дуб
+        li.palette-item
+          img src=asset_path("jablunia.png")
+          h4
+            |Білений дуб
         .clearfix
       .clearfix
       .order_product_wrapper
-        a.order_product href="#"
+        a.order_product.link-to-form.fancybox href="#order-call-d-v" rel="order-call-d-v"
           |Замовити
 
 
@@ -217,6 +211,62 @@
           .tab-bottom-line
           .clearfix
       .clearfix
+div style="display: none"
+  div id="order-call-d-v"  rel="order-call-d-v"
+    .call-order-form-header
+      .large-10.columns
+        h1
+          |ФОРМА ЗАМОВЛЕННЯ ЖАЛЮЗІЙНИХ ДВЕРЦЯТ
+      .clearfix
+    .row
+      .contacts-form.call-order-form.order-call-d-v-form
+        = simple_form_for @order_door_louver, :html => {:class => 'form-horizontal' },:url => door_louver_path do |f|
+          .columns.large-6
+            = f.label :"Колір:", :class=> "label-padding label-collection", :for=>"contact_phone"
+            = f.input :color, :class=> " color-collection", collection: [ "Венге", "Вільха", "Горіх","Каштан","Дуб","Білений дуб"], prompt: "Венге", :label=>false
+          .columns.large-6
+            .columns.large-6.ff
+              = f.label :"Ширина:", :class=> "label-padding", :for=>"width"
+              = f.input :width, collection: [ "294", "394", "494","594"], prompt: "294", :label=>false
+            .columns.large-6.ff
+              = f.label :"Висота:", :class=> "label-padding", :for=>"height"
+              = f.input :height, collection: [ "395", "606", "720","993","1100","1400","1700","2013","2422"], prompt: "395", :label=>false
+
+            .columns.large-6.ff
+              = f.label :"Кількість:", :class=> "label-padding", :for=>"count"
+              = f.input :count, :required => true, :label=>false
+            .columns.large-6.ff
+              = f.label :"Ціна:", :class=> "label-padding", :for=>"price"
+              = f.input :price, :required => true, :label=>false
+
+          .columns.large-6.form-horizontal-left
+            = f.label :"Ваше ім'я:", :for=>"contact_name"
+            = f.input :name, :required => true, placeholder: 'Воронін Микола Валерійович', :label=>false, :class=>" name"
+
+            = f.label :"Контактний телефон:", :for=>"contact_phone"
+            = f.input :phone, :required => true, placeholder: '+38 (050) 417 07 28', :label=>false
+
+            = f.label :"Електронна скринька:", :for=>"contact_email"
+            = f.error_notification
+            = f.input :email, :required => false, placeholder: 'voronin.nick@gmail.com', :label=>false
+
+            = f.label :"Зручний час дзвінка:", :class=> "label-padding"
+            .columns.large-6
+              = f.label :"з", :class=> "label-time", :for=>"contact_time_from"
+              = f.input :time_from, collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], prompt: "08:00", :label=>false
+            .columns.large-6
+              = f.label :"до", :class=> "label-time", :for=>"contact_time_to"
+              = f.input :time_to, collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], prompt: "21:00", :label=>false
+
+          .columns.large-6.form-horizontal-right
+            = f.label :"Текст повідомлення:", :for=>"contact_message"
+            = f.input :message, :as => :text, :required => false, placeholder: 'Будемо раді почути відгуки та запитання від Вас.', :label=>false
+
+            .form-actions.right
+              = f.button :submit, 'НАДІСЛАТИ', :class=> "btn btn-primary"
+        .clearfix
+
+
 
 
 

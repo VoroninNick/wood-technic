@@ -4,7 +4,7 @@ class ProductionController < ApplicationController
   end
 
  def d_v
-
+    @order_door_louver = OrderDoorLouver.new
  end
 
   def mdf

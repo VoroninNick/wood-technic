@@ -26,3 +26,10 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+
+Завдання для Антона. Потрібні іконки.
+
+1)Іконка дроп-довн меню для форм, вибрати годину і т д...
+2)

@@ -11,5 +11,6 @@ class PagesController < ApplicationController
     @d_e_s_i = ProductModel.find_by_url(params[:url]).dveris
     @model = ProductModel.find_by_url(params[:url])
     @characteristic = Harakterystyky.order("updated_at asc").limit(1)
+    @ord_ent_door = OrderEnterDoor.new
   end
 end

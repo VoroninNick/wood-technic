@@ -11,12 +11,12 @@ class ApplicationController < ActionController::Base
     return @call_order
   end
 
-  helper_method :callorder
-
-  def callorder
-    @call = Call_order.new
-    return @call
-  end
+  #helper_method :callorder
+  #
+  #def callorder
+  #  @call = Call_order.new
+  #  return @call
+  #end
   #helper_method callorder
   #
   #def callorder

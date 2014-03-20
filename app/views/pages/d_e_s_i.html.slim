@@ -68,50 +68,68 @@
 div style="display: none"
   div id="order-door"  rel="order-door"
     .call-order-form-header
-      .large-10.columns
+      .large-10.columns.push-1
         h1
           |ФОРМА ЗАМОВЛЕННЯ ДВЕРЕЙ
       .clearfix
     .row
       .contacts-form.call-order-form.order-call-d-v-form
         = simple_form_for @ord_ent_door, :html => {:class => 'form-horizontal' },:url => door_enterior_show_one_item_path do |f|
-          .columns.large-6
-            .columns.large-4
-              img src=asset_path("d1.jpg")
-            .columns.large-8
-              =f.label :"Модель:"
-              = f.input :model, collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], prompt: "21:00", :label=>false
-              =f.label :"Колір:"
-              = f.input :color, collection: [ "Венге", "Вільха", "Горіх","Каштан","Дуб","Білений дуб"], prompt: "Венге", :label=>false
-          .columns.large-6
-            =f.label :"Кількість одиниць товару:", :for=>"count"
-            =f.input :count, :required =>true, :placeholder => '11', :label=>false
-            =f.label :"шт."
-          .columns.large-6.form-horizontal-left
-            = f.label :"Ваше ім'я:", :for=>"contact_name"
-            = f.input :name, :required => true, placeholder: 'Воронін Микола Валерійович', :label=>false, :class=>" name"
+          .row.top-part-order-door-form
+            .columns.large-10.push-1
+              .columns.large-6
+                .columns.large-4
+                  img src=asset_path("d1.jpg")
+                .columns.large-8.no-padding-left.no-padding-right
+                  .columns.large-3.no-padding-left
+                    =f.label :"Модель:", :class=>" label-count"
+                  .columns.large-9.no-padding-right
+                    = f.input :model, collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], prompt: "21:00", :label=>false
+                  .columns.large-3.no-padding-left
+                    =f.label :"Колір:", :class=>" label-count"
+                  .columns.large-9.no-padding-right
+                    = f.input :color, collection: [ "Венге", "Вільха", "Горіх","Каштан","Дуб","Білений дуб"], prompt: "Венге", :label=>false
+                  .columns.large-12.side-opening.no-padding-left
+                    = f.label :"Відкриття дверей: ", :for=>"side_opening", :class=>" label-count side-opening"
+                    = f.input :side_opening, :as => :radio_buttons, :collection => [ "Вліво", "Вправо" ], :label=>false
+                    /= f.input :side_opening, as: :boolean, checked_value: true, unchecked_value: false
+                    /= f.input :side_opening, :as => :grouped_select, :collection => [['Authors', ['Jose', 'Carlos']], ['General', ['Bob', 'John']]], :group_method => :last
+              .columns.large-6
+                .columns.large-12
+                  =f.label :"Кількість одиниць товару:", :for=>"count", :class=>" label-count count"
+                  =f.input :count, :required =>true, :placeholder => '11', :label=>false
+                  =f.label :"шт.", :class=>" label-count count"
+                .columns.large-12.furniture
+                  = f.label :"Фурнітура:", :for=>"furniture", :class=>" label-count"
+                  = f.input :furniture, :as => :radio_buttons, :collection => [ "З фурнітурою", "Без фурнітури" ], :label=>false
+                .clearfix
+          .row.bottom-part-order-door-form
+            .columns.large-10.push-1
+              .columns.large-6.form-horizontal-left
+                = f.label :"Ваше ім'я:", :for=>"contact_name"
+                = f.input :name, :required => true, placeholder: 'Воронін Микола Валерійович', :label=>false, :class=>" name"
 
-            = f.label :"Контактний телефон:", :for=>"contact_phone"
-            = f.input :phone, :required => true, placeholder: '+38 (050) 417 07 28', :label=>false
+                = f.label :"Контактний телефон:", :for=>"contact_phone"
+                = f.input :phone, :required => true, placeholder: '+38 (050) 417 07 28', :label=>false
 
-            = f.label :"Електронна скринька:", :for=>"contact_email"
-            = f.error_notification
-            = f.input :email, :required => false, placeholder: 'voronin.nick@gmail.com', :label=>false
+                = f.label :"Електронна скринька:", :for=>"contact_email"
+                = f.error_notification
+                = f.input :email, :required => false, placeholder: 'voronin.nick@gmail.com', :label=>false
 
-            = f.label :"Зручний час дзвінка:", :class=> "label-padding"
-            .columns.large-6
-              = f.label :"з", :class=> "label-time", :for=>"contact_time_from"
-              = f.input :time_from, collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], prompt: "08:00", :label=>false
-            .columns.large-6
-              = f.label :"до", :class=> "label-time", :for=>"contact_time_to"
-              = f.input :time_to, collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], prompt: "21:00", :label=>false
+                = f.label :"Зручний час дзвінка:", :class=> "label-padding title-lable-time"
+                .columns.large-6.no-padding-left
+                  = f.label :"з", :class=> "label-time", :for=>"contact_time_from"
+                  = f.input :time_from, collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], prompt: "08:00", :label=>false
+                .columns.large-6.no-padding-left
+                  = f.label :"до", :class=> "label-time", :for=>"contact_time_to"
+                  = f.input :time_to, collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], prompt: "21:00", :label=>false
 
-          .columns.large-6.form-horizontal-right
-            = f.label :"Текст повідомлення:", :for=>"contact_message"
-            = f.input :message, :as => :text, :required => false, placeholder: 'Будемо раді почути відгуки та запитання від Вас.', :label=>false
+              .columns.large-6.form-horizontal-right
+                = f.label :"Текст повідомлення:", :for=>"contact_message"
+                = f.input :message, :as => :text, :required => false, placeholder: 'Будемо раді почути відгуки та запитання від Вас.', :label=>false
 
-            .form-actions.right
-              = f.button :submit, 'ЗАМОВИТИ', :class=> "btn btn-primary"
+                .form-actions.right.btn-order-enter-door
+                  = f.button :submit, 'ЗАМОВИТИ', :class=> "btn btn-primary"
         .clearfix
 
 

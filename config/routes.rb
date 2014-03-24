@@ -30,9 +30,11 @@ Wt::Application.routes.draw do
 
   get '/information/for_buyers/' => 'wt_information#for_buyers', as: :for_buyers
 
+  get '/information/reviews' => 'wt_information#reviews', as: :reviews
+
   get '/information/certificates_and_warranty/' => 'wt_information#certificates_and_warranty', as: :certificates_and_warranty
 
-
+  resources :call_order, only: [:call_order_new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

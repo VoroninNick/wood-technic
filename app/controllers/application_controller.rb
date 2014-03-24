@@ -30,4 +30,17 @@ class ApplicationController < ActionController::Base
   #  @call_order = ContactForm.new
   #  #render action: :contacts
   #end
+  helper_method :call_order_new
+
+  def call_order_new
+    @call_order = Call_order.new
+    return @call_order
+  end
+
+  helper_method :call_order_create
+
+  def call_order_create
+    @call_order = Call_order.new(params[:call_order])
+    return @call_order
+  end
 end

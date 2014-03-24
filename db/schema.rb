@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140317090314) do
+ActiveRecord::Schema.define(version: 20140324133111) do
 
   create_table "banners", force: true do |t|
     t.text     "title"
@@ -22,6 +22,26 @@ ActiveRecord::Schema.define(version: 20140317090314) do
     t.text     "description"
     t.string   "ulr_to_content"
     t.integer  "index_sorting"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cackle_comments", id: false, force: true do |t|
+    t.integer  "comment_id"
+    t.integer  "parent_id"
+    t.string   "post_id"
+    t.string   "url"
+    t.string   "title"
+    t.text     "message"
+    t.string   "status"
+    t.string   "ip"
+    t.string   "author_name"
+    t.string   "author_email"
+    t.string   "author_avatar"
+    t.string   "author_www"
+    t.string   "author_provider"
+    t.string   "anonym_name"
+    t.string   "anonym_email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

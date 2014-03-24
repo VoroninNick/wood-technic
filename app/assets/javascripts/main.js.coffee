@@ -5,6 +5,24 @@
 
 #$(document).on 'ready page:load', ->
 $(document).ready ->
+  $("#call_order_form").submit ->
+    alert("test")
+    $(this).preventDefault()
+    valuesToSubmit = $(this).serialize()
+    #sumbits it to the given url of the form
+    # you want a difference between normal and ajax-calls, and json is standard
+    $.ajax(
+      url: $(this).attr("action")
+      data: valuesToSubmit
+      dataType: "JSON"
+    ).success (json) ->
+
+
+      #act on result.
+    false # prevents normal behaviour
+
+
+
   $("#tab-container").easytabs()
   $("#mdf-tab-container").easytabs()
 
@@ -72,6 +90,8 @@ $(document).ready ->
 
 #$(document).ready(ready)
 #$(document).on('page:load', ready)
+
+
 
 
 

@@ -11,4 +11,8 @@ class WtInformationController < ApplicationController
   def certificates_and_warranty
     @cert = Certificate.order('updated_at asc')
   end
+
+  def reviews
+
+  end
 end

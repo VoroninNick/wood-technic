@@ -90,7 +90,7 @@
           |Ваше повідомлення надіслане!
 .row
   .contacts-form
-    = simple_form_for @contact_new_form, :html => {:class => 'form-horizontal' },:url => contacts_path do |f|
+    = simple_form_for @contact_new_form, :html => {:class => 'form-horizontal', :id=>'call_order_form' },:url => contacts_path do |f|
       .columns.large-6.form-horizontal-left
         = f.label :"Ваше ім'я:", :for=>"contact_name"
         = f.input :name, :required => true, placeholder: 'Воронін Микола Валерійович', :label=>false, :class=>" name"

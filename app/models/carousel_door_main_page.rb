@@ -6,8 +6,8 @@ class CarouselDoorMainPage < ActiveRecord::Base
 
   rails_admin do
     navigation_label 'Головна сторінка'
-    label 'Каросель'
-    label_plural 'Каросель слайди'
+    label 'Карусель'
+    label_plural 'Карусель слайди'
 
     list do
       field :title

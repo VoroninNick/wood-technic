@@ -8,9 +8,9 @@ class MainBanner < ActiveRecord::Base
                     path:':rails_root/public:url'
 
   rails_admin do
-    navigation_label 'Головний банер'
-    label 'Слайд'
-    label_plural 'Слайди'
+    navigation_label 'Головна сторінка'
+    label 'Банер слайд'
+    label_plural 'Банер слайди'
 
     list do
       field :title

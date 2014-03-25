@@ -11,12 +11,14 @@ class ColoryDverej < ActiveRecord::Base
     visible false
 
     list do
-      field :title
+      field :titl
       field :image
     end
 
     edit do
-      field :title
+      field :title do
+        help 'Послідовність добавляння колборів дверей - "Венге", "Вільха", "Горіх", "Каштан", "Дуб", "Білений дуб".'
+      end
       field :image, :paperclip do
         label 'Зображення'
         help 'Розмір зображення 500x1010'

@@ -2,6 +2,7 @@ class MainController < ApplicationController
   def index
     @banner = MainBanner.order('index_sorting asc')
     @promotion = Promotion.order('updated_at asc')
+    @carousel = CarouselDoorMainPage.order('index_sort asc')
 
   end
 

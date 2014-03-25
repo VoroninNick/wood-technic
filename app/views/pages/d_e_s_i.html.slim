@@ -29,37 +29,56 @@
           -@d_e_s_i.each do |dac|
             li
               .large-3.columns
-                img src=dac.image(:large)
+                .door-image-wrapper
+                  img src=dac.image.url(:large)
               .large-9.columns
                 h1 =dac.title
-                p =raw dac.description
+                p =truncate_html dac.description, :length=> 260
                 h2
                   |Колір дверей
                 ul.palette_colors
-                  li.palette-item
-                    img src=asset_path("wenge.png")
-                    h4
-                      |Венге
-                  li.palette-item
-                    img src=asset_path("vilha.png")
-                    h4
-                      |Вільха
-                  li.palette-item
-                    img src=asset_path("gorih.png")
-                    h4
-                      |Горіх
-                  li.palette-item
-                    img src=asset_path("dub.png")
-                    h4
-                      |Каштан
-                  li.palette-item
-                    img src=asset_path("mahagon.png")
-                    h4
-                      |Дуб
-                  li.palette-item
-                    img src=asset_path("jablunia.png")
-                    h4
-                      |Білений дуб
+                  - dc = dac.colory_dverejs[0]
+                  -if dc
+                    li.palette-item
+                      a href=dc.image
+                        img src=asset_path("wenge.png")
+                        h4
+                          |Венге
+                  - dc = dac.colory_dverejs[1]
+                  -if dc
+                    li.palette-item
+                      a href=dc.image
+                        img src=asset_path("vilha.png")
+                        h4
+                          |Вільха
+                  - dc = dac.colory_dverejs[2]
+                  -if dc
+                    li.palette-item
+                      a href=dc.image
+                        img src=asset_path("gorih.png")
+                        h4
+                          |Горіх
+                  - dc = dac.colory_dverejs[3]
+                  -if dc
+                    li.palette-item
+                      a href=dc.image
+                        img src=asset_path("dub.png")
+                        h4
+                          |Каштан
+                  - dc = dac.colory_dverejs[4]
+                  -if dc
+                    li.palette-item
+                      a href=dc.image
+                        img src=asset_path("mahagon.png")
+                        h4
+                          |Дуб
+                  - dc = dac.colory_dverejs[5]
+                  -if dc
+                    li.palette-item
+                      a href=dc.image
+                        img src=asset_path("jablunia.png")
+                        h4
+                          |Білений дуб
                   .clearfix
                 .clearfix
                 .form-actions

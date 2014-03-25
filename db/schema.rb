@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324133111) do
+ActiveRecord::Schema.define(version: 20140325085716) do
 
   create_table "banners", force: true do |t|
     t.text     "title"
@@ -53,6 +53,18 @@ ActiveRecord::Schema.define(version: 20140324133111) do
     t.datetime "time_from"
     t.datetime "time_to"
     t.text     "message"
+  end
+
+  create_table "carousel_door_main_pages", force: true do |t|
+    t.string   "title"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "link"
+    t.integer  "index_sort"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "certificates", force: true do |t|

@@ -14,7 +14,7 @@ class Dveri < ActiveRecord::Base
 
   has_many :colory_dverejs
 
-  accepts_nested_attributes_for :colory_dverejs
+  accepts_nested_attributes_for :colory_dverejs, allow_destroy: true
   attr_accessible :colory_dverejs_attributes
 
   rails_admin do

@@ -5,8 +5,15 @@
 
 #$(document).on 'ready page:load', ->
 $(document).ready ->
+  $(".palette_colors li a").click (event)->
+    event.preventDefault()
+    $(".palette-item").removeClass(' door_color_active')
+    $(this).parent().addClass(' door_color_active')
+    mainImage = $(this).attr("href") #Find Image Name
+    $(".door-image-wrapper img").attr src: mainImage
+
+
   $("#call_order_form").submit ->
-    alert("test")
     $(this).preventDefault()
     valuesToSubmit = $(this).serialize()
     #sumbits it to the given url of the form
@@ -20,8 +27,6 @@ $(document).ready ->
 
       #act on result.
     false # prevents normal behaviour
-
-
 
   $("#tab-container").easytabs()
   $("#mdf-tab-container").easytabs()

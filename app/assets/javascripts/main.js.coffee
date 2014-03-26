@@ -32,40 +32,34 @@ $(document).ready ->
     #sumbits it to the given url of the form
     # you want a difference between normal and ajax-calls, and json is standard
     alert($(this).attr("action"))
-    $.ajax(
+    $.ajax
       url: $(this).attr("action")
       type: "POST"
       data: valuesToSubmit
-      dataType: "JSON"
-    ).success (json) ->
-      alert("success")
+#      dataType: "JSON"
+      success: () ->
+        alert("SUPER!!!!!!")
 
 
       #act on result.
     false # prevents normal behaviour
-
+#
 #  $("#call_order_form").submit (event) ->
 #    event.preventDefault()
 #    valuesToSubmit = $(this).serialize()
 #    #sumbits it to the given url of the form
 #    # you want a difference between normal and ajax-calls, and json is standard
 #    alert($(this).attr("action"))
-#    $.ajax({
+#    $.ajax
 #      type: "POST"
 #      url: $(this).attr("action"),
 #      data: valuesToSubmit,
 #      dataType: "JSON",
 #      success: (data,textstatus) ->
 #        alert("SUPER!!!!!!")
-#    })
+#
 #    #act on result.
 #    false # prevents normal behaviour
-
-
-#  $("#door_toogle").click ->
-#    mainImage = $(this).attr("href") #Find Image Name
-#    $(".door-image-wrapper img").attr src: mainImage
-
 
 
   $(".door-product-1 .palette_colors li a").click (event)->

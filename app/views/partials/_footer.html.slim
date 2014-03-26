@@ -89,118 +89,123 @@ div style="display: none"
           |ФОРМА ЗАМОВЛЕННЯ ДЗВІНКА
       .clearfix
     .row
-      .columns.large-10.push-1
+      .columns.large-12
         .status-message.dn
           h4
             |Ваше повідомлення успішно відправлене!
     .row
       .contacts-form.call-order-form.order-call-d-v-form
-        /= simple_form_for get_order, :html => {:class => 'form-horizontal' },:url => root_path do |f|
-        /
-        /  .columns.large-6.form-horizontal-left
-        /    = f.label :"Ваше ім'я:", :for=>"contact_name"
-        /    = f.input :name, :required => true, placeholder: 'Воронін Микола Валерійович', :label=>false, :class=>" name"
-        /
-        /    = f.label :"Контактний телефон:", :for=>"contact_phone"
-        /    = f.input :phone, :required => true, placeholder: '+38 (050) 417 07 28', :label=>false
-        /
-        /    = f.label :"Електронна скринька:", :for=>"contact_email"
-        /    = f.error_notification
-        /    = f.input :email, :required => false, placeholder: 'voronin.nick@gmail.com', :label=>false
-        /
-        /    = f.label :"Зручний час дзвінка:", :class=> "label-padding"
-        /    .columns.large-6
-        /      = f.label :"з", :class=> "label-time", :for=>"contact_time_from"
-        /      = f.input :time_from, collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], prompt: "08:00", :label=>false
-        /    .columns.large-6
-        /      = f.label :"до", :class=> "label-time", :for=>"contact_time_to"
-        /      = f.input :time_to, collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], prompt: "21:00", :label=>false
-        /
-        /  .columns.large-6.form-horizontal-right
-        /    = f.label :"Текст повідомлення:", :for=>"contact_message"
-        /    = f.input :message, :as => :text, :required => false, placeholder: 'Будемо раді почути відгуки та запитання від Вас.', :label=>false
-        /
-        /    .form-actions.right
-        /      = f.button :submit, 'НАДІСЛАТИ', :class=> "btn btn-primary"
-
         form action="/call_order" method="POST" id="call_order_form" class=" form-horizontal"
-          .columns.large-6.form-horizontal-left
-            label for="name"
-              |Ваше ім'я:
-            input.name#name name="call_order[name]" placeholder="Воронін Микола Валерійович"
-
-            label for="phone"
-              |Контактний телефон
-            input#phone name="call_order[phone]" placeholder="+38 (050) 417 07 28"
-
-            label for="email"
-              |Електронна скринька:
-            input#email name="call_order[email]" placeholder="voronin.nick@gmail.com"
-
-            label.label-padding
-              |Зручний час дзвінка
+          .columns.large-12
             .columns.large-6
-              label.label-time for="time_from"
-                |з
-              select#time_from name="call_order[time_from]"
-                option value="08:00"
-                  |08:00
-                option value="09:00"
-                  |09:00
-                option value="10:00"
-                  |10:00
-                option value="11:00"
-                  |11:00
-                option value="12:00"
-                  |12:00
-                option value="13:00"
-                  |13:00
-                option value="14:00"
-                  |14:00
-                option value="15:00"
-                  |15:00
-                option value="16:00"
-                  |16:00
-                option value="17:00"
-                  |17:00
-                option value="18:00"
-                  |18:00
+              label for="name"
+                |Ваше ім'я:
+              input.name#name name="call_order[name]" placeholder="Воронін Микола Валерійович"
+
+              label for="phone"
+                |Контактний телефон
+              input#phone name="call_order[phone]" placeholder="+38 (050) 417 07 28"
+
+              label for="email"
+                |Електронна скринька:
+              input#email name="call_order[email]" placeholder="voronin.nick@gmail.com"
+
+              label.label-padding
+                |Зручний час дзвінка
+              .row
+                .columns.large-6
+                  label.label-time for="time_from"
+                    |з
+                  select#time_from name="call_order[time_from]"
+                    option value="08:00"
+                      |08:00
+                    option value="09:00"
+                      |09:00
+                    option value="10:00"
+                      |10:00
+                    option value="11:00"
+                      |11:00
+                    option value="12:00"
+                      |12:00
+                    option value="13:00"
+                      |13:00
+                    option value="14:00"
+                      |14:00
+                    option value="15:00"
+                      |15:00
+                    option value="16:00"
+                      |16:00
+                    option value="17:00"
+                      |17:00
+                    option value="18:00"
+                      |18:00
+
+                .columns.large-6
+                  label.label-time for="time_to"
+                    |до
+                  select#time_to name="call_order[time_to]"
+                    option value="09:00"
+                      |09:00
+                    option value="10:00"
+                      |10:00
+                    option value="11:00"
+                      |11:00
+                    option value="12:00"
+                      |12:00
+                    option value="13:00"
+                      |13:00
+                    option value="14:00"
+                      |14:00
+                    option value="15:00"
+                      |15:00
+                    option value="16:00"
+                      |16:00
+                    option value="17:00"
+                      |17:00
+                    option value="18:00"
+                      |18:00
+                    option value="19:00"
+                      |19:00
             .columns.large-6
-              label.label-time for="time_to"
-                |до
-              select#time_to name="call_order[time_to]"
-                option value="09:00"
-                  |09:00
-                option value="10:00"
-                  |10:00
-                option value="11:00"
-                  |11:00
-                option value="12:00"
-                  |12:00
-                option value="13:00"
-                  |13:00
-                option value="14:00"
-                  |14:00
-                option value="15:00"
-                  |15:00
-                option value="16:00"
-                  |16:00
-                option value="17:00"
-                  |17:00
-                option value="18:00"
-                  |18:00
-                option value="19:00"
-                  |19:00
-          .columns.large-6.form-horizontal-right
-            label for="message"
-              |Текст повідомлення:
-            input#message type="text" name="call_order[message]" placeholder="Будемо раді почути відгуки та запитання від Вас."
+              label for="message"
+                |Текст повідомлення:
+              textarea#message type="text" name="call_order[message]" placeholder="Будемо раді почути відгуки та запитання від Вас."
 
-            .form-actions.right
-              button#submit type="submit" class="btn btn-primary"
-                |НАДІСЛАТИ
-
+              .form-actions.right
+                button#submit type="submit" class="btn btn-primary"
+                  |НАДІСЛАТИ
+            .clearfix
         .clearfix
+      .clearfix
 
+
+
+/= simple_form_for get_order, :html => {:class => 'form-horizontal' },:url => root_path do |f|
+/
+/  .columns.large-6.form-horizontal-left
+/    = f.label :"Ваше ім'я:", :for=>"contact_name"
+/    = f.input :name, :required => true, placeholder: 'Воронін Микола Валерійович', :label=>false, :class=>" name"
+/
+/    = f.label :"Контактний телефон:", :for=>"contact_phone"
+/    = f.input :phone, :required => true, placeholder: '+38 (050) 417 07 28', :label=>false
+/
+/    = f.label :"Електронна скринька:", :for=>"contact_email"
+/    = f.error_notification
+/    = f.input :email, :required => false, placeholder: 'voronin.nick@gmail.com', :label=>false
+/
+/    = f.label :"Зручний час дзвінка:", :class=> "label-padding"
+/    .columns.large-6
+/      = f.label :"з", :class=> "label-time", :for=>"contact_time_from"
+/      = f.input :time_from, collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], prompt: "08:00", :label=>false
+/    .columns.large-6
+/      = f.label :"до", :class=> "label-time", :for=>"contact_time_to"
+/      = f.input :time_to, collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], prompt: "21:00", :label=>false
+/
+/  .columns.large-6.form-horizontal-right
+/    = f.label :"Текст повідомлення:", :for=>"contact_message"
+/    = f.input :message, :as => :text, :required => false, placeholder: 'Будемо раді почути відгуки та запитання від Вас.', :label=>false
+/
+/    .form-actions.right
+/      = f.button :submit, 'НАДІСЛАТИ', :class=> "btn btn-primary"
 
 

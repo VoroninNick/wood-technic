@@ -39,6 +39,7 @@ $(document).ready ->
       success: () ->
 #        alert("SUPER!!!!!!")
         $(".status-message").removeClass(" dn")
+        $.fancybox.close
 
 
       #act on result.

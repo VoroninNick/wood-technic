@@ -14,3 +14,4 @@ class ContactUs < ActionMailer::Base
   end
 
 end
+

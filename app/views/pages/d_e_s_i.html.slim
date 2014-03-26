@@ -18,16 +18,18 @@
         -if @d_e_s_i
           - count = 0
           -@d_e_s_i.each do |da|
-            a data-slide-index="#{count}" href=""
+            a#door_toogle data-slide-index="#{count}" href=da.image.url(:large)
               img src=da.image.url(:avatar)
               .white-opacity-cub
               span =da.title
               -count +=1
     .large-11.columns
+      -forclass = 1
       ul.product-door
         -if @d_e_s_i
           -@d_e_s_i.each do |dac|
-            li
+            li class="door-product-#{forclass}"
+              -forclass+=1
               .large-3.columns
                 .door-image-wrapper
                   img src=dac.image.url(:large)

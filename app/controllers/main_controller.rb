@@ -28,4 +28,29 @@ class MainController < ApplicationController
     render action: :contacts
   end
 
+  def call_order
+  #  call_order =params[:call_order]
+  #
+  #  if request.post?
+  #    @data = {
+  #        :name => params[:name],
+  #        :email => params[:email],
+  #        :phone => params[:phone],
+  #        :time_from => params[:time_from],
+  #        :time_to => params[:time_to],
+  #        :message => params[:message]
+  #    }
+  #
+  #    if MessageMailer.message(@data).deliver
+  #      redirect('/contact', :flash => 'Thank you for the message. I will get back to you as soon as possible')
+  #    else
+  #      redirect('/contact', :flash => 'Oops! Something went wrong. I will look into it. Until it\'s fixed you can email me at email@domain.com')
+  #    end
+  #
+  #  else
+  #    redirect('/contact', :flash => 'Please fill out the contact form to get in touch.')
+  #  end
+  #
+  end
+
 end

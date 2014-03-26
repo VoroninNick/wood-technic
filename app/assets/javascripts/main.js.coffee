@@ -5,28 +5,89 @@
 
 #$(document).on 'ready page:load', ->
 $(document).ready ->
-  $(".palette_colors li a").click (event)->
-    event.preventDefault()
-    $(".palette-item").removeClass(' door_color_active')
-    $(this).parent().addClass(' door_color_active')
-    mainImage = $(this).attr("href") #Find Image Name
-    $(".door-image-wrapper img").attr src: mainImage
-
+  #Program a custom submit function for the form
+#  $("form#call_order_form").submit (event) ->
+#
+#    #disable the default form submission
+#    event.preventDefault()
+#    alert($(this).attr("action"))
+#    #grab all form data
+#    formData = $(this).serialize()
+#    $.ajax
+#      url: $(this).attr("action")
+#      type: "POST"
+#      data: formData
+#      async: false
+#      cache: false
+#      contentType: false
+#      processData: false
+#      success: (returndata) ->
+#        alert returndata
+#        return
+#
+#    false
 
   $("#call_order_form").submit ->
-    $(this).preventDefault()
     valuesToSubmit = $(this).serialize()
     #sumbits it to the given url of the form
     # you want a difference between normal and ajax-calls, and json is standard
+    alert($(this).attr("action"))
     $.ajax(
       url: $(this).attr("action")
+      type: "POST"
       data: valuesToSubmit
       dataType: "JSON"
     ).success (json) ->
+      alert("success")
 
 
       #act on result.
     false # prevents normal behaviour
+
+#  $("#call_order_form").submit (event) ->
+#    event.preventDefault()
+#    valuesToSubmit = $(this).serialize()
+#    #sumbits it to the given url of the form
+#    # you want a difference between normal and ajax-calls, and json is standard
+#    alert($(this).attr("action"))
+#    $.ajax({
+#      type: "POST"
+#      url: $(this).attr("action"),
+#      data: valuesToSubmit,
+#      dataType: "JSON",
+#      success: (data,textstatus) ->
+#        alert("SUPER!!!!!!")
+#    })
+#    #act on result.
+#    false # prevents normal behaviour
+
+
+#  $("#door_toogle").click ->
+#    mainImage = $(this).attr("href") #Find Image Name
+#    $(".door-image-wrapper img").attr src: mainImage
+
+
+
+  $(".door-product-1 .palette_colors li a").click (event)->
+    event.preventDefault()
+    $(".palette-item").removeClass(' door_color_active')
+    $(this).parent().addClass(' door_color_active')
+    mainImage = $(this).attr("href") #Find Image Name
+    $(".door-product-1 .door-image-wrapper img").attr src: mainImage
+
+  $(".door-product-2 .palette_colors li a").click (event)->
+    event.preventDefault()
+    $(".palette-item").removeClass(' door_color_active')
+    $(this).parent().addClass(' door_color_active')
+    mainImage = $(this).attr("href") #Find Image Name
+    $(".door-product-2 .door-image-wrapper img").attr src: mainImage
+
+  $(".door-product-3 .palette_colors li a").click (event)->
+    event.preventDefault()
+    $(".palette-item").removeClass(' door_color_active')
+    $(this).parent().addClass(' door_color_active')
+    mainImage = $(this).attr("href") #Find Image Name
+    $(".door-product-3 .door-image-wrapper img").attr src: mainImage
 
   $("#tab-container").easytabs()
   $("#mdf-tab-container").easytabs()

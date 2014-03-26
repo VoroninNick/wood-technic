@@ -29,6 +29,9 @@ class MainController < ApplicationController
   end
 
   def call_order
+    CallOrder.order_call(params[:call_order]).deliver
+
+
   #  call_order =params[:call_order]
   #
   #  if request.post?

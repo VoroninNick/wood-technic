@@ -122,22 +122,22 @@ div style="display: none"
           .columns.large-6.form-horizontal-left
             label for="name"
               |Ваше ім'я:
-            input.name#name name="name" placeholder="Воронін Микола Валерійович"
+            input.name#name name="call_order[name]" placeholder="Воронін Микола Валерійович"
 
             label for="phone"
               |Контактний телефон
-            input#phone name="phone" placeholder="+38 (050) 417 07 28"
+            input#phone name="call_order[phone]" placeholder="+38 (050) 417 07 28"
 
             label for="email"
               |Електронна скринька:
-            input#email name="email" placeholder="voronin.nick@gmail.com"
+            input#email name="call_order[email]" placeholder="voronin.nick@gmail.com"
 
             label.label-padding
               |Зручний час дзвінка
             .columns.large-6
               label.label-time for="time_from"
                 |з
-              select#time_from name="time_from"
+              select#time_from name="call_order[time_from]"
                 option value="08:00"
                   |08:00
                 option value="09:00"
@@ -163,7 +163,7 @@ div style="display: none"
             .columns.large-6
               label.label-time for="time_to"
                 |до
-              select#time_to name="time_to"
+              select#time_to name="call_order[time_to]"
                 option value="09:00"
                   |09:00
                 option value="10:00"
@@ -189,7 +189,7 @@ div style="display: none"
           .columns.large-6.form-horizontal-right
             label for="message"
               |Текст повідомлення:
-            input#message type="text" name="message" placeholder="Будемо раді почути відгуки та запитання від Вас."
+            input#message type="text" name="call_order[message]" placeholder="Будемо раді почути відгуки та запитання від Вас."
 
             .form-actions.right
               button#submit type="submit" class="btn btn-primary"

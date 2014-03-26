@@ -1,1 +1,40 @@
-h1 = @callorder.inspect
+.row
+  .columns.large-6.left
+    .columns.large-6
+      p
+        h1
+          |Ім'я:
+      p
+        h1
+          |Контактний телефон:
+      p
+        h1
+          |Електронна скринька:
+      p
+        h1
+          |Зручний час дзвінка:
+      p
+        h1
+          |З:
+      p
+        h1
+          |До:
+      p
+        h1
+          |Текст повідомлення:
+    .columns.large-6
+      p
+        h1 = @callorder[:name]
+      p
+        h1 = @callorder[:phone]
+      p
+        h1 = @callorder[:email]
+      p
+        h1
+          |
+      p
+        h1 = @callorder[:time_from]
+      p
+        h1 = @callorder[:time_to]
+      p
+        h1 = @callorder[:message]

@@ -89,6 +89,11 @@ div style="display: none"
           |ФОРМА ЗАМОВЛЕННЯ ДЗВІНКА
       .clearfix
     .row
+      .columns.large-10.push-1
+        .status-message
+          h4
+            |Ваше повідомлення успішно відправлене!
+    .row
       .contacts-form.call-order-form.order-call-d-v-form
         /= simple_form_for get_order, :html => {:class => 'form-horizontal' },:url => root_path do |f|
         /

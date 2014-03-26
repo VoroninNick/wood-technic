@@ -26,19 +26,19 @@ $(document).ready ->
 #        return
 #
 #    false
-
+  $(".status-message").addClass(" dn")
   $("#call_order_form").submit ->
     valuesToSubmit = $(this).serialize()
     #sumbits it to the given url of the form
     # you want a difference between normal and ajax-calls, and json is standard
-    alert($(this).attr("action"))
     $.ajax
       url: $(this).attr("action")
       type: "POST"
       data: valuesToSubmit
 #      dataType: "JSON"
       success: () ->
-        alert("SUPER!!!!!!")
+#        alert("SUPER!!!!!!")
+        $(".status-message").removeClass(" dn")
 
 
       #act on result.

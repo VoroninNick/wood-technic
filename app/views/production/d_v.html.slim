@@ -49,6 +49,149 @@
         a.order_product.link-to-form.fancybox href="#order-call-d-v" rel="order-call-d-v"
           |Замовити
 
+.row.dn
+  .sel-part-wrap
+    .columns.large-10.push-1
+      .columns.large-5.no-padding-left
+        p
+          label for="d_v_color"
+            |Колір:
+          select#d_v_color name="d_v_color"
+            option value="Венге"
+              |Венге
+            option value="Вільха"
+              |Вільха
+            option value="Горіх"
+              |Горіх
+            option value="Каштан"
+              |Каштан
+            option value="Дуб"
+              |Дуб
+            option value="Білений дуб"
+              |Білений дуб
+      .columns.large-5.no-padding-right
+        .d-v-left-part
+          p
+            label for="d_v_width"
+              |Ширина:
+            select#d_v_width
+              option value="294 мм."
+                |294 мм.
+              option value="394 мм."
+                |394 мм.
+              option value="494 мм."
+                |494 мм.
+              option value="594 мм."
+                |594 мм.
+          p
+            label for="d_v_count"
+              |Кількість:
+            input#d_v_count type="text" placeholder="11 шт."
+        .d-v-right-part
+          p
+            label for="d_v_height"
+              |Висота:
+            select#d_v_height
+              option value="395 мм."
+                |395 мм.
+              option value="606 мм."
+                |606 мм.
+              option value="720 мм."
+                |720 мм.
+              option value="993 мм."
+                |993 мм.
+              option value="1100 мм."
+                |1100 мм.
+              option value="1400 мм."
+                |1400 мм.
+              option value="1700 мм."
+                |1700 мм.
+              option value="2013 мм."
+                |2013 мм.
+              option value="2422 мм."
+                |2422 мм.
+          p
+            label for="d_v_rez"
+              |Ціна:
+            input#d_v_rez type="text" placeholder="360 грн."
+.row.dn
+  .info-part-wrap
+    .columns.large-10.push-1
+      .columns.large-6.no-padding-left
+        p
+          label for="d_v_name"
+            |Ваше ім’я
+          input#d_v_name type="text" placeholder="Воронін Микола Валерійович"
+        p
+          label for="d_v_phone"
+            |Контактний телефон
+          input#d_v_phone type="text" placeholder="+38 (050) 417 07 28"
+        p
+          label for="d_v_email"
+            |Електронна скринька
+          input#d_v_email type="text" placeholder="voronin.nick@gmail.com"
+        .d-v-time
+          span
+            |Зручний час дзвінка:
+          .d-v-time-left
+            label for="d_v_time_from"
+              |з
+            select#d_v_time_from
+              option value="09:00"
+                |09:00
+              option value="10:00"
+                |10:00
+              option value="11:00"
+                |11:00
+              option value="12:00"
+                |12:00
+              option value="13:00"
+                |13:00
+              option value="14:00"
+                |14:00
+              option value="15:00"
+                |15:00
+              option value="16:00"
+                |16:00
+              option value="17:00"
+                |17:00
+              option value="18:00"
+                |18:00
+
+          .d-v-time-right
+            label for="d_v_time_to"
+              |до
+            select#d_v_time_to
+              option value="10:00"
+                |10:00
+              option value="11:00"
+                |11:00
+              option value="12:00"
+                |12:00
+              option value="13:00"
+                |13:00
+              option value="14:00"
+                |14:00
+              option value="15:00"
+                |15:00
+              option value="16:00"
+                |16:00
+              option value="17:00"
+                |17:00
+              option value="18:00"
+                |18:00
+              option value="19:00"
+                |19:00
+            .clearfix
+      .columns.large-6.no-padding-right
+        p
+          label for="d_v_message"
+            |Текст повідомлення
+          textarea#d_v_message type="text" placeholder="Зателефонуйте мені будь-ласка. є декілька питань, щодо покупки..."
+        .form-actions.right
+          button#d_v_submit type="submit"
+            |Замовити
+
 
 .row
   .door-info.door-louver-tabs-wrapper

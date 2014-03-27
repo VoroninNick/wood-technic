@@ -176,6 +176,13 @@
         :display none
     .bx-wrapper
         :height auto !important
+    .form-actions
+        :position relative
+        :top -2px
+
+        a:focus
+            :outline none !important
+
 .white-opacity-cub
     :background rgba(255, 255, 255, 0.35)
     :width 100%
@@ -422,12 +429,12 @@ table
     :padding-top 20px
 
     select
-        :color #7a868c
-        :font-size 1.5rem
-        :font-weight 300
         :text-transform uppercase
-        :height 40px !important
-        :padding 0.4rem !important
+        :height 60px
+        :font-size 1.5rem
+        :color #cccccc
+        :padding 0.875rem 1.3rem
+
 .order_door_louver_width, .order_door_louver_height
     :width 188px
 .order_door_louver_count, .order_door_louver_price
@@ -492,10 +499,6 @@ table
 .label-time, .order_enter_door_time_from, .order_enter_door_time_to
     :float left
 
-.label-time
-    :padding-left 0 !important
-    :font-size 1.5rem !important
-    :padding-right 12px
 
 .title-lable-time
     :font-size 1.5rem !important
@@ -512,4 +515,85 @@ table
     :padding-top 25px
 .furniture
     :padding-top 109px
+
+.order-enter-door-form
+    span, label, input, select
+        :float left
+    span
+        :display block
+        :width 100%
+        :color #94d60a
+        :font-size 1.5rem
+        :font-style italic
+        :font-family Tinos
+
+    label
+        :color #94d60a
+        :font-style italic
+        :font-family Tinos
+        :font-size 1rem
+    p.e-d-rule
+        label
+            :font-size 1.5rem
+            :color #7a868c
+            :font-style normal
+            :font-family sans-serif
+
+        input
+            :position relative
+            :top 10px
+            :margin-left 10px
+            :margin-right 5px
+.e-d-rule-label
+    :font-size 1.5rem !important
+.d-e-time
+    select
+        :width 125px
+.select-enter-door-wrapper
+
+    .left-part
+        :width 33%
+        :float left
+        :padding-right 0.9375rem
+
+    .right-part
+        :width 67%
+        :float left
+        :position relative
+        :padding-left 0.9375rem
+
+        select
+            :width 60%
+.count-e-door-wrapper
+    input
+        :width 80px
+
+    p
+        label, input, span
+            :float left
+        span
+            :width auto !important
+
+
+.d-v-left-part, .d-v-right-part, .d-v-time-left, .d-v-time-right
+    :width 45%
+    :float left
+    :position relative
+    :padding-left 0.9375rem
+    :padding-right 0.9375rem
+
+.d-v-time
+    label, select, span
+        :float left
+    span
+        :float left
+        :width 100%
+        :display block
+    label
+        :width 10%
+    select
+        :width 65%
+
+
+
 

@@ -10,6 +10,142 @@
       =link_to "Моделі", door_enterior_path
     li.unavailable
       =@model.title
+.row.dn
+  .order-enter-door-form
+    form#order-enter-door action="/order_enter_door" method="POST"
+      .row
+        .columns.large-6
+          .select-enter-door-wrapper
+            .left-part
+              .image-enter-door
+                img src=asset_path("d1.jpg")
+            .right-part
+              p
+                label.e-d-rule-label for="model_d"
+                  |Модель:
+                select#model_d
+                .clearfix
+              p
+                label.e-d-rule-label for="color_d"
+                  |Колір:
+                select#color_d
+                .clearfix
+              p.e-d-rule
+                span
+                  |Відкриття дверей:
+                label for="d_in_left"
+                  |Вліво
+                input#d_in_left.squaredOne type="checkbox" checked="checked" value="1" name="fooby[1][]"
+                label for="d_in_right"
+                  |Вправо
+                input#d_in_right type="checkbox" value="1" name="fooby[1][]"
+                .clearfix
+            .clearfix
+
+        .columns.large-6
+          .count-e-door-wrapper
+            p
+              label.e-d-rule-label for="count_e_door"
+                |Кількість одиниць товару:
+              input#count_e_door type="text" name="count" placeholder="11"
+              span
+                |шт.
+              .clearfix
+          .furniture-e-door-wrapper
+            p.e-d-rule
+              span
+                |Фурнітура:
+              label for="with_furn"
+                |З фурнітурою
+              input#with_furn type="checkbox" value="1" name="furn[1][]"
+              label for="without_furn"
+                |Без фурнітури
+              input#without_furn type="checkbox" checked="checked" value="1" name="furn[1][]"
+              .clearfix
+      .row
+        .columns.large-6
+          p
+            label for="d_e_name"
+              |Ваше ім’я
+            input#d_e_name type="text" placeholder="Воронін Микола Валерійович"
+            .clearfix
+          p
+            label for="d_e_phone"
+              |Контактний телефон
+            input#d_e_phone type="text" placeholder="+38 (050) 417 07 28"
+            .clearfix
+          p
+            label for="d_e_email"
+              |Електронна скринька
+            input#d_e_email type="text" placeholder="voronin.nick@gmail.com"
+            .clearfix
+          p.d-e-time
+            span
+              |Зручний час дзвінка:
+            label for="d_e_time_with"
+              |з
+            select#d_e_time_with
+              option value="08:00"
+                |08:00
+              option value="09:00"
+                |09:00
+              option value="10:00"
+                |10:00
+              option value="11:00"
+                |11:00
+              option value="12:00"
+                |12:00
+              option value="13:00"
+                |13:00
+              option value="14:00"
+                |14:00
+              option value="15:00"
+                |15:00
+              option value="16:00"
+                |16:00
+              option value="17:00"
+                |17:00
+              option value="18:00"
+                |18:00
+
+            label for="d_e_time_to"
+              |до
+            select#d_e_time_to
+              option value="09:00"
+                |09:00
+              option value="10:00"
+                |10:00
+              option value="11:00"
+                |11:00
+              option value="12:00"
+                |12:00
+              option value="13:00"
+                |13:00
+              option value="14:00"
+                |14:00
+              option value="15:00"
+                |15:00
+              option value="16:00"
+                |16:00
+              option value="17:00"
+                |17:00
+              option value="18:00"
+                |18:00
+              option value="19:00"
+                |19:00
+            .clearfix
+
+        .columns.large-6
+          p
+            label for="d_e_message"
+              |Текст повідомлення
+            textarea#d_e_message  type="text" placeholder="Зателефонуйте мені будь-ласка. є декілька питань, щодо покупки..."
+          .form-actions.right
+            button#d_e_submit type="submit"
+              |Замовити
+
+
+
 
 .row
   .p-d-s
@@ -93,6 +229,7 @@ div style="display: none"
         h1
           |ФОРМА ЗАМОВЛЕННЯ ДВЕРЕЙ
       .clearfix
+
     .row
       .contacts-form.call-order-form.order-call-d-v-form
         = simple_form_for @ord_ent_door, :html => {:class => 'form-horizontal' },:url => door_enterior_show_one_item_path do |f|
@@ -188,4 +325,5 @@ div style="display: none"
               .tab-bottom-line
               .clearfix
           .clearfix
+
 

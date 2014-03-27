@@ -5,27 +5,7 @@
 
 #$(document).on 'ready page:load', ->
 $(document).ready ->
-  #Program a custom submit function for the form
-#  $("form#call_order_form").submit (event) ->
-#
-#    #disable the default form submission
-#    event.preventDefault()
-#    alert($(this).attr("action"))
-#    #grab all form data
-#    formData = $(this).serialize()
-#    $.ajax
-#      url: $(this).attr("action")
-#      type: "POST"
-#      data: formData
-#      async: false
-#      cache: false
-#      contentType: false
-#      processData: false
-#      success: (returndata) ->
-#        alert returndata
-#        return
-#
-#    false
+# send call_order
   $(".status-message").addClass(" dn")
   $("#call_order_form").submit ->
     valuesToSubmit = $(this).serialize()
@@ -39,30 +19,15 @@ $(document).ready ->
       success: () ->
 #        alert("SUPER!!!!!!")
         $(".status-message").removeClass(" dn")
+        $("#call_order_form").addClass(" dn")
+        $(".fancybox-inner").height('height', '250px')
+        $(".fancybox-wrap").css({"width":"600px","left":"30%"})
         $.fancybox.close
-
-
-      #act on result.
+        #act on result.
     false # prevents normal behaviour
-#
-#  $("#call_order_form").submit (event) ->
-#    event.preventDefault()
-#    valuesToSubmit = $(this).serialize()
-#    #sumbits it to the given url of the form
-#    # you want a difference between normal and ajax-calls, and json is standard
-#    alert($(this).attr("action"))
-#    $.ajax
-#      type: "POST"
-#      url: $(this).attr("action"),
-#      data: valuesToSubmit,
-#      dataType: "JSON",
-#      success: (data,textstatus) ->
-#        alert("SUPER!!!!!!")
-#
-#    #act on result.
-#    false # prevents normal behaviour
 
 
+# for door
   $(".door-product-1 .palette_colors li a").click (event)->
     event.preventDefault()
     $(".palette-item").removeClass(' door_color_active')
@@ -84,10 +49,13 @@ $(document).ready ->
     mainImage = $(this).attr("href") #Find Image Name
     $(".door-product-3 .door-image-wrapper img").attr src: mainImage
 
+# tabs
   $("#tab-container").easytabs()
   $("#mdf-tab-container").easytabs()
 
+# init fancybox
   $(".fancybox").fancybox()
+
 #  main banner
   $(".bxslider").bxSlider
     mode: 'fade'
@@ -122,7 +90,15 @@ $(document).ready ->
     autoPlay : 5000
 
 
-
+#checkbox group
+  $("input:checkbox").click ->
+    if $(this).is(":checked")
+      group = "input:checkbox[name='" + $(this).attr("name") + "']"
+      $(group).prop "checked", false
+      $(this).prop "checked", true
+    else
+      $(this).prop "checked", false
+    return
 
 #drop-down header
   $("#rotate").click ->

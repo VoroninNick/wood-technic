@@ -36,4 +36,5 @@ server 'voroninstudio.eu',
            auth_methods: %w(publickey password),
            password: 'casper#2014'
        }
+
 # setting per server overrides global ssh_options

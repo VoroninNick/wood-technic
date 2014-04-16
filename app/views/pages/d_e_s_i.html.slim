@@ -5,9 +5,25 @@
     li
       =link_to "продукція", production_path
     li
-      =link_to "двері міжкімнатні", door_enterior_path
+      =link_to 'двері міжкімнатні', door_enterior_path
+      svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="12.004px" height="12px" viewBox="0 0 12.004 12" enable-background="new 0 0 12.004 12" xml:space="preserve"
+        path fill="#7A868C" d="M6.002,12L0,0h12.004L6.002,12z"
+      ul.b_drop_down
+        li
+          =link_to 'двері міжкімнатні', door_enterior_path
+        li
+          =link_to 'Дверцята жалюзійні', door_louver_path
+        li
+          =link_to 'мдф', mdf_path
     li
       =link_to "Моделі", door_enterior_path
+      svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="12.004px" height="12px" viewBox="0 0 12.004 12" enable-background="new 0 0 12.004 12" xml:space="preserve"
+        path fill="#7A868C" d="M6.002,12L0,0h12.004L6.002,12z"
+      ul.b_drop_down
+        -if @models
+          -@models.each do |m|
+            li
+              =link_to "#{m.title}",door_enterior_show_one_item_path(m.url)
     li.unavailable
       =@model.title
 .row.dn
@@ -214,9 +230,9 @@
                   -if dc
                     li.palette-item
                       a href=dc.image.url(:large)
-                        img src=asset_path("jablunia.png")
+                        img src=asset_path("Bileniy-dub-icon.png")
                         h4
-                          |Білений дуб
+                          |Дуб білий
                   .clearfix
                 .clearfix
                 .form-actions

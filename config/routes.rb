@@ -1,12 +1,12 @@
 Wt::Application.routes.draw do
-  resources :banners
-
-  resources :m_bs
-
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :views
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  resources :banners
+
+  resources :m_bs
 
   get '/production' => 'main#production', as: :production
   get '/promotion' => 'main#promotion', as: :promotion

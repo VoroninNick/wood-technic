@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   end
 
   def d_e_s_i
+    @models = ProductModel.order("updated_at asc")
     @d_e_s_i = ProductModel.find_by_url(params[:url]).dveris
     @model = ProductModel.find_by_url(params[:url])
     @characteristic = Harakterystyky.order("updated_at asc").limit(1)

@@ -126,6 +126,7 @@
     :color #94d60a
     :border 1px solid #94d60a
 .d_v_content
+    min-height: 456px
     h1
         :font-size 1.5rem
         :color #555555
@@ -136,10 +137,12 @@
         :font-size 1.5rem
         :color #7a868c
         :font-style italic
+    .order_product_wrapper
+        position: absolute
+        bottom: 0
+        left: 0
 .door-louver-tabs-wrapper
     :padding-top 90px
-/*.order_product_wrapper*/
-    /*:padding-top 40px*/
 #door-louver-tabs
     .active
         :border-top 1px solid #b2b2b2
@@ -593,6 +596,39 @@ table
         :width 10%
     select
         :width 65%
+
+ul.b_drop_down
+    font-size: inherit
+    padding-top: 5px
+    position: absolute
+    z-index: 100
+    padding: 10px
+    -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.75)
+    -moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75)
+    box-shadow: 0px 3px 1px 1px rgba(0,0,0,0.25)
+    background: rgba(255, 255, 255, 0.8)
+    margin-left: 0.5rem
+    display: none
+
+    li
+        list-style: none
+        font-size: inherit
+        a
+            text-transform: uppercase
+            font-size: inherit
+            line-height: 1.25rem
+
+.breadcrumbs
+    li:hover path
+        fill: #94d60a
+    li:hover ul.b_drop_down
+        display: block
+    svg
+        height: 6px
+        margin: 0 0 1px 3px
+
+
+
 
 
 

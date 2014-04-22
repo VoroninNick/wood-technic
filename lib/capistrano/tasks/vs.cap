@@ -1,6 +1,6 @@
 set :vs_app_name, 'WoodTechnic'
-set :vs_repo_url, 'git@github.com:VoroninNick/bnb.git'
-set :vs_deploy_to, '/home/applications/develop/'
+set :vs_repo_url, 'git@github.com:VoroninNick/wood-technic.git'
+set :vs_deploy_to, '/home/applications/develop/wood-technic'
 
 # will be featured in future
 #set :dns_names, %w[zurc.voroninstudio.eu www.zurc.voroninstudio.eu]

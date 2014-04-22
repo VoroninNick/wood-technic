@@ -16,28 +16,25 @@
         li
           =link_to 'мдф', mdf_path
 .row
-  -if @louver_door
-    -@louver_door.each do |l|
-      .large-4.columns
-        .d_v_image
-          -if l.louvre_doors_images
-            a.fancybox data-fancybox-group="ld" rel="ld" href=l.louvre_doors_images[0].image
-              img src=l.louvre_doors_images[0].image.url(:large)
-        -if l.louvre_doors_images
-          ul#louver_door_slider
-            -l.louvre_doors_images.each do |li|
-              li
-                a href=li.image.url(:large)
-                  img src=li.image.url(:small)
-                a.fancybox data-fancybox-group="ld" rel="ld" href=li.image
-      .large-8.columns
-        .d_v_content
-          h1 =l.title
-          p = raw l.description
+  -if @ld_images
+    .large-4.columns
+      .d_v_image
+        a.fancybox data-fancybox-group="ld" rel="ld" href=@ld_images[0].image
+          img src=@ld_images[0].image.url(:large)
+      ul#louver_door_slider
+        -@ld_images.each do |l|
+          li
+            a href=l.image.url(:large)
+              img src=l.image.url(:small)
+            a.fancybox data-fancybox-group="ld" rel="ld" href=l.image
+  .large-8.columns
+    .d_v_content
+      h1 =@louver_door[0].title
+      p = raw @louver_door[0].description
 
-          .order_product_wrapper
-            a.order_product.link-to-form.fancybox href="#order-call-d-v" rel="order-call-d-v"
-              |Замовити
+      .order_product_wrapper
+        a.order_product.link-to-form.fancybox href="#order-call-d-v" rel="order-call-d-v"
+          |Замовити
 
 .row.dn
   .sel-part-wrap

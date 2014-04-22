@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140325085716) do
+ActiveRecord::Schema.define(version: 20140416124912) do
 
   create_table "banners", force: true do |t|
     t.text     "title"
@@ -175,6 +175,38 @@ ActiveRecord::Schema.define(version: 20140325085716) do
 
   create_table "harakterystykies", force: true do |t|
     t.integer  "dveri_id"
+    t.text     "operation"
+    t.text     "specifications"
+    t.text     "warranty"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "louvre_doors", force: true do |t|
+    t.string   "title"
+    t.integer  "order"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "louvre_doors_images", force: true do |t|
+    t.integer  "louvre_doors_id"
+    t.string   "title"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "louvre_doors_infos", force: true do |t|
+    t.integer  "louvre_doors_id"
     t.text     "operation"
     t.text     "specifications"
     t.text     "warranty"

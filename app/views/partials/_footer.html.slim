@@ -63,151 +63,33 @@
             .clearfix
   .row
     .footer-bottom
-      .large-5.columns
-        .large-3.columns
-          img src=asset_path("Voronin logo.svg")
-        .large-9.columns
-          p
-            span
-              |Розроблено в дизайн студії Миколи Вороніна
-            span
-              |2014 р. Інформація про сайт.
+      .columns.large-5.left
+        ul.voronin-block-wrap
+          li.vbw-image
+            a href="http://voroninstudio.eu/"
+              svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="52px" height="55px" viewBox="0 0 52 55" enable-background="new 0 0 52 55" xml:space="preserve"
+                g
+                  g
+                    path fill="#CBCBCB" d="M33.146,33.782c-0.068,0.039-0.126,0.073-0.176,0.103c3.201,1.559,8.311,3.211,13.26,3.329c1.355-2.407,2.599-4.907,3.449-7.581c-4.572,1.977-9.493,2.792-14.729,3.04C34.358,33.058,33.757,33.427,33.146,33.782z"
+                    path fill="#CBCBCB" d="M37.849,30.602c4.668-0.753,9.847-2.614,12.758-4.483c0.736-3.134,1.131-6.399,1.131-9.758c0-1.411-0.07-2.806-0.205-4.182C48.729,19.514,43.95,25.866,37.849,30.602z"
+                    path fill="#CBCBCB" d="M45.348,38.45c-5.48,0-10.719-1.038-15.529-2.928c-2.884-1.132-5.612-2.57-8.149-4.275c-0.021-0.015-0.044-0.028-0.065-0.043C11.376,24.302,4.314,13.066,3.052,0.131c-1.8,4.71-2.789,9.821-2.789,15.165c0,0.745,0.02,1.486,0.057,2.222c0.027,0.521,0.066,1.037,0.112,1.554c0.147,1.675,0.374,3.368,0.729,5.023c0.105,0.488,0.055,0.303,0.105,0.488c2.988,3.141,9.128,7.002,10.672,8.105c-1.575-0.314-7.415-3.135-9.733-4.668c1.332,4.25,3.327,8.459,6.011,12.029c1.926,0.816,5.661,2.653,6.985,3.102c-1.703-0.165-4.077-0.846-5.617-1.299c4.439,5.539,10.235,9.943,16.885,12.706c0.255,0.105,0.51,0.211,0.767,0.312c1.246-0.584,2.459-1.226,3.636-1.923c6.002-3.557,11.055-8.546,14.684-14.5C45.485,38.447,45.417,38.45,45.348,38.45z"
+          li.vbw-text
+            p
+              |Зроблено&nbsp;
+              a href="http://voroninstudio.eu/"
+                |дизайн студією Миколи Вороніна&nbsp;
+              |в 2014р.
+            p
+              a href="http://voroninstudio.eu/" Інформація про сайт
       .large-5.columns.push-2.left
-        p
-          span
-            |© WoodTechnic 2014р.
-          span
-            |Всі права застережено.
+        .frt
+          p
+            |© WoodTechnic 2014р. Всі права застережено.
+          p
             a
               |Правила користування сайтом.
       .clearfix
-div style="display: none"
-  div id="order-call"  rel="order-call"
-    .call-order-form-header
-      .large-10.columns
-        .columns.large-12
-          h1
-            |ФОРМА ЗАМОВЛЕННЯ ДЗВІНКА
-      .clearfix
-    .row
-      .columns.large-12
-        .status-message.dn
-          h4
-            |Ваше повідомлення успішно відправлене!
-    .row
-      .contacts-form.call-order-form.order-call-d-v-form
-        form action="/call_order" method="POST" id="call_order_form" class=" form-horizontal"
-          .columns.large-12
-            .columns.large-6
-              label for="name"
-                |Ваше ім'я:
-              input.name#name name="call_order[name]" placeholder="Воронін Микола Валерійович"
 
-              label for="phone"
-                |Контактний телефон
-              input#phone name="call_order[phone]" placeholder="+38 (050) 417 07 28"
-
-              label for="email"
-                |Електронна скринька:
-              input#email name="call_order[email]" placeholder="voronin.nick@gmail.com"
-
-              label.label-padding.time-label
-                |Зручний час дзвінка
-              .row
-                .select-time
-                  .columns.large-5
-                    label.label-time for="time_from"
-                      |з
-                    select#time_from name="call_order[time_from]"
-                      option value="08:00"
-                        |08:00
-                      option value="09:00"
-                        |09:00
-                      option value="10:00"
-                        |10:00
-                      option value="11:00"
-                        |11:00
-                      option value="12:00"
-                        |12:00
-                      option value="13:00"
-                        |13:00
-                      option value="14:00"
-                        |14:00
-                      option value="15:00"
-                        |15:00
-                      option value="16:00"
-                        |16:00
-                      option value="17:00"
-                        |17:00
-                      option value="18:00"
-                        |18:00
-
-                  .columns.large-5.left
-                    label.label-time for="time_to"
-                      |до
-                    select#time_to name="call_order[time_to]"
-                      option value="09:00"
-                        |09:00
-                      option value="10:00"
-                        |10:00
-                      option value="11:00"
-                        |11:00
-                      option value="12:00"
-                        |12:00
-                      option value="13:00"
-                        |13:00
-                      option value="14:00"
-                        |14:00
-                      option value="15:00"
-                        |15:00
-                      option value="16:00"
-                        |16:00
-                      option value="17:00"
-                        |17:00
-                      option value="18:00"
-                        |18:00
-                      option value="19:00"
-                        |19:00
-            .columns.large-6
-              label for="message"
-                |Текст повідомлення:
-              textarea#message.call_order_textarea type="text" name="call_order[message]" placeholder="Будемо раді почути відгуки та запитання від Вас."
-
-              .form-actions.right
-                button#submit type="submit" class="btn btn-primary"
-                  |НАДІСЛАТИ
-            .clearfix
-        .clearfix
-      .clearfix
-
-
-
-/= simple_form_for get_order, :html => {:class => 'form-horizontal' },:url => root_path do |f|
-/
-/  .columns.large-6.form-horizontal-left
-/    = f.label :"Ваше ім'я:", :for=>"contact_name"
-/    = f.input :name, :required => true, placeholder: 'Воронін Микола Валерійович', :label=>false, :class=>" name"
-/
-/    = f.label :"Контактний телефон:", :for=>"contact_phone"
-/    = f.input :phone, :required => true, placeholder: '+38 (050) 417 07 28', :label=>false
-/
-/    = f.label :"Електронна скринька:", :for=>"contact_email"
-/    = f.error_notification
-/    = f.input :email, :required => false, placeholder: 'voronin.nick@gmail.com', :label=>false
-/
-/    = f.label :"Зручний час дзвінка:", :class=> "label-padding"
-/    .columns.large-6
-/      = f.label :"з", :class=> "label-time", :for=>"contact_time_from"
-/      = f.input :time_from, collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], prompt: "08:00", :label=>false
-/    .columns.large-6
-/      = f.label :"до", :class=> "label-time", :for=>"contact_time_to"
-/      = f.input :time_to, collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], prompt: "21:00", :label=>false
-/
-/  .columns.large-6.form-horizontal-right
-/    = f.label :"Текст повідомлення:", :for=>"contact_message"
-/    = f.input :message, :as => :text, :required => false, placeholder: 'Будемо раді почути відгуки та запитання від Вас.', :label=>false
-/
-/    .form-actions.right
-/      = f.button :submit, 'НАДІСЛАТИ', :class=> "btn btn-primary"
+=render :partial => 'partials/call_order_form'
 
 

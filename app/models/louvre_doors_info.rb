@@ -1,11 +1,10 @@
-class Harakterystyky < ActiveRecord::Base
-  attr_accessible :door_id, :operation, :specifications, :warranty
+class LouvreDoorsInfo < ActiveRecord::Base
+  attr_accessible :louvre_doors_id, :operation, :specifications, :warranty
 
-  belongs_to :dveri
+  belongs_to :louvre_doors
 
   rails_admin do
-    #visible false
-    parent Dveri
+    parent LouvreDoors
     label 'Характеристика'
     label_plural 'Характеристики'
 
@@ -17,10 +16,13 @@ class Harakterystyky < ActiveRecord::Base
 
     edit do
       field :operation, :ck_editor do
+
       end
       field :specifications, :ck_editor do
+
       end
       field :warranty, :ck_editor do
+
       end
     end
   end

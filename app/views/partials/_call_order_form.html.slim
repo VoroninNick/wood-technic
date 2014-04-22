@@ -1,0 +1,99 @@
+div style="display: none"
+  div id="order-call" rel="order-call"
+    .call-order-form-header
+      .large-10.columns
+        .columns.large-12
+          h1
+            |ФОРМА ЗАМОВЛЕННЯ ДЗВІНКА
+      .clearfix
+    .row
+      .columns.large-12
+        .status-message.dn
+          h4
+            |Ваше повідомлення успішно відправлене!
+    .row
+      .contacts-form.call-order-form.order-call-d-v-form
+        form action="/call_order" method="POST" id="call_order_form" class=" form-horizontal"
+          .columns.large-12
+            .columns.large-6
+              .input_field
+                label for="name"
+                  |Ваше ім'я:
+                input.name#name name="call_order[name]" placeholder="Воронін Микола Валерійович" data-validation="length" data-validation-length="3-30" data-validation-error-msg="Введіть ваше ім'я"
+              .input_field
+                label for="phone"
+                  |Контактний телефон
+                input#phone name="call_order[phone]" placeholder="050 417 07 28" data-validation="length number" data-validation-length="10" data-validation-error-msg="Введіть номер телефону"
+              .input_field
+                label for="email"
+                  |Електронна скринька:
+                input#email name="call_order[email]" placeholder="voronin.nick@gmail.com" data-validation="email" data-validation-error-msg="Введіть правильний email"
+
+              label.label-padding.time-label
+                |Зручний час дзвінка
+              .row
+                .select-time
+                  .columns.large-5
+                    label.label-time for="time_from"
+                      |з
+                    select#time_from name="call_order[time_from]"
+                      option value="08:00"
+                        |08:00
+                      option value="09:00"
+                        |09:00
+                      option value="10:00"
+                        |10:00
+                      option value="11:00"
+                        |11:00
+                      option value="12:00"
+                        |12:00
+                      option value="13:00"
+                        |13:00
+                      option value="14:00"
+                        |14:00
+                      option value="15:00"
+                        |15:00
+                      option value="16:00"
+                        |16:00
+                      option value="17:00"
+                        |17:00
+                      option value="18:00"
+                        |18:00
+
+                  .columns.large-5.left
+                    label.label-time for="time_to"
+                      |до
+                    select#time_to name="call_order[time_to]"
+                      option value="09:00"
+                        |09:00
+                      option value="10:00"
+                        |10:00
+                      option value="11:00"
+                        |11:00
+                      option value="12:00"
+                        |12:00
+                      option value="13:00"
+                        |13:00
+                      option value="14:00"
+                        |14:00
+                      option value="15:00"
+                        |15:00
+                      option value="16:00"
+                        |16:00
+                      option value="17:00"
+                        |17:00
+                      option value="18:00"
+                        |18:00
+                      option value="19:00"
+                        |19:00
+            .columns.large-6
+              label for="message"
+                |Текст повідомлення:
+              textarea#message.call_order_textarea type="text" name="call_order[message]" placeholder="Будемо раді почути відгуки та запитання від Вас."
+
+              .form-actions.right
+                button#submit type="submit" class="btn btn-primary"
+                  |НАДІСЛАТИ
+            .clearfix
+        .clearfix
+      .clearfix

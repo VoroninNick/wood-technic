@@ -16,47 +16,28 @@
         li
           =link_to 'мдф', mdf_path
 .row
-  .large-4.columns
-    .d_v_image
-      img src=asset_path("Blinds-2.jpg")
-  .large-8.columns
-    .d_v_content
-      h1
-        |ЖАЛЮЗІЙНІ ДВЕРЦЯТА
-      p
-        |Дверцята жалюзійні стали досить популярні в Європі ще в середині 19 століття. Їх як правило використовували в якості ставень на вікна. Пізніше в процесі еволюції їх почали використовувати в облаштуванні інтер’єру в якості меблевих фасадів, перегородок, ширм. І за досить короткий період вони набули надзвичайної популярності і в Україні. Тож якщо ви бажайте внести в свою оселю частинку природи, поставити оригінальні акценти чи просто відгородити непотрібні площі дверцята жалюзійні – саме для вас.
-      /h1
-      /  |Палітра доступних кольорів
-      /ul.palette_colors
-      /  li.palette-item
-      /    img src=asset_path("wenge.png")
-      /    h4
-      /      |Венге
-      /  li.palette-item
-      /    img src=asset_path("vilha.png")
-      /    h4
-      /      |Вільха
-      /  li.palette-item
-      /    img src=asset_path("gorih.png")
-      /    h4
-      /      |Горіх
-      /  li.palette-item
-      /    img src=asset_path("dub.png")
-      /    h4
-      /      |Каштан
-      /  li.palette-item
-      /    img src=asset_path("mahagon.png")
-      /    h4
-      /      |Дуб
-      /  li.palette-item
-      /    img src=asset_path("jablunia.png")
-      /    h4
-      /      |Білений дуб
-      /  .clearfix
-      /.clearfix
-      .order_product_wrapper
-        a.order_product.link-to-form.fancybox href="#order-call-d-v" rel="order-call-d-v"
-          |Замовити
+  -if @louver_door
+    -@louver_door.each do |l|
+      .large-4.columns
+        .d_v_image
+          -if l.louvre_doors_images
+            a.fancybox data-fancybox-group="ld" rel="ld" href=l.louvre_doors_images[0].image
+              img src=l.louvre_doors_images[0].image.url(:large)
+        -if l.louvre_doors_images
+          ul#louver_door_slider
+            -l.louvre_doors_images.each do |li|
+              li
+                a href=li.image.url(:large)
+                  img src=li.image.url(:small)
+                a.fancybox data-fancybox-group="ld" rel="ld" href=li.image
+      .large-8.columns
+        .d_v_content
+          h1 =l.title
+          p = raw l.description
+
+          .order_product_wrapper
+            a.order_product.link-to-form.fancybox href="#order-call-d-v" rel="order-call-d-v"
+              |Замовити
 
 .row.dn
   .sel-part-wrap
@@ -123,303 +104,40 @@
             label for="d_v_rez"
               |Ціна:
             input#d_v_rez type="text" placeholder="360 грн."
-.row.dn
-  .info-part-wrap
-    .columns.large-10.push-1
-      .columns.large-6.no-padding-left
-        p
-          label for="d_v_name"
-            |Ваше ім’я
-          input#d_v_name type="text" placeholder="Воронін Микола Валерійович"
-        p
-          label for="d_v_phone"
-            |Контактний телефон
-          input#d_v_phone type="text" placeholder="+38 (050) 417 07 28"
-        p
-          label for="d_v_email"
-            |Електронна скринька
-          input#d_v_email type="text" placeholder="voronin.nick@gmail.com"
-        .d-v-time
-          span
-            |Зручний час дзвінка:
-          .d-v-time-left
-            label for="d_v_time_from"
-              |з
-            select#d_v_time_from
-              option value="09:00"
-                |09:00
-              option value="10:00"
-                |10:00
-              option value="11:00"
-                |11:00
-              option value="12:00"
-                |12:00
-              option value="13:00"
-                |13:00
-              option value="14:00"
-                |14:00
-              option value="15:00"
-                |15:00
-              option value="16:00"
-                |16:00
-              option value="17:00"
-                |17:00
-              option value="18:00"
-                |18:00
 
-          .d-v-time-right
-            label for="d_v_time_to"
-              |до
-            select#d_v_time_to
-              option value="10:00"
-                |10:00
-              option value="11:00"
-                |11:00
-              option value="12:00"
-                |12:00
-              option value="13:00"
-                |13:00
-              option value="14:00"
-                |14:00
-              option value="15:00"
-                |15:00
-              option value="16:00"
-                |16:00
-              option value="17:00"
-                |17:00
-              option value="18:00"
-                |18:00
-              option value="19:00"
-                |19:00
-            .clearfix
-      .columns.large-6.no-padding-right
-        p
-          label for="d_v_message"
-            |Текст повідомлення
-          textarea#d_v_message type="text" placeholder="Зателефонуйте мені будь-ласка. є декілька питань, щодо покупки..."
-        .form-actions.right
-          button#d_v_submit type="submit"
-            |Замовити
-
-
+= render :partial => 'partials/order_louver_door'
 .row
   .door-info.door-louver-tabs-wrapper
-    #tab-container.tab-container
-      ul.etabs.header-box-shadow-right-bottom
-        li.tab
-          a href="#tab-th"
-            |Експлуатуція
-        li.tab
-          a href="#tab-d"
-            | Технічні характеристики
-        li.tab
-          a href="#tab-ug"
-            |Гарантія
-      #tab-th.tab-content.header-box-shadow-right-bottom
-        .tab-content-inner
-          .large-10.columns.push-1
-            h1
-              |Рекомендації по експлуатації
-            p
-              |Дверні полотна  Woodtechniс™ використовуються у приміщеннях з «сухими» режимами,  відносною вологістю не більше 60%  при температурі від +5° до + 40° C. У процесі експлуатації слід уникати механічних, хімічних та термічних  впливів, які можуть призвести до пошкодження полотна та коробки дверного блоку а також лиштви. Задля запобігання пошкодження лакофарбового покриття дверей, коробки та лиштви мити двері водяними та мильними засобами забороняється.  Для догляду за дверима використовуються всі типи  спеціальних  аерозольних засобів по догляду за дерев’яними меблями.
-          .tab-bottom-line
-          .clearfix
-      .clearfix
-      #tab-d.tab-content.header-box-shadow-right-bottom
-        .tab-content-inner
-          .large-10.columns.push-1
-            h1
-              |Таблиця розмірів
-            table
-              thead
-                tr
-                  th width="92"
-                    |мм
-                  th.tbg.tbgr width="92"
-                    |395
-                  th.tbg.tbgr
-                    |606
-                  th.tbg.tbgr
-                    |720
-                  th.tbg.tbgr
-                    |993
-                  th.tbg.tbgr
-                    |1100
-                  th.tbg.tbgr
-                    |1400
-                  th.tbg.tbgr
-                    |1700
-                  th.tbg.tbgr
-                    |2013
-                  th.tbg
-                    |2422
-
-
-              tbody
-                tr
-                  td.tbg.tbgl
-                    |294
-                  td
-                    |30грн
-                  td
-                    |45грн
-                  td
-                    |53грн
-                  td
-                    |73грн
-                  td
-                    |81грн
-                  td
-                    |103грн
-                  td
-                    |125грн
-                  td
-                    |148грн
-                  td
-                    |178грн
-                tr
-                  td.tbg.tbgl
-                    |394
-                  td
-                    |39грн
-                  td
-                    |60грн
-                  td
-                    |71грн
-                  td
-                    |98грн
-                  td
-                    |108грн
-                  td
-                    |138грн
-                  td
-                    |167грн
-                  td
-                    |198грн
-                  td
-                    |239грн
-                tr
-                  td.tbg.tbgl
-                    |494
-                  td
-                    |48грн
-                  td
-                    |75грн
-                  td
-                    |89грн
-                  td
-                    |123грн
-                  td
-                    |136грн
-                  td
-                    |173грн
-                  td
-                    |210грн
-                  td
-                    |249грн
-                  td
-                    |299грн
-                tr
-                  td.tbg.tbgl
-                    |594
-                  td
-                    |59грн
-                  td
-                    |90грн
-                  td
-                    |107грн
-                  td
-                    |148грн
-                  td
-                    |163грн
-                  td
-                    |208грн
-                  td
-                    |252грн
-                  td
-                    |299грн
-                  td
-                    |360грн
-            .mi
-              ul
-                li
-                  |Використовуються для виготовлення меблів;
-                li
-                  |Забезпечують вільну циркуляцію повітря;
-                li
-                  |Рекомендуються для облаштування радіаторів та обігрівачів;
-                li
-                  |Готові до лакування чи бейцування.
-          .tab-bottom-line
-          .clearfix
-      .clearfix
-      #tab-ug.tab-content.header-box-shadow-right-bottom
-        .tab-content-inner
-          .large-10.columns.push-1
-            h1
-              |Умови гарантії
-            p
-              |Гарантійний термін експлуатації дверей, виробництва компанії Woodtechniс™ — 5 років  від дати виготовлення при умові правильного зберігання, правильного монтажу і правильної  експлуатації у відповідності до чинних стандартів, нормативних документів та чинного законодавства України. Зовнішній вигляд виробів, комплектність (згідно з умовами купівлі), повинні перевірятись покупцем у момент купівлі  та отримання дверей (дверної коробки, лиштви). Гарантійний термін зберігання невстановлених дверних полотен складає 12 місяців від дати виготовлення, при умові зберігання продукції згідно з ДСТУ Б В.2.6-99:2009 (EN 14351-1:2006, NEQ) БЛОКИ ДВЕРНІ ДЕРЕВ'ЯНІ  Загальні технічні умови. Для пред’явлення претензій на товар необхідно подати справжню «Інструкцію з транспортування, зберігання, монтажу та експлуатації міжкімнатних дверей Woodtechniс™», копію товарного чеку та письмову заяву. Виробник не відповідає за недоліки товару, які виникли після передачі товару споживачеві і які виникли внаслідок порушення правил зберігання, монтажу і експлуатації у відповідності до чинних стандартів, нормативних документів  та чинного законодавства України.
-          .tab-bottom-line
-          .clearfix
-      .clearfix
-div style="display: none"
-  div id="order-call-d-v"  rel="order-call-d-v"
-    .call-order-form-header
-      .large-10.columns
-        h1
-          |ФОРМА ЗАМОВЛЕННЯ ЖАЛЮЗІЙНИХ ДВЕРЦЯТ
-      .clearfix
-    .row
-      .contacts-form.call-order-form.order-call-d-v-form
-        = simple_form_for @order_door_louver, :html => {:class => 'form-horizontal' },:url => door_louver_path do |f|
-          .columns.large-6
-            = f.label :"Колір:", :class=> "label-padding label-collection", :for=>"contact_phone"
-            = f.input :color, :class=> " color-collection", collection: [ "Венге", "Вільха", "Горіх","Каштан","Дуб","Білений дуб"], prompt: "Венге", :label=>false
-          .columns.large-6
-            .columns.large-6.ff
-              = f.label :"Ширина:", :class=> "label-padding", :for=>"width"
-              = f.input :width, collection: [ "294", "394", "494","594"], prompt: "294", :label=>false
-            .columns.large-6.ff
-              = f.label :"Висота:", :class=> "label-padding", :for=>"height"
-              = f.input :height, collection: [ "395", "606", "720","993","1100","1400","1700","2013","2422"], prompt: "395", :label=>false
-
-            .columns.large-6.ff
-              = f.label :"Кількість:", :class=> "label-padding", :for=>"count"
-              = f.input :count, :required => true, :label=>false
-            .columns.large-6.ff
-              = f.label :"Ціна:", :class=> "label-padding", :for=>"price"
-              = f.input :price, :required => true, :label=>false
-
-          .columns.large-6.form-horizontal-left
-            = f.label :"Ваше ім'я:", :for=>"contact_name"
-            = f.input :name, :required => true, placeholder: 'Воронін Микола Валерійович', :label=>false, :class=>" name"
-
-            = f.label :"Контактний телефон:", :for=>"contact_phone"
-            = f.input :phone, :required => true, placeholder: '+38 (050) 417 07 28', :label=>false
-
-            = f.label :"Електронна скринька:", :for=>"contact_email"
-            = f.error_notification
-            = f.input :email, :required => false, placeholder: 'voronin.nick@gmail.com', :label=>false
-
-            = f.label :"Зручний час дзвінка:", :class=> "label-padding"
-            .columns.large-6
-              = f.label :"з", :class=> "label-time", :for=>"contact_time_from"
-              = f.input :time_from, collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], prompt: "08:00", :label=>false
-            .columns.large-6
-              = f.label :"до", :class=> "label-time", :for=>"contact_time_to"
-              = f.input :time_to, collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], prompt: "21:00", :label=>false
-
-          .columns.large-6.form-horizontal-right
-            = f.label :"Текст повідомлення:", :for=>"contact_message"
-            = f.input :message, :as => :text, :required => false, placeholder: 'Будемо раді почути відгуки та запитання від Вас.', :label=>false
-
-            .form-actions.right
-              = f.button :submit, 'НАДІСЛАТИ', :class=> "btn btn-primary"
+    -@louver_door.each do |l|
+      #tab-container.tab-container
+        ul.etabs.header-box-shadow-right-bottom
+          li.tab
+            a href="#tab-th"
+              |Експлуатуція
+          li.tab
+            a href="#tab-d"
+              | Технічні характеристики
+          li.tab
+            a href="#tab-ug"
+              |Гарантія
+        #tab-th.tab-content.header-box-shadow-right-bottom
+          .tab-content-inner
+            = raw l.louvre_doors_info.operation
+            .tab-bottom-line
+            .clearfix
         .clearfix
-
-
-
+        #tab-d.tab-content.header-box-shadow-right-bottom
+          .tab-content-inner
+            = raw l.louvre_doors_info.specifications
+            .tab-bottom-line
+            .clearfix
+        .clearfix
+        #tab-ug.tab-content.header-box-shadow-right-bottom
+          .tab-content-inner
+            = raw l.louvre_doors_info.warranty
+            .tab-bottom-line
+            .clearfix
+        .clearfix
 
 
 

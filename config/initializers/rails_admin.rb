@@ -31,4 +31,10 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+  # config.model 'LouvreDoors' do
+  #   navigation_label 'Продукція'
+  # end
+  # config.model 'LouvreDoorsImage' do
+  #   parent LouvreDoors
+  # end
 end

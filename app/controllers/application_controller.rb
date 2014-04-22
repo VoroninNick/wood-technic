@@ -11,6 +11,12 @@ class ApplicationController < ActionController::Base
     return @call_order
   end
 
+  helper_method :all_doors
+
+  def all_doors
+    @m = Dveri.all
+    return @m
+  end
   #helper_method :callorder
   #
   #def callorder

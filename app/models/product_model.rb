@@ -13,7 +13,7 @@ class ProductModel < ActiveRecord::Base
   has_many :dveris
 
   rails_admin do
-    navigation_label 'Продукція'
+    parent Dveri
     label 'Модель'
     label_plural 'Моделі'
 

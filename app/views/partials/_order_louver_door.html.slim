@@ -1,133 +1,152 @@
-div style="display: none"
-  div id="order-call-d-v" rel="order-call-d-v"
+div id="order-louver-form" class="reveal-modal xlarge" data-reveal=""
+  .fbt
+  .rmw
+    .ph
     .call-order-form-header
-      .large-10.columns
-        h1
-          |ФОРМА ЗАМОВЛЕННЯ ЖАЛЮЗІЙНИХ ДВЕРЦЯТ
-      .clearfix
-    .row
-      .info-part-wrap
+      .row
         .columns.large-10.push-1
-          .columns.large-6.no-padding-left
-            .input_filed
-              label for="d_v_name"
-                |Ваше ім’я
-              input#d_v_name type="text" placeholder="Воронін Микола Валерійович" data-validation="length" data-validation-length="3-30" data-validation-error-msg="Введіть ваше ім'я"
-            .input_filed
-              label for="d_v_phone"
-                |Контактний телефон
-              input#d_v_phone type="text" placeholder="050 417 07 28" data-validation="length number" data-validation-length="10" data-validation-error-msg="Введіть номер телефону"
-            .input_filed
-              label for="d_v_email"
-                |Електронна скринька
-              input#d_v_email type="text" placeholder="voronin.nick@gmail.com" data-validation="email" data-validation-error-msg="Введіть правильний email"
-            .d-v-time
-              span
-                |Зручний час дзвінка:
-              .d-v-time-left
-                label for="d_v_time_from"
-                  |з
-                select#d_v_time_from
-                  option value="09:00"
-                    |09:00
-                  option value="10:00"
-                    |10:00
-                  option value="11:00"
-                    |11:00
-                  option value="12:00"
-                    |12:00
-                  option value="13:00"
-                    |13:00
-                  option value="14:00"
-                    |14:00
-                  option value="15:00"
-                    |15:00
-                  option value="16:00"
-                    |16:00
-                  option value="17:00"
-                    |17:00
-                  option value="18:00"
-                    |18:00
+          h1
+            |ФОРМА ЗАМОВЛЕННЯ ЖАЛЮЗІЙНИХ ДВЕРЦЯТ
+          a.close-reveal-modal
+            svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="41px" height="41px" viewBox="0 0 41 41" enable-background="new 0 0 41 41" xml:space="preserve"
+              rect x="0.5" y="0.5" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" width="40" height="40"
+              line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="10.101" y1="10" x2="31.101" y2="31"
+              line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="30" y1="10" x2="9" y2="31"
+      .clearfix
 
-              .d-v-time-right
-                label for="d_v_time_to"
-                  |до
-                select#d_v_time_to
-                  option value="10:00"
-                    |10:00
-                  option value="11:00"
-                    |11:00
-                  option value="12:00"
-                    |12:00
-                  option value="13:00"
-                    |13:00
-                  option value="14:00"
-                    |14:00
-                  option value="15:00"
-                    |15:00
-                  option value="16:00"
-                    |16:00
-                  option value="17:00"
-                    |17:00
-                  option value="18:00"
-                    |18:00
-                  option value="19:00"
-                    |19:00
-                .clearfix
-          .columns.large-6.no-padding-right
-            .input_field
-              label for="d_v_message"
-                |Текст повідомлення
-              textarea#d_v_message type="text" placeholder="Зателефонуйте мені будь-ласка. є декілька питань, щодо покупки..."
-            .form-actions.right
-              button#d_v_submit type="submit"
-                |Замовити
-    /.row
-    /  .contacts-form.call-order-form.order-call-d-v-form
-    /    = simple_form_for @order_door_louver, :html => {:class => 'form-horizontal' },:url => door_louver_path do |f|
-    /      .columns.large-6
-    /        = f.label :"Колір:", :class=> "label-padding label-collection", :for=>"contact_phone"
-    /        = f.input :color, :class=> " color-collection", collection: [ "Венге", "Вільха", "Горіх","Каштан","Дуб","Білений дуб"], prompt: "Венге", :label=>false
-    /      .columns.large-6
-    /        .columns.large-6.ff
-    /          = f.label :"Ширина:", :class=> "label-padding", :for=>"width"
-    /          = f.input :width, collection: [ "294", "394", "494","594"], prompt: "294", :label=>false
-    /        .columns.large-6.ff
-    /          = f.label :"Висота:", :class=> "label-padding", :for=>"height"
-    /          = f.input :height, collection: [ "395", "606", "720","993","1100","1400","1700","2013","2422"], prompt: "395", :label=>false
-    /
-    /        .columns.large-6.ff
-    /          = f.label :"Кількість:", :class=> "label-padding", :for=>"count"
-    /          = f.input :count, :required => true, :label=>false
-    /        .columns.large-6.ff
-    /          = f.label :"Ціна:", :class=> "label-padding", :for=>"price"
-    /          = f.input :price, :required => true, :label=>false
-    /
-    /      .columns.large-6.form-horizontal-left
-    /        = f.label :"Ваше ім'я:", :for=>"contact_name"
-    /        = f.input :name, :required => true, placeholder: 'Воронін Микола Валерійович', :label=>false, :class=>" name"
-    /
-    /        = f.label :"Контактний телефон:", :for=>"contact_phone"
-    /        = f.input :phone, :required => true, placeholder: '+38 (050) 417 07 28', :label=>false
-    /
-    /        = f.label :"Електронна скринька:", :for=>"contact_email"
-    /        = f.error_notification
-    /        = f.input :email, :required => false, placeholder: 'voronin.nick@gmail.com', :label=>false
-    /
-    /        = f.label :"Зручний час дзвінка:", :class=> "label-padding"
-    /        .columns.large-6
-    /          = f.label :"з", :class=> "label-time", :for=>"contact_time_from"
-    /          = f.input :time_from, collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], prompt: "08:00", :label=>false
-    /        .columns.large-6
-    /          = f.label :"до", :class=> "label-time", :for=>"contact_time_to"
-    /          = f.input :time_to, collection: [ "08:00", "09:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"], prompt: "21:00", :label=>false
-    /
-    /      .columns.large-6.form-horizontal-right
-    /        = f.label :"Текст повідомлення:", :for=>"contact_message"
-    /        = f.input :message, :as => :text, :required => false, placeholder: 'Будемо раді почути відгуки та запитання від Вас.', :label=>false
-    /
-    /        .form-actions.right
-    /          = f.button :submit, 'НАДІСЛАТИ', :class=> "btn btn-primary"
-    /    .clearfix
-    /
-    /
+      .row
+        .columns.large-10.push-1
+          .status-message.dn
+            h4
+              |Ваше повідомлення успішно відправлене!
+    form#order-enter-door action="/order_enter_door" method="POST"
+      .ph
+      .lf_header
+        .row
+          .columns.large-10.push-1
+            .large-3.columns.no-padd-left
+              .input_filed
+                label for="#d_v_width"
+                  |Ширина:
+                select#d_v_width
+                  option value="294 мм."
+                    |294 мм.
+                  option value="394 мм."
+                    |394 мм.
+                  option value="494 мм."
+                    |494 мм.
+                  option value="594 мм."
+                    |594 мм.
+            .large-3.columns
+              .input_field
+                label for="d_v_height"
+                  |Висота:
+                select#d_v_height
+                  option value="395 мм."
+                    |395 мм.
+                  option value="606 мм."
+                    |606 мм.
+                  option value="720 мм."
+                    |720 мм.
+                  option value="993 мм."
+                    |993 мм.
+                  option value="1100 мм."
+                    |1100 мм.
+                  option value="1400 мм."
+                    |1400 мм.
+                  option value="1700 мм."
+                    |1700 мм.
+                  option value="2013 мм."
+                    |2013 мм.
+                  option value="2422 мм."
+                    |2422 мм.
+            .large-3.columns
+              .input_field
+                label for="d_v_count"
+                  |Кількість:
+                input#d_v_count type="text" placeholder="11 шт."
+            .large-3.columns.no-padd-right
+              .input_field
+                label for="d_v_suma"
+                  |Ціна:
+                input#d_v_suma type="text"
+      .ph
+      .row
+        .info-part-wrap
+          .columns.large-10.push-1
+            .columns.large-6.no-padding-left
+              .input_filed
+                label for="d_v_name"
+                  |Ваше ім’я
+                input#d_v_name type="text" placeholder="Воронін Микола Валерійович" data-validation="length" data-validation-length="3-30" data-validation-error-msg="Введіть ваше ім'я"
+              .input_filed
+                label for="d_v_phone"
+                  |Контактний телефон
+                input#d_v_phone type="text" placeholder="050 417 07 28" data-validation="length number" data-validation-length="10" data-validation-error-msg="Введіть номер телефону"
+              .input_filed
+                label for="d_v_email"
+                  |Електронна скринька
+                input#d_v_email type="text" placeholder="voronin.nick@gmail.com" data-validation="email" data-validation-error-msg="Введіть правильний email"
+              .d-v-time
+                span
+                  |Зручний час дзвінка:
+                .d-v-time-left
+                  label for="d_v_time_from"
+                    |з
+                  select#d_v_time_from
+                    option value="09:00"
+                      |09:00
+                    option value="10:00"
+                      |10:00
+                    option value="11:00"
+                      |11:00
+                    option value="12:00"
+                      |12:00
+                    option value="13:00"
+                      |13:00
+                    option value="14:00"
+                      |14:00
+                    option value="15:00"
+                      |15:00
+                    option value="16:00"
+                      |16:00
+                    option value="17:00"
+                      |17:00
+                    option value="18:00"
+                      |18:00
+
+                .d-v-time-right
+                  label for="d_v_time_to"
+                    |до
+                  select#d_v_time_to
+                    option value="10:00"
+                      |10:00
+                    option value="11:00"
+                      |11:00
+                    option value="12:00"
+                      |12:00
+                    option value="13:00"
+                      |13:00
+                    option value="14:00"
+                      |14:00
+                    option value="15:00"
+                      |15:00
+                    option value="16:00"
+                      |16:00
+                    option value="17:00"
+                      |17:00
+                    option value="18:00"
+                      |18:00
+                    option value="19:00"
+                      |19:00
+                  .clearfix
+            .columns.large-6.no-padding-right
+              .input_field
+                label for="d_v_message"
+                  |Текст повідомлення
+                textarea#d_v_message type="text" placeholder="Зателефонуйте мені будь-ласка. є декілька питань, щодо покупки..."
+              .form-actions.right
+                button#d_v_submit type="submit"
+                  |Замовити
+      .ph
+  .fbb

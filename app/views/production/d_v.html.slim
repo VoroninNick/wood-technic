@@ -33,74 +33,8 @@
       p = raw @louver_door[0].description
 
       .order_product_wrapper
-        a.order_product.link-to-form.fancybox href="#order-call-d-v" rel="order-call-d-v"
+        a.order_product.link-to-form.link-to-order-louver href="#order-louver-form"
           |Замовити
-
-.row.dn
-  .sel-part-wrap
-    .columns.large-10.push-1
-      .columns.large-5.no-padding-left
-        p
-          label for="d_v_color"
-            |Колір:
-          select#d_v_color name="d_v_color"
-            option value="Венге"
-              |Венге
-            option value="Вільха"
-              |Вільха
-            option value="Горіх"
-              |Горіх
-            option value="Каштан"
-              |Каштан
-            option value="Дуб"
-              |Дуб
-            option value="Білений дуб"
-              |Білений дуб
-      .columns.large-5.no-padding-right
-        .d-v-left-part
-          p
-            label for="d_v_width"
-              |Ширина:
-            select#d_v_width
-              option value="294 мм."
-                |294 мм.
-              option value="394 мм."
-                |394 мм.
-              option value="494 мм."
-                |494 мм.
-              option value="594 мм."
-                |594 мм.
-          p
-            label for="d_v_count"
-              |Кількість:
-            input#d_v_count type="text" placeholder="11 шт."
-        .d-v-right-part
-          p
-            label for="d_v_height"
-              |Висота:
-            select#d_v_height
-              option value="395 мм."
-                |395 мм.
-              option value="606 мм."
-                |606 мм.
-              option value="720 мм."
-                |720 мм.
-              option value="993 мм."
-                |993 мм.
-              option value="1100 мм."
-                |1100 мм.
-              option value="1400 мм."
-                |1400 мм.
-              option value="1700 мм."
-                |1700 мм.
-              option value="2013 мм."
-                |2013 мм.
-              option value="2422 мм."
-                |2422 мм.
-          p
-            label for="d_v_rez"
-              |Ціна:
-            input#d_v_rez type="text" placeholder="360 грн."
 
 = render :partial => 'partials/order_louver_door'
 .row

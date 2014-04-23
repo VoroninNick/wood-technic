@@ -1,0 +1,170 @@
+div id="order-door-form" class="reveal-modal xlarge" data-reveal=""
+  .fbt
+  .rmw
+    .ph
+    .call-order-form-header
+      .row
+        .columns.large-10.push-1
+          h1
+            |ФОРМА ЗАМОВЛЕННЯ ДВЕРЕЙ
+          a.close-reveal-modal
+            svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="41px" height="41px" viewBox="0 0 41 41" enable-background="new 0 0 41 41" xml:space="preserve"
+              rect x="0.5" y="0.5" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" width="40" height="40"
+              line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="10.101" y1="10" x2="31.101" y2="31"
+              line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="30" y1="10" x2="9" y2="31"
+      .clearfix
+
+      .row
+        .columns.large-10.push-1
+          .status-message.dn
+            h4
+              |Ваше повідомлення успішно відправлене!
+    .ph
+    .row
+      .order-enter-door-form
+        form#order-enter-door action="/order_enter_door" method="POST"
+          .row
+            .columns.large-5.push-1.left
+              .select-enter-door-wrapper
+                .left-part
+                  .image-enter-door
+                    img src=asset_path("d1.jpg")
+                .right-part
+                  p
+                    label.e-d-rule-label for="model_d"
+                      |Двері:
+                    select#model_d
+                      -if all_doors
+                        -all_doors.each do |ad|
+                          option value=ad.title
+                            =ad.title
+                    .clearfix
+                  p
+                    label.e-d-rule-label for="color_d"
+                      |Колір:
+                    select#color_d
+                      option value="Венге"
+                        |Венге
+                      option value="Вільха"
+                        |Вільха
+                      option value="Горіх"
+                        |Горіх
+                        option value="Каштан"
+                          |Каштан
+                      option value="Дуб"
+                        |Дуб
+                        option value="Дуб білий"
+                          |Венге
+                    .clearfix
+                  p.e-d-rule
+                    span
+                      |Відкриття дверей:
+                    label for="d_in_left"
+                      |Вліво
+                    input#d_in_left.squaredOne type="checkbox" checked="checked" value="1" name="fooby[1][]"
+                    label for="d_in_right"
+                      |Вправо
+                    input#d_in_right type="checkbox" value="1" name="fooby[1][]"
+                    .clearfix
+                .clearfix
+
+            .columns.large-5.push-1.left
+              .count-e-door-wrapper
+                p
+                  label.e-d-rule-label for="count_e_door"
+                    |Кількість одиниць товару:
+                  input#count_e_door type="text" name="count" placeholder="11"
+                  span
+                    |шт.
+                .clearfix
+              .furniture-e-door-wrapper
+                p.e-d-rule
+                  span
+                    |Фурнітура:
+                  label for="with_furn"
+                    |З фурнітурою
+                  input#with_furn type="checkbox" value="1" name="furn[1][]"
+                  label for="without_furn"
+                    |Без фурнітури
+                  input#without_furn type="checkbox" checked="checked" value="1" name="furn[1][]"
+                  .clearfix
+          .ph
+          .row
+            .info-part-wrap
+              .columns.large-10.push-1
+                .columns.large-6.no-padding-left
+                  .input_filed
+                    label for="d_v_name"
+                      |Ваше ім’я
+                    input#d_v_name type="text" placeholder="Воронін Микола Валерійович" data-validation="length" data-validation-length="3-30" data-validation-error-msg="Введіть ваше ім'я"
+                  .input_filed
+                    label for="d_v_phone"
+                      |Контактний телефон
+                    input#d_v_phone type="text" placeholder="050 417 07 28" data-validation="length number" data-validation-length="10" data-validation-error-msg="Введіть номер телефону"
+                  .input_filed
+                    label for="d_v_email"
+                      |Електронна скринька
+                    input#d_v_email type="text" placeholder="voronin.nick@gmail.com" data-validation="email" data-validation-error-msg="Введіть правильний email"
+                  .d-v-time
+                    span
+                      |Зручний час дзвінка:
+                    .d-v-time-left
+                      label for="d_v_time_from"
+                        |з
+                      select#d_v_time_from
+                        option value="09:00"
+                          |09:00
+                        option value="10:00"
+                          |10:00
+                        option value="11:00"
+                          |11:00
+                        option value="12:00"
+                          |12:00
+                        option value="13:00"
+                          |13:00
+                        option value="14:00"
+                          |14:00
+                        option value="15:00"
+                          |15:00
+                        option value="16:00"
+                          |16:00
+                        option value="17:00"
+                          |17:00
+                        option value="18:00"
+                          |18:00
+
+                    .d-v-time-right
+                      label for="d_v_time_to"
+                        |до
+                      select#d_v_time_to
+                        option value="10:00"
+                          |10:00
+                        option value="11:00"
+                          |11:00
+                        option value="12:00"
+                          |12:00
+                        option value="13:00"
+                          |13:00
+                        option value="14:00"
+                          |14:00
+                        option value="15:00"
+                          |15:00
+                        option value="16:00"
+                          |16:00
+                        option value="17:00"
+                          |17:00
+                        option value="18:00"
+                          |18:00
+                        option value="19:00"
+                          |19:00
+                      .clearfix
+                .columns.large-6.no-padding-right
+                  .input_field
+                    label for="d_v_message"
+                      |Текст повідомлення
+                    textarea#d_v_message type="text" placeholder="Зателефонуйте мені будь-ласка. є декілька питань, щодо покупки..."
+                  .form-actions.right
+                    button#d_v_submit type="submit"
+                      |Замовити
+          .ph
+  .fbb

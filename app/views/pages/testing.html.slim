@@ -1,32 +1,37 @@
-/a href="#" data-reveal-id="myModal" data-reveal=""
-/  |Click Me For A Modal
-/#myModal.reveal-modal data-reveal=""
-/  h2 Awesome. I have it.
-/  p.lead
-/    |Your couch.  It is mine.
-/  p
-/    |Im a cool paragraph that lives inside of an even cooler modal. Wins
-/  a.close-reveal-modal &#215;
+/a data-effect="modal" data-reveal-id="myModal"
+a.reveal-link href="#" data-reveal-id="tt" data-reveal="true"
+  |Click Me For A Modal
+div id="tt" class="reveal-modal large" data-reveal=""
+  h2 Awesome. I have it.
+  p.lead
+    |Your couch.  It is mine.
+  p
+    |Im a cool paragraph that lives inside of an even cooler modal. Wins
+  a.close-reveal-modal &#215;
 
-.login-form
-  .header-block-page-wrapper
-    .header-block-page.products-green-line
-      h1
-        |Вхід в адмінпанель
-  .row
-    .large-8.push-2.columns
-      = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-        .form-inputs
-          = f.label :"Електронна скринька:"
-          = f.input :email, :required => false, :autofocus => true, placeholder: 'retail@woodtehnic.com.ua', :label=>false
-          = f.label :"Пароль:"
-          = f.input :password, :required => false, placeholder: 'пароль', :label=>false
+/.login-form
+/  .header-block-page-wrapper
+/    .header-block-page.products-green-line
+/      h1
+/        |Вхід в адмінпанель
+/  .row
+/    .large-8.push-2.columns
+/      = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+/        .form-inputs
+/          = f.label :"Електронна скринька:"
+/          = f.input :email, :required => false, :autofocus => true, placeholder: 'retail@woodtehnic.com.ua', :label=>false
+/          = f.label :"Пароль:"
+/          = f.input :password, :required => false, placeholder: 'пароль', :label=>false
+/
+/          = f.input :remember_me, :as => :boolean, :label=>false if devise_mapping.rememberable?
+/          = f.label :"Запам'ятати мене", :for=>"resource_remember_me", :class=>" label-remember-me"
+/
+/        .form-actions.right
+/          button#submit type="submit" class="btn btn-primary"
+/            |Увійти
+/
+/      = render "devise/shared/links"
 
-          = f.input :remember_me, :as => :boolean, :label=>false if devise_mapping.rememberable?
-          = f.label :"Запам'ятати мене", :for=>"resource_remember_me", :class=>" label-remember-me"
 
-        .form-actions.right
-          button#submit type="submit" class="btn btn-primary"
-            |Увійти
 
-      = render "devise/shared/links"
+

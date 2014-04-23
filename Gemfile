@@ -73,6 +73,6 @@ gem 'capistrano'
 
 gem 'capistrano-rails'
 
-gem 'cackle', github: 'iRet/cackle'
+# gem 'cackle', github: 'iRet/cackle'
 
 gem 'disqus_rails'

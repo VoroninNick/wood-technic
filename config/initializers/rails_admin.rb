@@ -36,5 +36,6 @@ RailsAdmin.config do |config|
   # end
   # config.model 'LouvreDoorsImage' do
   #   parent LouvreDoors
+  #   weight -1
   # end
 end

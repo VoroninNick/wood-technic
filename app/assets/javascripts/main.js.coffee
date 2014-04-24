@@ -8,7 +8,7 @@ $(document).ready ->
 
   # ===================================================== init reveal
 
-  $('#tt, #call_order_form, #order-louver-form, #order-door-form').data('reveal-init', {
+  $('#call_order_form, #order-louver-form, #order-door-form').data('reveal-init', {
     animation: 'fade',
     animation_speed: 250,
     close_on_background_click: false,
@@ -36,7 +36,9 @@ $(document).ready ->
     $('#order-door-form').foundation('reveal', 'close')
 
 
-  $('a.link-to-call-order').click ->
+  $('a.link-to-call-order').click (e) ->
+    e.preventDefault()
+    window.location.hash = '' # clearf url after click on link
     $('#call_order_form').foundation('reveal', 'open')
 
   $('a.link-to-order-louver').click (e) ->

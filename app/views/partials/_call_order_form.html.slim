@@ -1,103 +1,104 @@
-div id="call_order_form" class="reveal-modal xlarge" data-reveal=""
-  .fbt
-  .rmw
-    .ph
-    .call-order-form-header
-      .row
-        .columns.large-10.push-1
-          h1
-            |ФОРМА ЗАМОВЛЕННЯ ДЗВІНКА
-          a.close-reveal-modal
-            svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="41px" height="41px" viewBox="0 0 41 41" enable-background="new 0 0 41 41" xml:space="preserve"
-              rect x="0.5" y="0.5" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" width="40" height="40"
-              line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="10.101" y1="10" x2="31.101" y2="31"
-              line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="30" y1="10" x2="9" y2="31"
-      .clearfix
-
-      .row
-        .columns.large-10.push-1
-          .status-message.dn
-            h4
-              |Ваше повідомлення успішно відправлене!
-    form#order-enter-door action="/order_enter_door" method="POST"
+div style="display: none"
+  div id="call_order_form"  rel="call_order_form"
+    .fbt
+    .rmw
       .ph
-      .row
-        .info-part-wrap
+      .call-order-form-header
+        .row
           .columns.large-10.push-1
-            form#order-enter-door action="/order_enter_door" method="POST"
-              .columns.large-6.no-padding-left
-                .input_filed
-                  label for="d_v_name"
-                    |Ваше ім’я
-                  input#d_v_name type="text" placeholder="Воронін Микола Валерійович" data-validation="length" data-validation-length="3-30" data-validation-error-msg="Введіть ваше ім'я"
-                .input_filed
-                  label for="d_v_phone"
-                    |Контактний телефон
-                  input#d_v_phone type="text" placeholder="050 417 07 28" data-validation="length number" data-validation-length="10" data-validation-error-msg="Введіть номер телефону"
-                .input_filed
-                  label for="d_v_email"
-                    |Електронна скринька
-                  input#d_v_email type="text" placeholder="voronin.nick@gmail.com" data-validation="email" data-validation-error-msg="Введіть правильний email"
-                .d-v-time
-                  span
-                    |Зручний час дзвінка:
-                  .d-v-time-left
-                    label for="d_v_time_from"
-                      |з
-                    select#d_v_time_from
-                      option value="09:00"
-                        |09:00
-                      option value="10:00"
-                        |10:00
-                      option value="11:00"
-                        |11:00
-                      option value="12:00"
-                        |12:00
-                      option value="13:00"
-                        |13:00
-                      option value="14:00"
-                        |14:00
-                      option value="15:00"
-                        |15:00
-                      option value="16:00"
-                        |16:00
-                      option value="17:00"
-                        |17:00
-                      option value="18:00"
-                        |18:00
+            h1
+              |ФОРМА ЗАМОВЛЕННЯ ДЗВІНКА
+            a.close-fancy_form onClick="parent.jQuery.fancybox.close();"
+              svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="41px" height="41px" viewBox="0 0 41 41" enable-background="new 0 0 41 41" xml:space="preserve"
+                rect x="0.5" y="0.5" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" width="40" height="40"
+                line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="10.101" y1="10" x2="31.101" y2="31"
+                line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="30" y1="10" x2="9" y2="31"
+        .clearfix
 
-                  .d-v-time-right
-                    label for="d_v_time_to"
-                      |до
-                    select#d_v_time_to
-                      option value="10:00"
-                        |10:00
-                      option value="11:00"
-                        |11:00
-                      option value="12:00"
-                        |12:00
-                      option value="13:00"
-                        |13:00
-                      option value="14:00"
-                        |14:00
-                      option value="15:00"
-                        |15:00
-                      option value="16:00"
-                        |16:00
-                      option value="17:00"
-                        |17:00
-                      option value="18:00"
-                        |18:00
-                      option value="19:00"
-                        |19:00
-                    .clearfix
-              .columns.large-6.no-padding-right
-                .input_field
-                  label for="d_v_message"
-                    |Текст повідомлення
-                  textarea#d_v_message type="text" placeholder="Зателефонуйте мені будь-ласка. є декілька питань, щодо покупки..."
-                .form-actions.right
-                  button#d_v_submit type="submit"
-                    |Замовити
-    .ph
-  .fbb
+        .row
+          .columns.large-10.push-1
+            .status-message.dn
+              h4
+                |Ваше повідомлення успішно відправлене!
+      form#order-enter-door action="/order_enter_door" method="POST"
+        .ph
+        .row
+          .info-part-wrap
+            .columns.large-10.push-1
+              form#order-enter-door action="/order_enter_door" method="POST"
+                .columns.large-6.no-padding-left
+                  .input_filed
+                    label for="d_v_name"
+                      |Ваше ім’я
+                    input#d_v_name type="text" placeholder="Воронін Микола Валерійович" data-validation="length" data-validation-length="3-30" data-validation-error-msg="Введіть ваше ім'я"
+                  .input_filed
+                    label for="d_v_phone"
+                      |Контактний телефон
+                    input#d_v_phone type="text" placeholder="050 417 07 28" data-validation="length number" data-validation-length="10" data-validation-error-msg="Введіть номер телефону"
+                  .input_filed
+                    label for="d_v_email"
+                      |Електронна скринька
+                    input#d_v_email type="text" placeholder="voronin.nick@gmail.com" data-validation="email" data-validation-error-msg="Введіть правильний email"
+                  .d-v-time
+                    span
+                      |Зручний час дзвінка:
+                    .d-v-time-left
+                      label for="d_v_time_from"
+                        |з
+                      select#d_v_time_from
+                        option value="09:00"
+                          |09:00
+                        option value="10:00"
+                          |10:00
+                        option value="11:00"
+                          |11:00
+                        option value="12:00"
+                          |12:00
+                        option value="13:00"
+                          |13:00
+                        option value="14:00"
+                          |14:00
+                        option value="15:00"
+                          |15:00
+                        option value="16:00"
+                          |16:00
+                        option value="17:00"
+                          |17:00
+                        option value="18:00"
+                          |18:00
+
+                    .d-v-time-right
+                      label for="d_v_time_to"
+                        |до
+                      select#d_v_time_to
+                        option value="10:00"
+                          |10:00
+                        option value="11:00"
+                          |11:00
+                        option value="12:00"
+                          |12:00
+                        option value="13:00"
+                          |13:00
+                        option value="14:00"
+                          |14:00
+                        option value="15:00"
+                          |15:00
+                        option value="16:00"
+                          |16:00
+                        option value="17:00"
+                          |17:00
+                        option value="18:00"
+                          |18:00
+                        option value="19:00"
+                          |19:00
+                      .clearfix
+                .columns.large-6.no-padding-right
+                  .input_field
+                    label for="d_v_message"
+                      |Текст повідомлення
+                    textarea#d_v_message type="text" placeholder="Зателефонуйте мені будь-ласка. є декілька питань, щодо покупки..."
+                  .form-actions.right
+                    button#d_v_submit type="submit"
+                      |Замовити
+      .ph
+    .fbb

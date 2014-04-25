@@ -76,3 +76,5 @@ gem 'capistrano-rails'
 # gem 'cackle', github: 'iRet/cackle'
 
 gem 'disqus_rails'
+
+gem 'nokogiri'

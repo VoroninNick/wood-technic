@@ -26,18 +26,22 @@ $(document).ready ->
     e.preventDefault()
     door = $('select#model_d').val()
     color = $('select#color_d').val()
-#    alert("ПОдія працює!"+"door: "+door+","+"color: "+color)
     valuesToSubmit = {door: door, color: color}
     src = '/get_image?doors='+door+'&door_color='+color
     $('.image-enter-door img').attr('src', src )
-#    $.ajax
-#      url: '/get_image'
-#      type: GET
-#      data: valuesToSubmit
-#      dataType: "image"
-#      success:(data) ->
-#        alert('111')
-#        src = '/get_image?doors='+door+'&door_color='+color
-#        alert(src)
-#        $('.image-enter-door img').attr('src', src )
+
+  $('.lf_header select').change (e) ->
+    e.preventDefault()
+    selected_width = $('select#d_v_width').val()
+    selected_height = $('select#d_v_height').val()
+
+#    int[][] prices = new int[][]
+    alert('Ширина: '+selected_width+' Висота '+selected_height)
+
+#  arr = class_first_tr_td
+#  $.each ->
+#    class_first_tr_td = $('.tab-content-inner table tr td:first-child').text()
+#    class_first_tr_td.addClass(class_first_tr_td)
+#
+#    alert(class_first_tr_td)
 

@@ -60,14 +60,14 @@ div style="display: none"
                     p.e-d-rule
                       span
                         |Відкриття дверей:
-                      label.rule_l for="d_in_left"
-                        |Вліво
                       input#d_in_left.squaredOne type="checkbox" checked="checked" value="1" name="fooby[1][]"
                       label.green_square for="d_in_left"
-                      label.rule_l for="d_in_right"
-                        |Вправо
+                      label.rule_l for="d_in_left"
+                        |Вліво
                       input#d_in_right type="checkbox" value="1" name="fooby[1][]"
                       label.green_square for="d_in_right"
+                      label.rule_l for="d_in_right"
+                        |Вправо
                       .clearfix
                   .clearfix
 
@@ -84,14 +84,14 @@ div style="display: none"
                   p.e-d-rule
                     span
                       |Фурнітура:
+                    input#with_furn type="checkbox" value="1" name="furn[1][]"
+                      label.green_square for="with_furn"
                     label.rule_l for="with_furn"
                       |З фурнітурою
-                    input#with_furn type="checkbox" value="1" name="furn[1][]"
-                    label.green_square for="with_furn"
+                    input#without_furn type="checkbox" checked="checked" value="1" name="furn[1][]"
+                      label.green_square for="without_furn"
                     label.rule_l for="without_furn"
                       |Без фурнітури
-                    input#without_furn type="checkbox" checked="checked" value="1" name="furn[1][]"
-                    label.green_square for="without_furn"
                     .clearfix
             .ph
             .row

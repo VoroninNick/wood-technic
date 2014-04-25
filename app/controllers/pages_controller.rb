@@ -16,15 +16,14 @@ class PagesController < ApplicationController
   end
 
   def get_image
-    door = params[:selected_model_d]
-    color = params[:selected_model_d_c]
 
-    query = "select d_i.id from colory_dverej d_i, dveri d where d_i.door_id == d.id  and d.title == '#{door}' and d_i.title == '#{color}'"
-    result = ActiveRecord::Base.connection.execute( query )
-    @door_image = []
-    result.each do |row|
-      @door_image.append( ColoryDverej.find( row['id'] ) )
-    end
+    d = Dveri.find_by_title(params[:doors])
+    di = ColoryDverej.where(dveri_id: d.id, title: params[:door_color] ).first
+
+    file_name = di.image.url(:avatar)
+    file_name = di.image.path(:avatar)
+    send_file(file_name, disposition: "inline", x_sendfile: true)
+
   end
 
   def testing

@@ -1,5 +1,5 @@
 class ColoryDverej < ActiveRecord::Base
-  attr_accessible :title, :image, :door_id
+  attr_accessible :title, :image, :dveri_id
 
   has_attached_file :image, styles:{ avatar: "130x260#", large: "500x1010>"
   },url:'/assets/images/door/color_options/:id/image_:style.:extension',

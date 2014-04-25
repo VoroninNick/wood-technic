@@ -7,7 +7,7 @@ $(document).ready ->
     valuesToSend = {doors: selected_model_d, door_color: selected_model_d_c}
     $.ajax
       url: '/get_image'
-      type: "POST"
+      type: "GET"
       data: valuesToSend
       dataType: "json"
     success: () ->

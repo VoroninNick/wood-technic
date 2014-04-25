@@ -1,6 +1,6 @@
 div style="display: none"
   div id="order-door-form" rel="order-door-form"
-    .fbt
+    /.fbt
     .rmw
       .ph
       .call-order-form-header
@@ -60,12 +60,14 @@ div style="display: none"
                     p.e-d-rule
                       span
                         |Відкриття дверей:
-                      label for="d_in_left"
+                      label.rule_l for="d_in_left"
                         |Вліво
                       input#d_in_left.squaredOne type="checkbox" checked="checked" value="1" name="fooby[1][]"
-                      label for="d_in_right"
+                      label.green_square for="d_in_left"
+                      label.rule_l for="d_in_right"
                         |Вправо
                       input#d_in_right type="checkbox" value="1" name="fooby[1][]"
+                      label.green_square for="d_in_right"
                       .clearfix
                   .clearfix
 
@@ -82,12 +84,14 @@ div style="display: none"
                   p.e-d-rule
                     span
                       |Фурнітура:
-                    label for="with_furn"
+                    label.rule_l for="with_furn"
                       |З фурнітурою
                     input#with_furn type="checkbox" value="1" name="furn[1][]"
-                    label for="without_furn"
+                    label.green_square for="with_furn"
+                    label.rule_l for="without_furn"
                       |Без фурнітури
                     input#without_furn type="checkbox" checked="checked" value="1" name="furn[1][]"
+                    label.green_square for="without_furn"
                     .clearfix
             .ph
             .row
@@ -168,4 +172,4 @@ div style="display: none"
                       button#d_v_submit type="submit"
                         |Замовити
             .ph
-    .fbb
+    /.fbb

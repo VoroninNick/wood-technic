@@ -36,7 +36,7 @@ Wt::Application.routes.draw do
 
   post '/call_order' => 'main#call_order', as: :call_order
 
-  post '/get_image' => 'pages#get_image', as: :get_image
+  get '/get_image' => 'pages#get_image', as: :get_image
 
   get '/testing' => 'pages#testing', as: :testing
 

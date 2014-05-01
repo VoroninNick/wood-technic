@@ -1,7 +1,7 @@
 Wt::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   # devise_for :views
-  # devise_for :users
+  devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   resources :banners

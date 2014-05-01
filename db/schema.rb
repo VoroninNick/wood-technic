@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140428081847) do
+ActiveRecord::Schema.define(version: 20140501132456) do
 
   create_table "banners", force: true do |t|
     t.text     "title"
@@ -75,6 +75,13 @@ ActiveRecord::Schema.define(version: 20140428081847) do
     t.string   "alt"
     t.string   "title"
     t.integer  "index"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "certificates_and_warranties", force: true do |t|
+    t.string   "title"
+    t.text     "page_content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -169,6 +176,13 @@ ActiveRecord::Schema.define(version: 20140428081847) do
 
   create_table "feedback_emails", force: true do |t|
     t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "for_buyers", force: true do |t|
+    t.string   "title"
+    t.text     "page_content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -371,5 +385,12 @@ ActiveRecord::Schema.define(version: 20140428081847) do
 
   add_index "views", ["email"], name: "index_views_on_email", unique: true
   add_index "views", ["reset_password_token"], name: "index_views_on_reset_password_token", unique: true
+
+  create_table "who_we_ares", force: true do |t|
+    t.string   "title"
+    t.text     "page_content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

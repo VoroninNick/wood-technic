@@ -40,6 +40,8 @@ Wt::Application.routes.draw do
 
   get '/testing' => 'pages#testing', as: :testing
 
+  get '/get_price' => 'pages#price', as: :price
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

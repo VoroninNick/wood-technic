@@ -15,4 +15,5 @@ class WtInformationController < ApplicationController
   def reviews
 
   end
+
 end

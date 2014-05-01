@@ -30,18 +30,24 @@ $(document).ready ->
     src = '/get_image?doors='+door+'&door_color='+color
     $('.image-enter-door img').attr('src', src )
 
+
+
   $('.lf_header select').change (e) ->
     e.preventDefault()
     selected_width = $('select#d_v_width').val()
     selected_height = $('select#d_v_height').val()
 
-#    int[][] prices = new int[][]
-    alert('Ширина: '+selected_width+' Висота '+selected_height)
+    rez_request_string = selected_width+'/'+selected_height
 
-#  arr = class_first_tr_td
-#  $.each ->
-#    class_first_tr_td = $('.tab-content-inner table tr td:first-child').text()
-#    class_first_tr_td.addClass(class_first_tr_td)
-#
-#    alert(class_first_tr_td)
+    valuesToSend = {title: rez_request_string}
+
+    $.ajax
+      url: '/get_price'
+      type: "GET"
+      data: valuesToSend
+      dataType: "text"
+    success:(data) ->
+      alert('rrr')
+
+
 

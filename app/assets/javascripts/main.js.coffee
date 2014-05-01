@@ -107,8 +107,8 @@ $(document).ready ->
 
 
   # ===================================================== init google maps
-  lat = 49.87213
-  lng = 23.92897
+  lat = 49.869030
+  lng = 23.927616
   myLatlng = new google.maps.LatLng(lat, lng)
   myOptions =
     zoom: 16

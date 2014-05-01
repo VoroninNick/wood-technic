@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140416124912) do
+ActiveRecord::Schema.define(version: 20140428081847) do
 
   create_table "banners", force: true do |t|
     t.text     "title"
@@ -178,6 +178,28 @@ ActiveRecord::Schema.define(version: 20140416124912) do
     t.text     "operation"
     t.text     "specifications"
     t.text     "warranty"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "louver_door_heights", force: true do |t|
+    t.string   "title"
+    t.integer  "height"
+    t.integer  "louver_door_price_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "louver_door_prices", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "louver_door_widths", force: true do |t|
+    t.string   "title"
+    t.integer  "width"
+    t.integer  "louver_door_price_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

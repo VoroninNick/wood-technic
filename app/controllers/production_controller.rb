@@ -7,6 +7,7 @@ class ProductionController < ApplicationController
    @order_door_louver = OrderDoorLouver.new
    @louver_door = LouvreDoors.all
    @ld_images = LouvreDoorsImage.order("updated_at asc")
+
  end
 
   def mdf

@@ -26,6 +26,12 @@ class PagesController < ApplicationController
 
   end
 
+  def price
+    t =LouverDoorWidth.find_by_title(params[:title])
+
+    render(inline: t.width.to_s)
+  end
+
   def testing
 
   end

@@ -1,17 +1,6 @@
 
 $(document).ready ->
   # ===================================================== get door image
-  $(".select-enter-door-wrapper select").change ->
-    selected_model_d = $("select#model_d").val()
-    selected_model_d_c = $("select#color_d").val()
-    valuesToSend = {doors: selected_model_d, door_color: selected_model_d_c}
-    $.ajax
-      url: '/get_image'
-      type: "GET"
-      data: valuesToSend
-      dataType: "json"
-    success: () ->
-      alert("GOOD")
 
 
 

@@ -30,6 +30,23 @@ $(document).ready ->
     src = '/get_image?doors='+door+'&door_color='+color
     $('.image-enter-door img').attr('src', src )
 
+  door_louver_price = 0
+  $('a.order-louver-doors').click (e) ->
+    e.preventDefault()
+    selected_width = $('select#d_v_width').val()
+    selected_height = $('select#d_v_height').val()
+
+    rez_request_string = selected_width+'/'+selected_height
+
+    valuesToSend = {title: rez_request_string}
+    $.ajax
+      url: '/get_price'
+      type: "GET"
+      data: valuesToSend
+      dataType: "text"
+      success:(data) ->
+        door_louver_price = data
+        $('input#d_v_suma').val(door_louver_price)
 
 
   $('.lf_header select').change (e) ->
@@ -46,8 +63,16 @@ $(document).ready ->
       type: "GET"
       data: valuesToSend
       dataType: "text"
-    success:(data) ->
-      alert('rrr')
+      success:(data) ->
+        door_louver_price = data
+        if $('input#d_v_count') == null
+          $('input#d_v_suma').val(door_louver_price)
+        else
+          $('input#d_v_suma').val(door_louver_price*parseInt($('input#d_v_count').val()))
 
 
+  $('input#d_v_count').keyup (e) ->
+    e.preventDefault()
+    price_from = $('input#d_v_suma')
+    $('input#d_v_suma').val(parseInt($('input#d_v_count').val())*parseInt(door_louver_price))
 

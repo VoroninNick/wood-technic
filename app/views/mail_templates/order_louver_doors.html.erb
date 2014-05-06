@@ -1,0 +1,44 @@
+<h1>ЗАМОВЛЕННЯ ЖАЛЮЗІЙНИХ ДВЕРЦЯТ</h1>
+<div>
+  <h2>Дані замовлення:</h2>
+  <p><span>Ширина: </span>
+    <strong><%=@louver_doors[:width] %></strong>
+  </p>
+  <p><span>Висота  </span>
+    <strong><%=@louver_doors[:height] %></strong>
+  </p>
+  <p><span>Кількість  </span>
+    <strong><%=@louver_doors[:count] %></strong>
+  </p>
+  <p><span>Загальна сума  </span>
+    <strong><%=@louver_doors[:price] %></strong>
+  </p>
+  <div>
+    <h2>Контактні дані  </h2>
+    <p>
+      <span>Ім'я  </span>
+      <strong><%=@louver_doors[:name] %></strong>
+    </p>
+    <p>
+      <span>Телефон  </span>
+      <strong><%=@louver_doors[:phone] %></strong>
+    </p>
+    <p>
+      <span>Електронна скринька  </span>
+      <strong><%=@louver_doors[:email] %></strong>
+    </p>
+    <p>
+      <span>Повідомлення  </span>
+      <strong><%=@louver_doors[:comment] %></strong>
+    </p>
+  </div>
+  <div>
+   <h2>Зручний час дзвінка:</h2>
+    <p><span>З  </span>
+      <strong><%=@louver_doors[:time_from] %></strong>
+    </p>
+    <p><span>До  </span>
+      <strong><%=@louver_doors[:time_to] %></strong>
+    </p>
+  </div>
+</div>

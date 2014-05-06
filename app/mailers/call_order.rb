@@ -9,7 +9,6 @@ class CallOrder < ActionMailer::Base
       to.push(r.email)
     end
     #default to: to
-    mail(:template_path => 'mail_templates', :template_name => 'call_order', :subject => "New message from your website!", to: to)
-    #render template: "mail_templates/call_order"
+    mail(:template_path => 'mail_templates', :template_name => 'call_order', :subject => "ЗАМОВЛЕННЯ ДЗВІНКА", to: to)
   end
 end

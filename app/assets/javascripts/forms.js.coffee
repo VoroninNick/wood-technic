@@ -1,26 +1,6 @@
 $(document).ready ->
-  # =====================================================  send call_order
-  $(".status-message").addClass(" dn")
-  $("#call_order_form").submit ->
-    valuesToSubmit = $(this).serialize()
-    #sumbits it to the given url of the form
-    # you want a difference between normal and ajax-calls, and json is standard
-    $.ajax
-      url: $(this).attr("action")
-      type: "POST"
-      data: valuesToSubmit
-#      dataType: "JSON"
-      success: () ->
-        $(".status-message").removeClass(" dn")
-        $("#call_order_form").addClass(" dn")
-        $(".fancybox-inner").height('height', '250px')
-        $(".fancybox-wrap").css({"width":"600px","left":"30%"})
-    #act on result.
-    false # prevents normal behaviour
-
-
 #  ===================================================== init validation forms
-#  $.validate()
+  $.validate()
 
   $('.select-enter-door-wrapper select').change (e) ->
     e.preventDefault()
@@ -75,4 +55,51 @@ $(document).ready ->
     e.preventDefault()
     price_from = $('input#d_v_suma')
     $('input#d_v_suma').val(parseInt($('input#d_v_count').val())*parseInt(door_louver_price))
+
+#    order louver doors
+  $('button#d_v_submit').click (e) ->
+    e.preventDefault()
+    valueToSubmit = {louver_doors:{ width:$('select#d_v_width').val(), height:$('select#d_v_height').val(), count:$('input#d_v_count').val(), price:$('input#d_v_suma').val(), name:$('input#d_v_name').val(), phone:$('input#d_v_phone').val(), email:$('input#d_v_email').val(), comment:$('textarea#d_v_message').val(), time_from:$('select#d_v_time_from').val(), time_to:$('select#d_v_time_to').val()}}
+    $.ajax
+      url: '/order_louver_doors'
+      type: 'POST'
+      data: valueToSubmit
+      success: () ->
+        alert('success')
+
+# call order
+  $(".status-message").addClass(" dn")
+  $(".loading_status").addClass(" dn")
+
+
+  $("form#call_order").submit ->
+    $(".loading_status").removeClass("dn")
+    valuesToSubmit = $(this).serialize()
+    #sumbits it to the given url of the form
+    # you want a difference between normal and ajax-calls, and json is standard
+    $.ajax
+      url: $(this).attr("action")
+      type: "POST"
+      data: valuesToSubmit
+#      dataType: "JSON"
+      success: () ->
+        $(".status-message").removeClass(" dn")
+        $(".loading_status").addClass(" dn")
+        $("form#call_order").addClass(" dn")
+
+        $(".fancybox-inner").height('height', '250px')
+        $(".fancybox-wrap").css({"width":"600px","left":"30%"})
+    #act on result.
+    false # prevents normal behaviour
+
+# order enter doors
+  $('button#d_submit').click (e) ->
+    e.preventDefault()
+    valueToSubmit = {enter_doors:{ door:$('select#model_d').val(), color:$('select#color_d').val(), open_door:$('input:checkbox[name=open_door]:checked').val(), count:$('input#count_e_door').val(),furnitura:$('input:checkbox[name=furnitura]:checked').val(), name:$('input#d_v_name').val(), phone:$('input#d_v_phone').val(), email:$('input#d_v_email').val(), comment:$('textarea#d_v_message').val(), time_from:$('select#d_v_time_from').val(), time_to:$('select#d_v_time_to').val()}}
+    $.ajax
+      url: '/order_enter_door'
+      type: 'POST'
+      data: valueToSubmit
+      success: () ->
+        alert('success')
 

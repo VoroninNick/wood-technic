@@ -131,16 +131,5 @@ $(document).ready ->
 
 
 
-##order modal
-#  $('#OrderModal').foundation()
-
-#$(document).ready(ready)
-#$(document).on('page:load', ready)
-
-
-
-
-
-
 
 

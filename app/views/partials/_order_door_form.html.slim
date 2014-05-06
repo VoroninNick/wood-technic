@@ -60,11 +60,11 @@ div style="display: none"
                     p.e-d-rule
                       span
                         |Відкриття дверей:
-                      input#d_in_left.squaredOne type="checkbox" checked="checked" value="1" name="fooby[1][]"
+                      input#d_in_left.squaredOne type="checkbox" checked="checked" value="1" name="open_door"
                       label.green_square for="d_in_left"
                       label.rule_l for="d_in_left"
                         |Вліво
-                      input#d_in_right type="checkbox" value="1" name="fooby[1][]"
+                      input#d_in_right type="checkbox" value="1" name="open_door"
                       label.green_square for="d_in_right"
                       label.rule_l for="d_in_right"
                         |Вправо
@@ -84,11 +84,11 @@ div style="display: none"
                   p.e-d-rule
                     span
                       |Фурнітура:
-                    input#with_furn type="checkbox" value="1" name="furn[1][]"
+                    input#with_furn type="checkbox" value="1" name="furnitura"
                       label.green_square for="with_furn"
                     label.rule_l for="with_furn"
                       |З фурнітурою
-                    input#without_furn type="checkbox" checked="checked" value="1" name="furn[1][]"
+                    input#without_furn type="checkbox" checked="checked" value="1" name="furnitura"
                       label.green_square for="without_furn"
                     label.rule_l for="without_furn"
                       |Без фурнітури
@@ -101,15 +101,15 @@ div style="display: none"
                     .input_filed
                       label for="d_v_name"
                         |Ваше ім’я
-                      input#d_v_name type="text" placeholder="Воронін Микола Валерійович" data-validation="length" data-validation-length="3-30" data-validation-error-msg="Введіть ваше ім'я"
+                      input#d_v_name name="name" type="text" placeholder="Воронін Микола Валерійович" data-validation="length" data-validation-length="3-30" data-validation-error-msg="Введіть ваше ім'я"
                     .input_filed
                       label for="d_v_phone"
                         |Контактний телефон
-                      input#d_v_phone type="text" placeholder="050 417 07 28" data-validation="length number" data-validation-length="10" data-validation-error-msg="Введіть номер телефону"
+                      input#d_v_phone name="phone" type="text" placeholder="050 417 07 28" data-validation="length number" data-validation-length="10" data-validation-error-msg="Введіть номер телефону"
                     .input_filed
                       label for="d_v_email"
                         |Електронна скринька
-                      input#d_v_email type="text" placeholder="voronin.nick@gmail.com" data-validation="email" data-validation-error-msg="Введіть правильний email"
+                      input#d_v_email name="email" type="text" placeholder="voronin.nick@gmail.com" data-validation="email" data-validation-error-msg="Введіть правильний email"
                     .d-v-time
                       span
                         |Зручний час дзвінка:
@@ -169,7 +169,7 @@ div style="display: none"
                         |Текст повідомлення
                       textarea#d_v_message type="text" placeholder="Зателефонуйте мені будь-ласка. є декілька питань, щодо покупки..."
                     .form-actions.right
-                      button#d_v_submit type="submit"
+                      button#d_submit type="submit"
                         |Замовити
             .ph
     /.fbb

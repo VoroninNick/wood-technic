@@ -28,8 +28,16 @@ class MainController < ApplicationController
     render action: :contacts
   end
 
+
   def call_order
     CallOrder.order_call(params[:call_order]).deliver
   end
 
+  def order_louver_doors
+     OrderLouverDoors.order_louver_doors(params[:louver_doors]).deliver
+  end
+
+  def order_enter_door
+      OrderDoor.order_enter_door(params[:enter_doors]).deliver
+  end
 end

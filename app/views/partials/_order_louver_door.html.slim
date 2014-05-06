@@ -20,7 +20,7 @@ div style="display: none"
             .status-message.dn
               h4
                 |Ваше повідомлення успішно відправлене!
-      form#order-enter-door action="/order_enter_door" method="POST"
+      form#order-enter-door  method="POST"
         .ph
         .lf_header
           .row
@@ -79,15 +79,15 @@ div style="display: none"
                 .input_filed
                   label for="d_v_name"
                     |Ваше ім’я
-                  input#d_v_name type="text" placeholder="Воронін Микола Валерійович" data-validation="length" data-validation-length="3-30" data-validation-error-msg="Введіть ваше ім'я"
+                  input#d_v_name name="name" type="text" placeholder="Воронін Микола Валерійович" data-validation="length" data-validation-length="3-30" data-validation-error-msg="Ви ввели невірне ім'я"
                 .input_filed
                   label for="d_v_phone"
                     |Контактний телефон
-                  input#d_v_phone type="text" placeholder="050 417 07 28" data-validation="length number" data-validation-length="10" data-validation-error-msg="Введіть номер телефону"
+                  input#d_v_phone name="phone" type="text" placeholder="050 417 07 28" data-validation="length number" data-validation-length="10" data-validation-error-msg="Ви ввели невірний номер телефону"
                 .input_filed
                   label for="d_v_email"
                     |Електронна скринька
-                  input#d_v_email type="text" placeholder="voronin.nick@gmail.com" data-validation="email" data-validation-error-msg="Введіть правильний email"
+                  input#d_v_email name="email" type="text" placeholder="voronin.nick@gmail.com" data-validation="email" data-validation-error-msg="Ви ввели невірну електронну скриньку"
                 .d-v-time
                   span
                     |Зручний час дзвінка:
@@ -145,9 +145,8 @@ div style="display: none"
                 .input_field
                   label for="d_v_message"
                     |Текст повідомлення
-                  textarea#d_v_message type="text" placeholder="Зателефонуйте мені будь-ласка. є декілька питань, щодо покупки..."
+                  textarea#d_v_message name="message" type="text" placeholder="Зателефонуйте мені будь-ласка. є декілька питань, щодо покупки..."
                 .form-actions.right
                   button#d_v_submit type="submit"
                     |Замовити
         .ph
-    /.fbb

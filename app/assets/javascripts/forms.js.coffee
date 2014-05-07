@@ -56,31 +56,47 @@ $(document).ready ->
     price_from = $('input#d_v_suma')
     $('input#d_v_suma').val(parseInt($('input#d_v_count').val())*parseInt(door_louver_price))
 
-#    order louver doors
+
+
+  $(".status-message").addClass(" dn")
+  $(".loading_status").addClass(" dn")
+
+# ================================================================   order louver doors  begin
   $('button#d_v_submit').click (e) ->
+    $(".loading_status").removeClass("dn")
     e.preventDefault()
-    valueToSubmit = {louver_doors:{ width:$('select#d_v_width').val(), height:$('select#d_v_height').val(), count:$('input#d_v_count').val(), price:$('input#d_v_suma').val(), name:$('input#d_v_name').val(), phone:$('input#d_v_phone').val(), email:$('input#d_v_email').val(), comment:$('textarea#d_v_message').val(), time_from:$('select#d_v_time_from').val(), time_to:$('select#d_v_time_to').val()}}
+    valueToSubmit = {louver_doors:{ width:$('select#d_v_width').val(), height:$('select#d_v_height').val(), count:$('input#d_v_count').val(), price:$('input#d_v_suma').val(), f_name:$('input#d_v_name').val(), f_phone:$('input#d_v_phone').val(), f_email:$('input#d_v_email').val(), f_comment:$('textarea#d_v_message').val(), time_from:$('select#d_v_time_from').val(), time_to:$('select#d_v_time_to').val()}}
+
     $.ajax
       url: '/order_louver_doors'
       type: 'POST'
       data: valueToSubmit
       success: () ->
-        alert('success')
+        $(".status-message").removeClass(" dn")
+        $(".loading_status").addClass(" dn")
+        $("form#order-enter-door").addClass(" dn")
 
-# call order
-  $(".status-message").addClass(" dn")
-  $(".loading_status").addClass(" dn")
+        $(".fancybox-inner").height('height', '250px')
+#        $(".fancybox-wrap").css({"width":"600px","left":"30%"})
+    #act on result.
+    false # prevents normal behaviour
+
+#  ======================================================================end
 
 
-  $("form#call_order").submit ->
+
+
+# ================================================================ call order form begin
+  $("button#call_order_submit").click (e) ->
     $(".loading_status").removeClass("dn")
-    valuesToSubmit = $(this).serialize()
+    e.preventDefault()
+    valueToSubmit = {louver_doors:{ name:$('input#d_v_name').val(), phone:$('input#d_v_phone').val(), email:$('input#d_v_email').val(), comment:$('textarea#d_v_message').val(), time_from:$('select#d_v_time_from').val(), time_to:$('select#d_v_time_to').val()}}
     #sumbits it to the given url of the form
     # you want a difference between normal and ajax-calls, and json is standard
     $.ajax
-      url: $(this).attr("action")
+      url: '/call_order'
       type: "POST"
-      data: valuesToSubmit
+      data: valueToSubmit
 #      dataType: "JSON"
       success: () ->
         $(".status-message").removeClass(" dn")
@@ -88,12 +104,14 @@ $(document).ready ->
         $("form#call_order").addClass(" dn")
 
         $(".fancybox-inner").height('height', '250px')
-        $(".fancybox-wrap").css({"width":"600px","left":"30%"})
     #act on result.
     false # prevents normal behaviour
 
-# order enter doors
+#  ============================================================================== end
+
+#  ================================================================================ order enter doors begin
   $('button#d_submit').click (e) ->
+    $(".loading_status").removeClass("dn")
     e.preventDefault()
     valueToSubmit = {enter_doors:{ door:$('select#model_d').val(), color:$('select#color_d').val(), open_door:$('input:checkbox[name=open_door]:checked').val(), count:$('input#count_e_door').val(),furnitura:$('input:checkbox[name=furnitura]:checked').val(), name:$('input#d_v_name').val(), phone:$('input#d_v_phone').val(), email:$('input#d_v_email').val(), comment:$('textarea#d_v_message').val(), time_from:$('select#d_v_time_from').val(), time_to:$('select#d_v_time_to').val()}}
     $.ajax
@@ -101,5 +119,28 @@ $(document).ready ->
       type: 'POST'
       data: valueToSubmit
       success: () ->
-        alert('success')
+        $(".status-message").removeClass(" dn")
+        $(".loading_status").addClass(" dn")
+        $("form#order-enter-door").addClass(" dn")
 
+        $(".fancybox-inner").height('height', '250px')
+    #act on result.
+    false # prevents normal behaviour
+# ============================================================================================== end
+
+#  ================================================================================ feedback begin
+  $('button#contacts_submit').click (e) ->
+    $(".loading_status").removeClass("dn")
+    e.preventDefault()
+    valueToSubmit = {feedback:{ name:$('input#d_v_name').val(), phone:$('input#d_v_phone').val(), email:$('input#d_v_email').val(), comment:$('textarea#d_v_message').val(), time_from:$('select#d_v_time_from').val(), time_to:$('select#d_v_time_to').val()}}
+    $.ajax
+      url: '/feedback'
+      type: 'POST'
+      data: valueToSubmit
+      success: () ->
+        $(".status-message").removeClass(" dn")
+        $(".loading_status").addClass(" dn")
+
+    #act on result.
+    false # prevents normal behaviour
+# ============================================================================================== end

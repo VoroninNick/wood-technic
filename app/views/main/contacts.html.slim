@@ -82,6 +82,12 @@
   .header-block-page.promo-green-line.contact-form
     h1
       |ФОРМА ЗВОРОТНЬОГО ЗВ’ЯЗКУ
+  .c_s_m_w
+    .row
+      .column6.push-3
+        .status-message.dn
+          h4
+            |Ваше повідомлення успішно відправлене!
 .row
   - if @was_sent
     .large-6.columns
@@ -89,48 +95,31 @@
         span
           |Ваше повідомлення надіслане!
 .row
-  form#order-enter-door action="/order_enter_door" method="POST"
+  form#feedback method="POST"
+    .loading_status
+      img src=asset_path('Logo-animation.gif')
     .row
       .info-part-wrap
         .columns.large-10.push-1
-          form#order-enter-door action="/order_enter_door" method="POST"
+          form#order-enter-door method="POST"
             .columns.large-6.no-padding-left
               .input_filed
                 label for="d_v_name"
                   |Ваше ім’я
-                input#d_v_name type="text" placeholder="Воронін Микола Валерійович" data-validation="length" data-validation-length="3-30" data-validation-error-msg="Введіть ваше ім'я"
+                input#d_v_name name="name" type="text" placeholder="Воронін Микола Валерійович" data-validation="length" data-validation-length="3-30" data-validation-error-msg="Введіть ваше ім'я"
               .input_filed
                 label for="d_v_phone"
                   |Контактний телефон
-                input#d_v_phone type="text" placeholder="050 417 07 28" data-validation="length number" data-validation-length="10" data-validation-error-msg="Введіть номер телефону"
+                input#d_v_phone name="phone" type="text" placeholder="050 417 07 28" data-validation="length number" data-validation-length="10" data-validation-error-msg="Введіть номер телефону"
               .input_filed
                 label for="d_v_email"
                   |Електронна скринька
-                input#d_v_email type="text" placeholder="voronin.nick@gmail.com" data-validation="email" data-validation-error-msg="Введіть правильний email"
+                input#d_v_email name="email" type="text" placeholder="voronin.nick@gmail.com" data-validation="email" data-validation-error-msg="Введіть правильний email"
             .columns.large-6.no-padding-right
               .input_field
                 label for="d_v_message"
                   |Текст повідомлення
                 textarea#d_v_message type="text" placeholder="Зателефонуйте мені будь-ласка. є декілька питань, щодо покупки..."
               .form-actions.right
-                button#d_v_submit type="submit"
+                button#contacts_submit type="submit"
                   |Надіслати
-  /.contacts-form
-  /  = simple_form_for @contact_new_form, :html => {:class => 'form-horizontal', :id=>'call_order_form' },:url => contacts_path do |f|
-  /    .columns.large-6.form-horizontal-left
-  /      = f.label :"Ваше ім'я:", :for=>"contact_name"
-  /      = f.input :name, :required => true, placeholder: 'Воронін Микола Валерійович', :label=>false, :class=>" name"
-  /
-  /      = f.label :"Контактний телефон:", :for=>"contact_phone"
-  /      = f.input :phone, :required => true, placeholder: '+38 (050) 417 07 28', :label=>false
-  /
-  /      = f.label :"Електронна скринька:", :for=>"contact_email"
-  /      = f.input :email, :required => false, placeholder: 'voronin.nick@gmail.com', :label=>false
-  /
-  /
-  /    .columns.large-6.form-horizontal-right
-  /      = f.label :"Текст повідомлення:", :for=>"contact_message"
-  /      = f.input :message, :as => :text, :required => false, placeholder: 'Будемо раді почути відгуки та запитання від Вас.', :label=>false
-  /
-  /      .form-actions.right
-  /        = f.button :submit, 'НАДІСЛАТИ', :class=> "btn btn-primary"

@@ -33,7 +33,7 @@ Wt::Application.routes.draw do
   post '/call_order' => 'main#call_order', as: :call_order
   post '/order_louver_doors' => 'main#order_louver_doors', as: :order_louver_doors
   post '/order_enter_door' => 'main#order_enter_door', as: :order_enter_door
-  post '/contacts' => 'main#send_message', as: :send_message
+  post '/feedback' => 'main#feedback', as: :feedback
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -10,7 +10,7 @@ class ContactUs < ActionMailer::Base
       to.push(r.email)
     end
     #default to: to
-    mail(:subject => "New message from your website!", to: to)
+    mail(:template_path => 'mail_templates', :template_name => 'feedback', :subject => "ЗВОРОТНІЙ ЗВ’ЯЗОК", to: to)
   end
 
 end

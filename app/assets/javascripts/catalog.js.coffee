@@ -77,3 +77,13 @@ $(document).ready ->
     mainImage = mainImage.replace("image_large", "image_original");
     $(".d_v_image img").attr src: mainImage
     $(".d_v_image img").parent().attr href: mainImage
+
+# ==============================================================  click flip image
+  if $('div.image-enter-door img').hasClass('flip_right')
+    $('div.image-enter-door img').removeClass('flip_right')
+  $('label.flip_button_right').click ->
+    $('div.image-enter-door img').removeClass(' flip_left')
+    $('div.image-enter-door img').addClass(' flip_right')
+  $('.flip_button_left').click ->
+    $('div.image-enter-door img').removeClass('flip_right')
+    $('div.image-enter-door img').addClass(' flip_left')

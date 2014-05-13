@@ -5,10 +5,7 @@ class CallOrder < ActionMailer::Base
   def order_call(call_order)
     @call_order = call_order
     to = []
-    FeedbackEmail.all.each do | r |
-      to.push(r.email)
-    end
-    # default to: to
+    to = FeedbackEmail.email
     mail(:template_path => 'mail_templates', :template_name => 'call_order', :subject => "ЗАМОВЛЕННЯ ДЗВІНКА", to: to)
   end
 end

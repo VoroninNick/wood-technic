@@ -28,6 +28,7 @@ $(document).ready ->
         door_louver_price = data
         $('input#d_v_suma').val(door_louver_price)
 
+# rez wen select parameters
 
   $('.lf_header select').change (e) ->
     e.preventDefault()
@@ -37,7 +38,6 @@ $(document).ready ->
     rez_request_string = selected_width+'/'+selected_height
 
     valuesToSend = {title: rez_request_string}
-
     $.ajax
       url: '/get_price'
       type: "GET"

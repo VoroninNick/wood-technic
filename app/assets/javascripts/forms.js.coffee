@@ -62,11 +62,10 @@ $(document).ready ->
   $(".loading_status").addClass(" dn")
 
 # ================================================================   order louver doors  begin
-  $('button#d_v_submit').click (e) ->
+  $('button#d_v2_submit').click (e) ->
     $(".loading_status").removeClass("dn")
     e.preventDefault()
-    valueToSubmit = {louver_doors:{ width:$('select#d_v_width').val(), height:$('select#d_v_height').val(), count:$('input#d_v_count').val(), price:$('input#d_v_suma').val(), f_name:$('input#d_v_name').val(), f_phone:$('input#d_v_phone').val(), f_email:$('input#d_v_email').val(), f_comment:$('textarea#d_v_message').val(), time_from:$('select#d_v_time_from').val(), time_to:$('select#d_v_time_to').val()}}
-
+    valueToSubmit = {louver_doors:{ width:$('select#d_v_width').val(), height:$('select#d_v_height').val(), count:$('input#d_v_count').val(), price:$('input#d_v_suma').val(), f_name:$('input#d_v2_name').val(), f_phone:$('input#d_v2_phone').val(), f_email:$('input#d_v2_email').val(), f_comment:$('textarea#d_v2_message').val(), time_from:$('select#d_v_time_from').val(), time_to:$('select#d_v_time_to').val()}}
     $.ajax
       url: '/order_louver_doors'
       type: 'POST'
@@ -113,7 +112,7 @@ $(document).ready ->
   $('button#d_submit').click (e) ->
     $(".loading_status").removeClass("dn")
     e.preventDefault()
-    valueToSubmit = {enter_doors:{ door:$('select#model_d').val(), color:$('select#color_d').val(), open_door:$('input:checkbox[name=open_door]:checked').val(), count:$('input#count_e_door').val(),furnitura:$('input:checkbox[name=furnitura]:checked').val(), name:$('input#d_v_name').val(), phone:$('input#d_v_phone').val(), email:$('input#d_v_email').val(), comment:$('textarea#d_v_message').val(), time_from:$('select#d_v_time_from').val(), time_to:$('select#d_v_time_to').val()}}
+    valueToSubmit = {enter_doors:{ door:$('select#model_d').val(), color:$('select#color_d').val(), open_door:$('input:checkbox[name=open_door]:checked').val(), count:$('input#count_e_door').val(),furnitura:$('input:checkbox[name=furnitura]:checked').val(), name:$('input#d_v1_name').val(), phone:$('input#d_v1_phone').val(), email:$('input#d_v1_email').val(), comment:$('textarea#d_v1_message').val(), time_from:$('select#d_v_time_from').val(), time_to:$('select#d_v_time_to').val()}}
     $.ajax
       url: '/order_enter_door'
       type: 'POST'

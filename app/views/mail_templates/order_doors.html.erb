@@ -22,28 +22,28 @@
       <h2>Контактні дані  </h2>
       <p>
         <span>Ім'я  </span>
-
+        <strong><%=@enter_door[:name]%></strong>
       </p>
       <p>
         <span>Телефон  </span>
-
+        <strong><%=@enter_door[:phone]%></strong>
       </p>
       <p>
         <span>Електронна скринька  </span>
-
+        <strong><%=@enter_door[:email]%></strong>
       </p>
       <p>
         <span>Повідомлення  </span>
-
+        <strong><%=@enter_door[:comment]%></strong>
       </p>
     </div>
-    <div>
-      <h2>Зручний час дзвінка:</h2>
-      <p><span>З  </span>
-
-      </p>
-      <p><span>До  </span>
-
-      </p>
-    </div>
+  <div>
+    <h2>Зручний час дзвінка:</h2>
+    <p><span>З  </span>
+      <strong><%=@enter_door[:time_from] %></strong>
+    </p>
+    <p><span>До  </span>
+      <strong><%=@enter_door[:time_to] %></strong>
+    </p>
+  </div>
 </div>

@@ -9,6 +9,6 @@ class OrderDoor < ActionMailer::Base
       to.push(r.email)
     end
     #default to: to
-    mail(:template_path => 'mail_templates', :template_name => 'order_doors', :subject => "ЗАМОВЛЕННЯ ДВЕРЕЙ", to: to)
+    mail(:template_path => 'mail_templates', :template_name => 'order_doors', :subject => "Wood Technic ЗАМОВЛЕННЯ ДВЕРЕЙ", to: to)
   end
 end

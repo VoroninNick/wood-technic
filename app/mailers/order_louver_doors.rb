@@ -8,6 +8,6 @@ class OrderLouverDoors < ActionMailer::Base
     FeedbackEmail.all.each do | r |
       to.push(r.email)
     end
-    mail(:template_path => 'mail_templates', :template_name => 'order_louver_doors', :subject => "ЗАМОВЛЕННЯ ЖАЛЮЗІЙНИХ ДВЕРЦЯТ")
+    mail(:template_path => 'mail_templates', :template_name => 'order_louver_doors', :subject => "Wood Technic ЗАМОВЛЕННЯ ЖАЛЮЗІЙНИХ ДВЕРЦЯТ")
   end
 end

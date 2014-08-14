@@ -8,7 +8,6 @@ class OrderDoor < ActionMailer::Base
     FeedbackEmail.all.each do | r |
       to.push(r.email)
     end
-    #default to: to
     mail(:template_path => 'mail_templates', :template_name => 'order_doors', :subject => "ЗАМОВЛЕННЯ ДВЕРЕЙ", to: to)
   end
 end

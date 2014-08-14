@@ -3,28 +3,28 @@
   <h2>Контактні дані  </h2>
   <p>
     <span>Ім'я  </span>
-
+    <strong><%=@message[:name]%></strong>
   </p>
   <p>
     <span>Телефон  </span>
-
+    <strong><%=@message[:phone]%></strong>
   </p>
   <p>
     <span>Електронна скринька  </span>
-
+    <strong><%=@message[:email]%></strong>
   </p>
   <p>
     <span>Повідомлення  </span>
-
+    <strong><%=@message[:comment]%></strong>
   </p>
 </div>
 <div>
   <h2>Зручний час дзвінка:</h2>
   <p><span>З  </span>
-
+    <strong><%=@message[:time_from]%></strong>
   </p>
   <p><span>До  </span>
-
+    <strong><%=@message[:time_to]%></strong>
   </p>
 </div>
 </div>

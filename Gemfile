@@ -69,7 +69,7 @@ gem 'time_diff'
 gem 'sitemap_generator'
 
 
-gem 'capistrano'
+gem 'capistrano', "~> 3.1.0"
 
 gem 'capistrano-rails'
 

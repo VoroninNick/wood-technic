@@ -1,3 +1,5 @@
--if @page
-  -@page.each do |p|
-    =raw p.page_content
+.row
+  .columns.large-12.medium-12.small-12
+    -if @page
+      -@page.each do |p|
+        =raw p.page_content

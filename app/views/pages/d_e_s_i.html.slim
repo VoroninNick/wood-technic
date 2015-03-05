@@ -54,48 +54,57 @@
                 h2
                   |Колір дверей
                 ul.palette_colors
-                  - dc = dac.colory_dverejs[0]
-                  -if dc
+                  - dac.colory_dverejs.each_with_index do |cd, i|
                     li.palette-item
-                      a href=dc.image.url(:large)
-                        img src=asset_path("wenge.png")
-                        h4
-                          |Венге
-                  - dc = dac.colory_dverejs[1]
-                  -if dc
-                    li.palette-item
-                      a href=dc.image.url(:large)
-                        img src=asset_path("vilha.png")
-                        h4
-                          |Вільха
-                  - dc = dac.colory_dverejs[2]
-                  -if dc
-                    li.palette-item
-                      a href=dc.image.url(:large)
-                        img src=asset_path("gorih.png")
-                        h4
-                          |Горіх
-                  - dc = dac.colory_dverejs[3]
-                  -if dc
-                    li.palette-item
-                      a href=dc.image.url(:large)
-                        img src=asset_path("dub.png")
-                        h4
-                          |Каштан
-                  - dc = dac.colory_dverejs[4]
-                  -if dc
-                    li.palette-item
-                      a href=dc.image.url(:large)
-                        img src=asset_path("mahagon.png")
-                        h4
-                          |Дуб
-                  - dc = dac.colory_dverejs[5]
-                  -if dc
-                    li.palette-item
-                      a href=dc.image.url(:large)
-                        img src=asset_path("Bileniy-dub-icon.png")
-                        h4
-                          |Дуб білий
+                      a href=cd.image.url(:large)
+                        - if cd.ico.exists?
+                          = image_tag cd.ico.url(:avatar)
+                        - else
+                          = image_tag asset_path("wenge.png")
+                        h4 = cd.title
+
+                  /- dc = dac.colory_dverejs[0]
+                  /-if dc
+                  /  li.palette-item
+                  /    a href=dc.image.url(:large)
+                  /      img src=asset_path("wenge.png")
+                  /      h4
+                  /        |Венге
+                  /- dc = dac.colory_dverejs[1]
+                  /-if dc
+                  /  li.palette-item
+                  /    a href=dc.image.url(:large)
+                  /      img src=asset_path("vilha.png")
+                  /      h4
+                  /        |Вільха
+                  /- dc = dac.colory_dverejs[2]
+                  /-if dc
+                  /  li.palette-item
+                  /    a href=dc.image.url(:large)
+                  /      img src=asset_path("gorih.png")
+                  /      h4
+                  /        |Горіх
+                  /- dc = dac.colory_dverejs[3]
+                  /-if dc
+                  /  li.palette-item
+                  /    a href=dc.image.url(:large)
+                  /      img src=asset_path("dub.png")
+                  /      h4
+                  /        |Каштан
+                  /- dc = dac.colory_dverejs[4]
+                  /-if dc
+                  /  li.palette-item
+                  /    a href=dc.image.url(:large)
+                  /      img src=asset_path("mahagon.png")
+                  /      h4
+                  /        |Дуб
+                  /- dc = dac.colory_dverejs[5]
+                  /-if dc
+                  /  li.palette-item
+                  /    a href=dc.image.url(:large)
+                  /      img src=asset_path("Bileniy-dub-icon.png")
+                  /      h4
+                  /        |Дуб білий
                   .clearfix
                 .clearfix
                 .form-actions

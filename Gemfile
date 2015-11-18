@@ -78,3 +78,5 @@ gem 'capistrano-rails'
 gem 'disqus_rails'
 
 gem 'nokogiri'
+
+gem 'global_config'

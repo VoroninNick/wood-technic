@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140513081658) do
+ActiveRecord::Schema.define(version: 20150305133702) do
 
   create_table "banners", force: true do |t|
     t.text     "title"
@@ -120,6 +120,11 @@ ActiveRecord::Schema.define(version: 20140513081658) do
     t.integer  "dveri_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ico_file_name"
+    t.string   "ico_content_type"
+    t.integer  "ico_file_size"
+    t.datetime "ico_updated_at"
+    t.string   "slug"
   end
 
   create_table "contact_forms", force: true do |t|

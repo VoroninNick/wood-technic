@@ -32,6 +32,7 @@ Wt::Application.routes.draw do
 
   get '/get_image' => 'pages#get_image', as: :get_image
   get '/get_price' => 'pages#price', as: :price
+  get 'test' => 'main#test'
 
   post '/call_order' => 'main#call_order', as: :call_order
   post '/order_louver_doors' => 'main#order_louver_doors', as: :order_louver_doors

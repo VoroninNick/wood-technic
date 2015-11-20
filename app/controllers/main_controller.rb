@@ -34,4 +34,7 @@ class MainController < ApplicationController
   def order_enter_door
       OrderDoor.order_enter_door(params[:enter_doors]).deliver
   end
+  def test
+    
+  end
 end

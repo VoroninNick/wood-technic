@@ -6,7 +6,7 @@ class LouverDoorWidth < ActiveRecord::Base
   validates :width, :presence => true
 
   rails_admin do
-    visible false
+    # visible false
     label 'Одиницю'
     label_plural 'Одиниці'
 

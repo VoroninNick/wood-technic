@@ -12,7 +12,7 @@ class LouverDoorWidth < ActiveRecord::Base
 
     list do
       field :title
-      field :height
+      field :width
     end
 
     edit do

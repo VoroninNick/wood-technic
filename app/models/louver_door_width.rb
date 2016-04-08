@@ -7,6 +7,7 @@ class LouverDoorWidth < ActiveRecord::Base
 
   rails_admin do
     # visible false
+    parent LouvreDoors
     label 'Одиницю'
     label_plural 'Одиниці'
 
